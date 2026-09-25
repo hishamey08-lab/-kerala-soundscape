@@ -35,11 +35,14 @@ body {
     min-height: 100vh;
 }
 
+/* =========================
+   BACKGROUND EFFECT
+========================= */
+
 .overlay {
     min-height: 100vh;
     padding: 30px 20px 70px;
     backdrop-filter: blur(2px);
-    position: relative;
 }
 
 .overlay::before {
@@ -61,6 +64,10 @@ body {
 
     pointer-events: none;
 }
+
+/* =========================
+   HEADER
+========================= */
 
 header {
     max-width: 950px;
@@ -101,6 +108,10 @@ h1 {
     line-height: 1.8;
 }
 
+/* =========================
+   SOUNDSCAPE
+========================= */
+
 .soundscape {
     max-width: 1050px;
     margin: auto;
@@ -120,6 +131,10 @@ h1 {
     color: #bdc8c1;
     font-family: Arial, sans-serif;
 }
+
+/* =========================
+   SOUND CARDS
+========================= */
 
 .sound-grid {
     display: grid;
@@ -165,11 +180,6 @@ h1 {
         inset 0 0 30px rgba(217,197,138,0.04);
 }
 
-.sound-card.errored {
-    border-color: rgba(200,90,90,0.55);
-    opacity: 0.7;
-}
-
 .sound-icon {
     font-size: 45px;
     margin-bottom: 13px;
@@ -190,20 +200,12 @@ h1 {
 
     min-height: 66px;
 
-    margin-bottom: 12px;
+    margin-bottom: 20px;
 }
 
-.sound-error-msg {
-    display: none;
-    color: #e8a3a3;
-    font-family: Arial, sans-serif;
-    font-size: 12px;
-    margin-bottom: 12px;
-}
-
-.sound-card.errored .sound-error-msg {
-    display: block;
-}
+/* =========================
+   TOGGLE BUTTON
+========================= */
 
 .toggle {
     width: 100%;
@@ -229,17 +231,16 @@ h1 {
     background: rgba(255,255,255,0.14);
 }
 
-.toggle:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
-
 .sound-card.active .toggle {
     background: #d9c58a;
     color: #152017;
 
     font-weight: bold;
 }
+
+/* =========================
+   MASTER CONTROL
+========================= */
 
 .master {
     margin-top: 28px;
@@ -285,14 +286,14 @@ h1 {
 
     font-weight: bold;
 
-    border: none;
-
     transition: 0.25s;
 }
 
 .play-btn {
     background: #d9c58a;
     color: #132117;
+
+    border: none;
 }
 
 .play-btn:hover {
@@ -311,6 +312,10 @@ h1 {
 .stop-btn:hover {
     background: rgba(255,255,255,0.15);
 }
+
+/* =========================
+   VOLUME
+========================= */
 
 .volume-box {
     max-width: 420px;
@@ -335,6 +340,10 @@ input[type="range"] {
     cursor: pointer;
 }
 
+/* =========================
+   NOW PLAYING
+========================= */
+
 .now-playing {
     margin-top: 25px;
 
@@ -355,8 +364,11 @@ input[type="range"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
+
+/* =========================
+   FOOTER
+========================= */
 
 footer {
     text-align: center;
@@ -371,6 +383,10 @@ footer {
 
     line-height: 1.7;
 }
+
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 700px) {
 
@@ -418,7 +434,7 @@ footer {
     </h1>
 
     <div class="subtitle">
-        God's Own Country
+        God’s Own Country
     </div>
 
     <p class="intro">
@@ -446,96 +462,171 @@ footer {
 
     <div class="sound-grid">
 
+
+        <!-- =====================
+             RAIN
+        ====================== -->
+
         <div class="sound-card" id="card-rain">
 
-            <div class="sound-icon">🌧️</div>
+            <div class="sound-icon">
+                🌧️
+            </div>
 
-            <h3>Mazha</h3>
+            <h3>
+                Mazha
+            </h3>
 
             <p>
                 The peaceful sound of Kerala rain,
                 falling through trees, rooftops and roads.
             </p>
 
-            <div class="sound-error-msg">Audio file not found — add audio/rain.mp3</div>
+            <button
+                class="toggle"
+                onclick="toggleSound('rain')">
 
-            <button class="toggle" onclick="toggleSound('rain')">OFF</button>
+                OFF
+
+            </button>
 
         </div>
 
 
+
+        <!-- =====================
+             VILLAGE
+        ====================== -->
+
         <div class="sound-card" id="card-village">
 
-            <div class="sound-icon">🌴</div>
+            <div class="sound-icon">
+                🌴
+            </div>
 
-            <h3>Morning Village</h3>
+            <h3>
+                Morning Village
+            </h3>
 
             <p>
                 Birds, nature, distant voices and
                 the peaceful morning of a Kerala village.
             </p>
 
-            <div class="sound-error-msg">Audio file not found — add audio/village.mp3</div>
+            <button
+                class="toggle"
+                onclick="toggleSound('village')">
 
-            <button class="toggle" onclick="toggleSound('village')">OFF</button>
+                OFF
+
+            </button>
 
         </div>
 
 
+
+        <!-- =====================
+             ROMANTIC
+        ====================== -->
+
         <div class="sound-card" id="card-romantic">
 
-            <div class="sound-icon">💕</div>
+            <div class="sound-icon">
+                💕
+            </div>
 
-            <h3>Romantic Dialogues</h3>
+            <h3>
+                Romantic Dialogues
+            </h3>
 
             <p>
                 A collection of romantic dialogue
                 sounds for a softer Kerala atmosphere.
             </p>
 
-            <div class="sound-error-msg">Audio files not found — add audio/romantic-1/2/3.mp3</div>
+            <button
+                class="toggle"
+                onclick="toggleSound('romantic')">
 
-            <button class="toggle" onclick="toggleSound('romantic')">OFF</button>
+                OFF
+
+            </button>
 
         </div>
 
 
+
+        <!-- =====================
+             FEEL GOOD
+        ====================== -->
+
         <div class="sound-card" id="card-feelgood">
 
-            <div class="sound-icon">🎵</div>
+            <div class="sound-icon">
+                🎵
+            </div>
 
-            <h3>Feel-Good Sounds</h3>
+            <h3>
+                Feel-Good Sounds
+            </h3>
 
             <p>
                 Add a warm Malayalam-inspired
                 musical atmosphere to your soundscape.
             </p>
 
-            <div class="sound-error-msg">Audio files not found — add audio/feelgood-1..4.mp3</div>
+            <button
+                class="toggle"
+                onclick="toggleSound('feelgood')">
 
-            <button class="toggle" onclick="toggleSound('feelgood')">OFF</button>
+                OFF
+
+            </button>
 
         </div>
 
     </div>
 
 
+
+    <!-- =====================
+         MASTER CONTROLS
+    ====================== -->
+
     <div class="master">
 
-        <h3>🎛️ Sound Controls</h3>
+        <h3>
+            🎛️ Sound Controls
+        </h3>
+
 
         <div class="master-buttons">
 
-            <button class="master-btn play-btn" onclick="playSelected()">▶ Play Selected</button>
+            <button
+                class="master-btn play-btn"
+                onclick="playSelected()">
 
-            <button class="master-btn stop-btn" onclick="stopAll()">■ Stop All</button>
+                ▶ Play Selected
+
+            </button>
+
+
+            <button
+                class="master-btn stop-btn"
+                onclick="stopAll()">
+
+                ■ Stop All
+
+            </button>
 
         </div>
 
 
         <div class="volume-box">
 
-            <label for="volume">🔊 Master Volume — <span id="volumeLabel">70%</span></label>
+            <label>
+                🔊 Master Volume
+            </label>
 
             <input
                 type="range"
@@ -550,8 +641,12 @@ footer {
         </div>
 
 
-        <div class="now-playing" id="nowPlaying">
+        <div
+            class="now-playing"
+            id="nowPlaying">
+
             Nothing playing
+
         </div>
 
     </div>
@@ -561,7 +656,7 @@ footer {
 
 <footer>
 
-    Kerala &mdash; God's Own Country
+    Kerala — God’s Own Country
 
     <br>
 
@@ -572,197 +667,376 @@ footer {
 </div>
 
 
-<audio id="rain" src="audio/rain.mp3" loop preload="none"></audio>
-<audio id="village" src="audio/village.mp3" loop preload="none"></audio>
 
-<audio id="romantic1" src="audio/romantic-1.mp3" preload="none"></audio>
-<audio id="romantic2" src="audio/romantic-2.mp3" preload="none"></audio>
-<audio id="romantic3" src="audio/romantic-3.mp3" preload="none"></audio>
+<!-- ==================================
+     AUDIO ELEMENTS
+=================================== -->
 
-<audio id="feelgood1" src="audio/feelgood-1.mp3" preload="none"></audio>
-<audio id="feelgood2" src="audio/feelgood-2.mp3" preload="none"></audio>
-<audio id="feelgood3" src="audio/feelgood-3.mp3" preload="none"></audio>
-<audio id="feelgood4" src="audio/feelgood-4.mp3" preload="none"></audio>
+
+<!-- RAIN -->
+
+<audio
+    id="rain"
+    src="audio/rain.mp3"
+    loop>
+</audio>
+
+
+
+<!-- VILLAGE -->
+
+<audio
+    id="village"
+    src="audio/village.mp3"
+    loop>
+</audio>
+
+
+
+<!-- ROMANTIC DIALOGUES -->
+
+<audio
+    id="romantic1"
+    src="audio/romantic-1.mp3">
+</audio>
+
+<audio
+    id="romantic2"
+    src="audio/romantic-2.mp3">
+</audio>
+
+<audio
+    id="romantic3"
+    src="audio/romantic-3.mp3">
+</audio>
+
+
+
+<!-- FEEL GOOD -->
+
+<audio
+    id="feelgood1"
+    src="audio/feelgood-1.mp3">
+</audio>
+
+<audio
+    id="feelgood2"
+    src="audio/feelgood-2.mp3">
+</audio>
+
+<audio
+    id="feelgood3"
+    src="audio/feelgood-3.mp3">
+</audio>
+
+<audio
+    id="feelgood4"
+    src="audio/feelgood-4.mp3">
+</audio>
+
 
 
 <script>
 
+/* ==================================
+   AUDIO SETUP
+=================================== */
+
+
 const sounds = {
-    rain: [document.getElementById("rain")],
-    village: [document.getElementById("village")],
+
+    rain: [
+        document.getElementById("rain")
+    ],
+
+    village: [
+        document.getElementById("village")
+    ],
+
     romantic: [
         document.getElementById("romantic1"),
         document.getElementById("romantic2"),
         document.getElementById("romantic3")
     ],
+
     feelgood: [
         document.getElementById("feelgood1"),
         document.getElementById("feelgood2"),
         document.getElementById("feelgood3"),
         document.getElementById("feelgood4")
     ]
+
 };
+
+
+
+/* ==================================
+   DISPLAY NAMES
+=================================== */
+
 
 const names = {
+
     rain: "🌧️ Mazha",
+
     village: "🌴 Morning Village",
+
     romantic: "💕 Romantic Dialogues",
+
     feelgood: "🎵 Feel-Good Sounds"
+
 };
+
+
+
+/* ==================================
+   ACTIVE STATUS
+=================================== */
+
 
 const activeSounds = {
+
     rain: false,
+
     village: false,
+
     romantic: false,
+
     feelgood: false
+
 };
 
-// Tracks whether a sound group's audio file(s) actually failed to load,
-// so we can disable the card instead of silently doing nothing.
-const brokenSounds = {
-    rain: false,
-    village: false,
-    romantic: false,
-    feelgood: false
-};
 
-function markBroken(name) {
-    if (brokenSounds[name]) return;
-    brokenSounds[name] = true;
 
-    const card = document.getElementById("card-" + name);
-    const button = card.querySelector(".toggle");
+/* ==================================
+   TOGGLE SOUND
+=================================== */
 
-    card.classList.add("errored");
-    card.classList.remove("active");
-    button.disabled = true;
-    button.innerText = "UNAVAILABLE";
-
-    activeSounds[name] = false;
-    updateNowPlaying();
-}
-
-// Wire up error listeners once, up front, instead of only discovering
-// a missing file the moment someone clicks play.
-Object.keys(sounds).forEach(name => {
-    sounds[name].forEach(audio => {
-        audio.addEventListener("error", () => markBroken(name));
-    });
-});
 
 function toggleSound(name) {
-
-    if (brokenSounds[name]) return;
 
     const audioList = sounds[name];
 
     activeSounds[name] = !activeSounds[name];
 
-    const card = document.getElementById("card-" + name);
-    const button = card.querySelector(".toggle");
+
+    const card =
+        document.getElementById("card-" + name);
+
+
+    const button =
+        card.querySelector(".toggle");
+
+
+
+    /* TURN ON */
 
     if (activeSounds[name]) {
 
         audioList.forEach(audio => {
+
             audio.currentTime = 0;
-            audio.volume = document.getElementById("volume").value;
-            audio.play().catch(() => {
-                // Autoplay can be blocked until the user interacts with the
-                // page at least once; a real missing-file error is caught
-                // separately by the "error" listener above.
-                console.log("Playback blocked until user interacts with the page.");
+
+            audio.volume =
+                document.getElementById("volume").value;
+
+            audio.play().catch(error => {
+
+                console.log(
+                    "Browser requires user interaction."
+                );
+
             });
+
         });
+
 
         card.classList.add("active");
+
         button.innerText = "ON";
 
-    } else {
+    }
+
+
+
+    /* TURN OFF */
+
+    else {
 
         audioList.forEach(audio => {
+
             audio.pause();
+
             audio.currentTime = 0;
+
         });
 
+
         card.classList.remove("active");
+
         button.innerText = "OFF";
 
     }
 
+
     updateNowPlaying();
+
 }
+
+
+
+/* ==================================
+   PLAY SELECTED
+=================================== */
+
 
 function playSelected() {
 
     let selected = false;
 
+
     Object.keys(sounds).forEach(name => {
-        if (activeSounds[name] && !brokenSounds[name]) {
+
+        if (activeSounds[name]) {
+
             selected = true;
+
+
             sounds[name].forEach(audio => {
-                audio.volume = document.getElementById("volume").value;
+
+                audio.volume =
+                    document.getElementById("volume").value;
+
                 audio.play().catch(error => {
+
                     console.log(error);
+
                 });
+
             });
+
         }
+
     });
 
+
     if (!selected) {
-        alert("Select at least one sound first.");
+
+        alert(
+            "Select at least one sound first."
+        );
+
     }
 
+
     updateNowPlaying();
+
 }
+
+
+
+/* ==================================
+   STOP EVERYTHING
+=================================== */
+
 
 function stopAll() {
 
     Object.keys(sounds).forEach(name => {
 
+
         sounds[name].forEach(audio => {
+
             audio.pause();
+
             audio.currentTime = 0;
+
         });
+
 
         activeSounds[name] = false;
 
-        if (brokenSounds[name]) return;
 
-        const card = document.getElementById("card-" + name);
+        const card =
+            document.getElementById("card-" + name);
+
+
         card.classList.remove("active");
-        card.querySelector(".toggle").innerText = "OFF";
+
+
+        card.querySelector(".toggle").innerText =
+            "OFF";
 
     });
 
+
     updateNowPlaying();
+
 }
+
+
+
+/* ==================================
+   MASTER VOLUME
+=================================== */
+
 
 function changeVolume(value) {
 
-    document.getElementById("volumeLabel").innerText =
-        Math.round(value * 100) + "%";
-
     Object.keys(sounds).forEach(name => {
+
         sounds[name].forEach(audio => {
+
             audio.volume = value;
+
         });
+
     });
+
 }
+
+
+
+/* ==================================
+   NOW PLAYING DISPLAY
+=================================== */
+
 
 function updateNowPlaying() {
 
     const playing = Object.keys(activeSounds)
+
         .filter(name => activeSounds[name])
+
         .map(name => names[name]);
 
-    const display = document.getElementById("nowPlaying");
+
+    const display =
+        document.getElementById("nowPlaying");
+
 
     if (playing.length === 0) {
-        display.innerText = "Nothing playing";
-    } else {
-        display.innerText = "Now playing: " + playing.join("  •  ");
+
+        display.innerText =
+            "Nothing playing";
+
     }
+
+    else {
+
+        display.innerText =
+            "Now playing: " +
+            playing.join("  •  ");
+
+    }
+
 }
+
+
+
+/* ==================================
+   INITIAL VOLUME
+=================================== */
 
 changeVolume(0.7);
 
