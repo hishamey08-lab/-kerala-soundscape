@@ -6,345 +6,854 @@
 
 <title>Echoes of Kerala — God's Own Country</title>
 
+<meta name="description"
+content="Echoes of Kerala — See Kerala. Hear Kerala. Feel Kerala.">
+
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root{
+    --bg:#07110d;
+    --bg2:#0c1d16;
+    --green:#8fcf9b;
+    --light:#eaffef;
+    --muted:#a8b9ae;
+    --glass:rgba(255,255,255,.08);
+    --border:rgba(255,255,255,.14);
+    --shadow:0 25px 80px rgba(0,0,0,.45);
 }
 
-html {
-    scroll-behavior: smooth;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
     background:
-        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.78)),
-        url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85")
-        center/cover fixed;
-    color: white;
-    min-height: 100vh;
+        radial-gradient(circle at 20% 10%,rgba(69,145,91,.15),transparent 30%),
+        radial-gradient(circle at 80% 40%,rgba(82,130,100,.1),transparent 35%),
+        var(--bg);
+    color:white;
+    overflow-x:hidden;
 }
 
-/* ================= HEADER ================= */
-
-header {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 30px;
+button,
+select,
+input,
+textarea{
+    font:inherit;
 }
 
-.hero {
-    max-width: 900px;
+button{
+    cursor:pointer;
 }
 
-.small-title {
-    letter-spacing: 7px;
-    font-size: 13px;
-    color: #d5d5d5;
-    margin-bottom: 20px;
-    text-transform: uppercase;
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
-.hero h1 {
-    font-family: Georgia, serif;
-    font-size: clamp(55px, 10vw, 120px);
-    line-height: .9;
-    font-weight: 400;
-    letter-spacing: -4px;
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+    background:rgba(5,14,10,.62);
+    backdrop-filter:blur(18px);
+    border-bottom:1px solid rgba(255,255,255,.07);
 }
 
-.hero h1 span {
-    display: block;
-    font-style: italic;
+.logo{
+    font-size:1.05rem;
+    font-weight:800;
+    letter-spacing:2px;
 }
 
-.hero p {
-    margin-top: 28px;
-    font-size: 17px;
-    letter-spacing: 5px;
-    color: #ddd;
+.logo span{
+    color:var(--green);
 }
 
-.scroll {
-    margin-top: 70px;
-    font-size: 12px;
-    letter-spacing: 4px;
-    opacity: .7;
+.nav-links{
+    display:flex;
+    gap:25px;
+    font-size:.9rem;
 }
 
-/* ================= MAIN ================= */
-
-main {
-    width: min(1200px, 92%);
-    margin: auto;
-    padding-bottom: 100px;
+.nav-links a{
+    color:#d9e7dc;
+    transition:.3s;
 }
 
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
+.nav-links a:hover{
+    color:var(--green);
 }
 
-.section-title h2 {
-    font-family: Georgia, serif;
-    font-size: clamp(35px, 6vw, 65px);
-    font-weight: 400;
+@media(max-width:700px){
+    .nav-links{
+        display:none;
+    }
 }
 
-.section-title p {
-    margin-top: 12px;
-    color: #bbb;
-    letter-spacing: 2px;
+/* =========================
+   HERO
+========================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 50px;
+    overflow:hidden;
 }
 
-/* ================= SOUND CARDS ================= */
-
-.sound-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(to bottom,rgba(3,12,7,.25),rgba(3,12,7,.92)),
+        radial-gradient(circle at center,rgba(79,140,91,.15),transparent 50%);
 }
 
-.sound-card {
-    position: relative;
-    min-height: 260px;
-    border-radius: 24px;
-    padding: 30px;
-    overflow: hidden;
-
-    background: rgba(255,255,255,.09);
-    border: 1px solid rgba(255,255,255,.16);
-    backdrop-filter: blur(15px);
-
-    transition: .35s ease;
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
 }
 
-.sound-card:hover {
-    transform: translateY(-7px);
-    background: rgba(255,255,255,.13);
-    border-color: rgba(255,255,255,.3);
+.eyebrow{
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:5px;
+    font-size:.75rem;
+    margin-bottom:22px;
 }
 
-.sound-icon {
-    font-size: 45px;
-    margin-bottom: 20px;
+.hero h1{
+    font-size:clamp(3.5rem,10vw,8rem);
+    line-height:.9;
+    letter-spacing:-5px;
 }
 
-.sound-card h3 {
-    font-family: Georgia, serif;
-    font-size: 32px;
-    font-weight: 400;
+.hero h1 span{
+    color:var(--green);
 }
 
-.sound-card p {
-    color: #c7c7c7;
-    margin-top: 10px;
-    line-height: 1.6;
+.hero p{
+    max-width:650px;
+    margin:30px auto;
+    color:#c7d5ca;
+    font-size:1.1rem;
+    line-height:1.8;
 }
 
-/* Toggle */
-
-.toggle-row {
-    margin-top: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-.toggle {
-    width: 65px;
-    height: 34px;
-    border-radius: 30px;
-    background: rgba(255,255,255,.2);
-    padding: 4px;
-    cursor: pointer;
-    transition: .3s;
+.primary-btn,
+.secondary-btn{
+    border:none;
+    padding:15px 25px;
+    border-radius:100px;
+    font-weight:700;
+    transition:.3s;
 }
 
-.toggle-dot {
-    width: 26px;
-    height: 26px;
-    border-radius: 50%;
-    background: white;
-    transition: .3s;
+.primary-btn{
+    background:var(--green);
+    color:#07110d;
 }
 
-.toggle.active {
-    background: #79c98b;
+.secondary-btn{
+    background:rgba(255,255,255,.08);
+    color:white;
+    border:1px solid var(--border);
 }
 
-.toggle.active .toggle-dot {
-    transform: translateX(31px);
+.primary-btn:hover,
+.secondary-btn:hover{
+    transform:translateY(-3px);
 }
 
-/* ================= CONTROLS ================= */
+/* floating nature */
 
-.controls {
-    margin-top: 55px;
-    padding: 30px;
-    border-radius: 25px;
-    background: rgba(0,0,0,.42);
-    border: 1px solid rgba(255,255,255,.13);
-    backdrop-filter: blur(15px);
-    text-align: center;
+.firefly{
+    position:absolute;
+    width:5px;
+    height:5px;
+    border-radius:50%;
+    background:#dfffdc;
+    box-shadow:0 0 15px #b9ffbe;
+    animation:float 5s infinite ease-in-out;
 }
 
-.controls h3 {
-    font-family: Georgia, serif;
-    font-size: 27px;
-    font-weight: 400;
+.firefly:nth-child(1){left:15%;top:25%;}
+.firefly:nth-child(2){left:80%;top:30%;animation-delay:1s;}
+.firefly:nth-child(3){left:30%;top:65%;animation-delay:2s;}
+.firefly:nth-child(4){left:70%;top:70%;animation-delay:3s;}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);opacity:.3}
+    50%{transform:translateY(-30px);opacity:1}
 }
 
-.button-row {
-    margin-top: 25px;
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    flex-wrap: wrap;
+/* =========================
+   GENERAL
+========================= */
+
+section{
+    padding:110px 6%;
 }
 
-button {
-    border: none;
-    padding: 14px 25px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 14px;
-    letter-spacing: 1px;
-    transition: .25s;
+.section-heading{
+    max-width:750px;
+    margin-bottom:45px;
 }
 
-.play-btn {
-    background: white;
-    color: black;
+.section-heading .small{
+    color:var(--green);
+    text-transform:uppercase;
+    letter-spacing:4px;
+    font-size:.75rem;
 }
 
-.stop-btn {
-    background: rgba(255,255,255,.12);
-    color: white;
-    border: 1px solid rgba(255,255,255,.2);
+.section-heading h2{
+    font-size:clamp(2.5rem,6vw,5rem);
+    line-height:1;
+    margin:12px 0 20px;
 }
 
-button:hover {
-    transform: translateY(-2px);
+.section-heading p{
+    color:var(--muted);
+    line-height:1.8;
 }
 
-/* Volume */
+/* =========================
+   OPEN WINDOW
+========================= */
 
-.volume-box {
-    margin: 25px auto 0;
-    max-width: 400px;
+.window-section{
+    position:relative;
 }
 
-.volume-box label {
-    display: block;
-    margin-bottom: 10px;
-    color: #bbb;
-    font-size: 13px;
+.window-wrap{
+    max-width:1100px;
+    margin:auto;
 }
 
-input[type="range"] {
-    width: 100%;
+.window{
+    position:relative;
+    height:min(650px,75vh);
+    min-height:500px;
+    border:18px solid #3b2a1e;
+    border-radius:18px;
+    overflow:hidden;
+    background:
+        linear-gradient(to bottom,#91cbe5 0%,#c9e9d4 55%,#588b55 56%,#294d2d 100%);
+    box-shadow:var(--shadow);
 }
 
-/* ================= NOW PLAYING ================= */
-
-.now-playing {
-    margin-top: 25px;
-    color: #aaa;
-    font-size: 14px;
+.window-sky{
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 75% 18%,rgba(255,244,177,.9),transparent 12%),
+        linear-gradient(#83bdd7,#d2e7d3 60%,#547c4e 61%);
+    transition:1s;
 }
 
-.now-playing strong {
-    color: white;
+.window-sun{
+    position:absolute;
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:#ffe6a0;
+    box-shadow:0 0 80px rgba(255,227,141,.75);
+    top:13%;
+    right:15%;
+    transition:1s;
 }
 
-/* ================= YOUTUBE PLAYERS ================= */
-
-.youtube-section {
-    margin-top: 70px;
+.hills{
+    position:absolute;
+    bottom:20%;
+    left:-5%;
+    width:110%;
+    height:180px;
+    background:#396b40;
+    border-radius:50% 50% 0 0;
+    transform:rotate(-2deg);
 }
 
-.youtube-section h2 {
-    text-align: center;
-    font-family: Georgia, serif;
-    font-size: 40px;
-    font-weight: 400;
-    margin-bottom: 12px;
+.hills::after{
+    content:"";
+    position:absolute;
+    width:80%;
+    height:150px;
+    right:-15%;
+    top:20px;
+    background:#47794b;
+    border-radius:50% 50% 0 0;
 }
 
-.youtube-description {
-    text-align: center;
-    color: #aaa;
-    margin-bottom: 35px;
+.house{
+    position:absolute;
+    bottom:15%;
+    left:50%;
+    transform:translateX(-50%);
+    width:240px;
+    height:140px;
+    background:#d8c39c;
+    border-radius:5px;
 }
 
-.players-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
+.house::before{
+    content:"";
+    position:absolute;
+    top:-65px;
+    left:-30px;
+    width:300px;
+    height:110px;
+    background:#693d2d;
+    clip-path:polygon(50% 0,100% 100%,0 100%);
 }
 
-.player-card {
-    background: rgba(255,255,255,.07);
-    border: 1px solid rgba(255,255,255,.12);
-    border-radius: 20px;
-    overflow: hidden;
-    padding-bottom: 15px;
+.house::after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    left:90px;
+    width:60px;
+    height:85px;
+    background:#553624;
 }
 
-.player-title {
-    padding: 16px 18px;
-    font-family: Georgia, serif;
-    font-size: 20px;
+.tree{
+    position:absolute;
+    bottom:13%;
+    width:25px;
+    height:190px;
+    background:#543722;
+    border-radius:20px;
 }
 
-.player-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background: #000;
+.tree::before{
+    content:"";
+    position:absolute;
+    top:-70px;
+    left:-55px;
+    width:140px;
+    height:90px;
+    background:#245b34;
+    border-radius:50%;
+    box-shadow:
+        -45px 10px 0 #2e6b39,
+        45px 10px 0 #2c6537,
+        0 -35px 0 #32763d;
 }
 
-.player-container > div,
-.player-container iframe {
-    width: 100% !important;
-    height: 100% !important;
+.tree.one{
+    left:12%;
+    transform:rotate(-5deg);
 }
 
-/* ================= FOOTER ================= */
-
-footer {
-    text-align: center;
-    padding: 50px 20px;
-    color: #888;
-    font-size: 13px;
-    letter-spacing: 2px;
+.tree.two{
+    right:12%;
+    transform:rotate(6deg);
 }
 
-/* ================= RESPONSIVE ================= */
+.window-frame{
+    position:absolute;
+    background:#3b2a1e;
+    z-index:5;
+}
 
-@media (max-width: 750px) {
+.window-frame.vertical{
+    top:0;
+    bottom:0;
+    width:18px;
+    left:50%;
+    transform:translateX(-50%);
+}
 
-    .sound-grid,
-    .players-grid {
-        grid-template-columns: 1fr;
+.window-frame.horizontal{
+    left:0;
+    right:0;
+    height:18px;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.window-glass{
+    position:absolute;
+    inset:0;
+    z-index:6;
+    pointer-events:none;
+}
+
+.open-window{
+    position:absolute;
+    z-index:10;
+    left:50%;
+    bottom:35px;
+    transform:translateX(-50%);
+    background:rgba(0,0,0,.58);
+    color:white;
+    border:1px solid rgba(255,255,255,.25);
+    padding:16px 28px;
+    border-radius:100px;
+    backdrop-filter:blur(12px);
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.open-window:hover{
+    background:rgba(0,0,0,.75);
+}
+
+/* Weather effects */
+
+.rain{
+    position:absolute;
+    inset:0;
+    z-index:7;
+    pointer-events:none;
+    display:none;
+    background-image:
+        linear-gradient(
+            110deg,
+            transparent 0%,
+            transparent 48%,
+            rgba(255,255,255,.3) 49%,
+            transparent 50%
+        );
+    background-size:10px 35px;
+    animation:rain 0.45s linear infinite;
+}
+
+@keyframes rain{
+    from{background-position:0 0}
+    to{background-position:-20px 70px}
+}
+
+.cloud{
+    position:absolute;
+    width:190px;
+    height:60px;
+    border-radius:100px;
+    background:rgba(255,255,255,.65);
+    filter:blur(1px);
+    top:18%;
+    left:10%;
+    opacity:.7;
+    transition:1s;
+}
+
+.cloud::before,
+.cloud::after{
+    content:"";
+    position:absolute;
+    background:inherit;
+    border-radius:50%;
+}
+
+.cloud::before{
+    width:80px;
+    height:80px;
+    left:35px;
+    top:-35px;
+}
+
+.cloud::after{
+    width:100px;
+    height:100px;
+    right:25px;
+    top:-50px;
+}
+
+/* =========================
+   WEATHER
+========================= */
+
+.weather-card{
+    max-width:1100px;
+    margin:45px auto 0;
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:20px;
+}
+
+.glass-card{
+    background:var(--glass);
+    border:1px solid var(--border);
+    border-radius:25px;
+    padding:28px;
+    backdrop-filter:blur(20px);
+    box-shadow:var(--shadow);
+}
+
+.weather-main{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.weather-temp{
+    font-size:4rem;
+    font-weight:800;
+}
+
+.weather-condition{
+    color:var(--green);
+    font-weight:700;
+}
+
+.weather-meta{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:25px;
+}
+
+.meta-box{
+    background:rgba(255,255,255,.05);
+    padding:15px;
+    border-radius:15px;
+}
+
+.meta-box small{
+    display:block;
+    color:var(--muted);
+    margin-bottom:5px;
+}
+
+.location-select{
+    width:100%;
+    margin-top:15px;
+    padding:13px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:#102219;
+    color:white;
+}
+
+/* =========================
+   MEMORIES
+========================= */
+
+.memory-section{
+    background:
+        linear-gradient(
+            rgba(6,17,12,.9),
+            rgba(6,17,12,.96)
+        );
+}
+
+.memory-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    gap:20px;
+    margin-bottom:30px;
+}
+
+.memory-controls{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.filter-btn{
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.06);
+    color:#dce9df;
+    padding:10px 15px;
+    border-radius:100px;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+    background:var(--green);
+    color:#07110d;
+}
+
+.memory-form{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    margin-bottom:40px;
+}
+
+.memory-form textarea{
+    grid-column:1/-1;
+    min-height:150px;
+    resize:vertical;
+}
+
+.memory-form input,
+.memory-form textarea,
+.memory-form select{
+    width:100%;
+    padding:15px;
+    border-radius:14px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.06);
+    color:white;
+    outline:none;
+}
+
+.memory-form textarea:focus,
+.memory-form input:focus,
+.memory-form select:focus{
+    border-color:var(--green);
+}
+
+.memory-form option{
+    background:#102219;
+}
+
+.memory-submit{
+    width:max-content;
+    border:none;
+    background:var(--green);
+    color:#07110d;
+    padding:14px 25px;
+    border-radius:100px;
+    font-weight:800;
+}
+
+.memory-note{
+    grid-column:1/-1;
+    color:#84988a;
+    font-size:.8rem;
+    line-height:1.6;
+}
+
+.memories-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.memory-card{
+    padding:25px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.045);
+    border-radius:22px;
+    transition:.3s;
+}
+
+.memory-card:hover{
+    transform:translateY(-5px);
+    background:rgba(255,255,255,.07);
+}
+
+.memory-mood{
+    font-size:1.8rem;
+    margin-bottom:15px;
+}
+
+.memory-text{
+    color:#dfe9e1;
+    line-height:1.7;
+    margin-bottom:20px;
+}
+
+.memory-author{
+    color:var(--green);
+    font-size:.85rem;
+}
+
+.memory-date{
+    color:#728277;
+    font-size:.75rem;
+    margin-top:5px;
+}
+
+.empty-memory{
+    grid-column:1/-1;
+    text-align:center;
+    padding:60px;
+    color:var(--muted);
+}
+
+/* =========================
+   SOUND SECTION
+========================= */
+
+.sound-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.sound-card{
+    min-height:240px;
+    position:relative;
+    overflow:hidden;
+}
+
+.sound-icon{
+    font-size:3rem;
+}
+
+.sound-card h3{
+    margin:20px 0 10px;
+    font-size:1.7rem;
+}
+
+.sound-card p{
+    color:var(--muted);
+    line-height:1.6;
+}
+
+.sound-status{
+    display:inline-block;
+    margin-top:20px;
+    padding:8px 12px;
+    border-radius:100px;
+    background:rgba(143,207,155,.1);
+    color:var(--green);
+    font-size:.8rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    padding:50px 6%;
+    text-align:center;
+    border-top:1px solid var(--border);
+    color:#819186;
+}
+
+footer strong{
+    color:var(--green);
+}
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:3000;
+    max-width:350px;
+    padding:15px 20px;
+    border-radius:15px;
+    background:#102219;
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+    transform:translateY(120px);
+    opacity:0;
+    transition:.4s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:850px){
+
+    section{
+        padding:80px 5%;
     }
 
-    .hero h1 {
-        letter-spacing: -2px;
+    .weather-card{
+        grid-template-columns:1fr;
     }
 
-    .hero p {
-        font-size: 13px;
-        letter-spacing: 3px;
+    .memories-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .sound-card {
-        min-height: 230px;
+    .sound-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        letter-spacing:-3px;
+    }
+
+    .window{
+        min-height:430px;
+        height:60vh;
+        border-width:10px;
+    }
+
+    .window-frame.vertical{
+        width:10px;
+    }
+
+    .window-frame.horizontal{
+        height:10px;
+    }
+
+    .weather-meta{
+        grid-template-columns:1fr;
+    }
+
+    .memory-form{
+        grid-template-columns:1fr;
+    }
+
+    .memory-form textarea,
+    .memory-note{
+        grid-column:auto;
+    }
+
+    .memories-grid{
+        grid-template-columns:1fr;
+    }
+
+    .memory-top{
+        align-items:flex-start;
+        flex-direction:column;
+    }
+
+    .house{
+        transform:translateX(-50%) scale(.75);
+        transform-origin:bottom;
+    }
+
+    .tree.one{
+        left:5%;
+    }
+
+    .tree.two{
+        right:5%;
     }
 }
 </style>
@@ -352,46 +861,453 @@ footer {
 
 <body>
 
-<!-- ================= HERO ================= -->
+<!-- =========================
+     NAV
+========================= -->
 
-<header>
+<nav>
+    <div class="logo">
+        ECHOES <span>OF</span> KERALA
+    </div>
 
-    <div class="hero">
+    <div class="nav-links">
+        <a href="#window">Window</a>
+        <a href="#weather">Weather</a>
+        <a href="#memories">Memories</a>
+        <a href="#sounds">Sounds</a>
+    </div>
+</nav>
 
-        <div class="small-title">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<header class="hero">
+
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+    <div class="firefly"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
             God's Own Country
         </div>
 
         <h1>
-            Echoes
-            <span>of Kerala</span>
+            Echoes<br>
+            <span>of Kerala.</span>
         </h1>
 
         <p>
-            SEE • HEAR • FEEL
+            More than a place. It's a feeling.
+            Hear the rain, open the window,
+            discover the weather and leave a memory behind.
         </p>
 
-        <div class="scroll">
-            SCROLL TO LISTEN ↓
+        <div class="hero-buttons">
+
+            <a class="primary-btn" href="#window">
+                Open the Window 🪟
+            </a>
+
+            <a class="secondary-btn" href="#memories">
+                Explore Memories 💭
+            </a>
+
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     OPEN WINDOW
+========================= -->
+
+<section id="window" class="window-section">
+
+    <div class="section-heading">
+
+        <div class="small">
+            An experience
+        </div>
+
+        <h2>
+            Open the Window.
+        </h2>
+
+        <p>
+            Imagine you're sitting inside a Kerala home.
+            Outside is Kerala — exactly as it feels right now.
+        </p>
+
+    </div>
+
+
+    <div class="window-wrap">
+
+        <div class="window" id="keralaWindow">
+
+            <div class="window-sky" id="windowSky"></div>
+
+            <div class="window-sun" id="windowSun"></div>
+
+            <div class="cloud" id="cloud"></div>
+
+            <div class="hills"></div>
+
+            <div class="house"></div>
+
+            <div class="tree one"></div>
+            <div class="tree two"></div>
+
+            <div class="rain" id="rain"></div>
+
+            <div class="window-glass"></div>
+
+            <div class="window-frame vertical"></div>
+            <div class="window-frame horizontal"></div>
+
+            <button class="open-window" id="openWindowBtn">
+                OPEN THE WINDOW 🪟
+            </button>
+
         </div>
 
     </div>
 
-</header>
+</section>
 
 
-<main>
+<!-- =========================
+     WEATHER
+========================= -->
 
-<!-- ================= SOUND SECTION ================= -->
+<section id="weather">
 
-<section>
+    <div class="section-heading">
 
-    <div class="section-title">
+        <div class="small">
+            Kerala right now
+        </div>
 
-        <h2>Listen to Kerala</h2>
+        <h2>
+            What's happening outside?
+        </h2>
 
         <p>
-            Choose the sounds you want to experience together.
+            Choose a Kerala location and let the real-time weather
+            change the atmosphere of your window.
+        </p>
+
+    </div>
+
+
+    <div class="weather-card">
+
+        <div class="glass-card">
+
+            <div class="weather-main">
+
+                <div>
+                    <div class="eyebrow" style="margin-bottom:8px">
+                        LIVE WEATHER
+                    </div>
+
+                    <h3 id="weatherLocation">
+                        Kochi, Kerala
+                    </h3>
+
+                    <div class="weather-condition" id="weatherCondition">
+                        Loading...
+                    </div>
+                </div>
+
+                <div class="weather-temp" id="weatherTemp">
+                    --°
+                </div>
+
+            </div>
+
+            <div class="weather-meta">
+
+                <div class="meta-box">
+                    <small>Humidity</small>
+                    <strong id="humidity">--</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Wind</small>
+                    <strong id="wind">--</strong>
+                </div>
+
+                <div class="meta-box">
+                    <small>Updated</small>
+                    <strong id="updated">--</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="glass-card">
+
+            <h3>
+                Choose your Kerala
+            </h3>
+
+            <p style="color:var(--muted);margin-top:8px;line-height:1.6">
+                Weather differs across Kerala.
+                Pick a location to experience it.
+            </p>
+
+            <select id="locationSelect" class="location-select">
+
+                <option value="9.9312,76.2673,Kochi">
+                    Kochi
+                </option>
+
+                <option value="8.5241,76.9366,Thiruvananthapuram">
+                    Thiruvananthapuram
+                </option>
+
+                <option value="11.2588,75.7804,Kozhikode">
+                    Kozhikode
+                </option>
+
+                <option value="10.7867,76.6548,Palakkad">
+                    Palakkad
+                </option>
+
+                <option value="10.8505,76.2711,Thrissur">
+                    Thrissur
+                </option>
+
+                <option value="10.5276,76.2144,Irinjalakuda">
+                    Irinjalakuda
+                </option>
+
+                <option value="10.1833,76.4167,Angamaly">
+                    Angamaly
+                </option>
+
+                <option value="9.2648,76.7870,Alappuzha">
+                    Alappuzha
+                </option>
+
+                <option value="9.5916,76.5222,Kottayam">
+                    Kottayam
+                </option>
+
+                <option value="9.4981,76.3388,Pathanamthitta">
+                    Pathanamthitta
+                </option>
+
+                <option value="9.9312,76.2673,Kasaragod">
+                    Kasaragod
+                </option>
+
+            </select>
+
+            <button
+                class="primary-btn"
+                style="margin-top:15px"
+                id="refreshWeather">
+                Refresh Weather
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MEMORIES
+========================= -->
+
+<section id="memories" class="memory-section">
+
+    <div class="section-heading">
+
+        <div class="small">
+            From people of Kerala
+        </div>
+
+        <h2>
+            Memories of Kerala.
+        </h2>
+
+        <p>
+            Some places become memories.
+            Some memories become places.
+        </p>
+
+    </div>
+
+
+    <div class="glass-card">
+
+        <div class="memory-top">
+
+            <div>
+                <h3>
+                    Leave something behind.
+                </h3>
+
+                <p style="color:var(--muted);margin-top:7px">
+                    Share a small moment that reminds you of Kerala.
+                </p>
+            </div>
+
+            <button class="secondary-btn" id="randomMemory">
+                Show me a memory 🔀
+            </button>
+
+        </div>
+
+
+        <div class="memory-controls">
+
+            <button class="filter-btn active" data-filter="all">
+                All
+            </button>
+
+            <button class="filter-btn" data-filter="happy">
+                ❤️ Happy
+            </button>
+
+            <button class="filter-btn" data-filter="sad">
+                🌧️ Sad
+            </button>
+
+            <button class="filter-btn" data-filter="nostalgic">
+                🌅 Nostalgic
+            </button>
+
+            <button class="filter-btn" data-filter="funny">
+                😂 Funny
+            </button>
+
+            <button class="filter-btn" data-filter="childhood">
+                🏠 Childhood
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div style="height:25px"></div>
+
+
+    <!-- ADD MEMORY -->
+
+    <div class="glass-card">
+
+        <form id="memoryForm" class="memory-form">
+
+            <select id="memoryMood" required>
+
+                <option value="">
+                    Choose a feeling
+                </option>
+
+                <option value="happy">
+                    ❤️ Happy
+                </option>
+
+                <option value="sad">
+                    🌧️ Sad
+                </option>
+
+                <option value="nostalgic">
+                    🌅 Nostalgic
+                </option>
+
+                <option value="funny">
+                    😂 Funny
+                </option>
+
+                <option value="childhood">
+                    🏠 Childhood
+                </option>
+
+            </select>
+
+
+            <input
+                type="text"
+                id="memoryName"
+                maxlength="30"
+                placeholder="Your name or Anonymous">
+
+
+            <textarea
+                id="memoryText"
+                maxlength="500"
+                required
+                placeholder="Tell us your Kerala memory..."></textarea>
+
+
+            <div class="memory-note">
+
+                Please don't include phone numbers, email addresses,
+                home addresses, passwords or other private information.
+                Memories may be visible publicly.
+
+            </div>
+
+
+            <button class="memory-submit" type="submit">
+                Leave My Memory 💭
+            </button>
+
+        </form>
+
+    </div>
+
+
+    <div style="height:35px"></div>
+
+
+    <!-- MEMORY WALL -->
+
+    <div id="memoriesGrid" class="memories-grid">
+
+        <div class="empty-memory">
+            Loading memories...
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SOUNDS
+========================= -->
+
+<section id="sounds">
+
+    <div class="section-heading">
+
+        <div class="small">
+            Listen to Kerala
+        </div>
+
+        <h2>
+            Hear the feeling.
+        </h2>
+
+        <p>
+            Rain, village mornings, conversations and sounds
+            that feel like home.
         </p>
 
     </div>
@@ -399,173 +1315,82 @@ footer {
 
     <div class="sound-grid">
 
-        <!-- RAIN -->
-
-        <div class="sound-card">
+        <div class="glass-card sound-card">
 
             <div class="sound-icon">🌧️</div>
 
-            <h3>Mazha</h3>
+            <h3>
+                Mazha
+            </h3>
 
             <p>
-                The sound of Kerala rain falling on a quiet evening.
+                The sound of Kerala rain against windows,
+                rooftops and quiet roads.
             </p>
 
-            <div class="toggle-row">
-
-                <span>Rain</span>
-
-                <div
-                    class="toggle"
-                    id="toggle-rain"
-                    onclick="toggleSound('rain')"
-                >
-                    <div class="toggle-dot"></div>
-                </div>
-
-            </div>
+            <span class="sound-status">
+                Rain atmosphere
+            </span>
 
         </div>
 
 
-        <!-- VILLAGE -->
-
-        <div class="sound-card">
+        <div class="glass-card sound-card">
 
             <div class="sound-icon">🌴</div>
 
-            <h3>Morning Village</h3>
+            <h3>
+                Morning Village
+            </h3>
 
             <p>
-                Birds, nature and the peaceful sound of a Kerala morning.
+                Birds, breeze, distant roads and the slow
+                beginning of a Kerala morning.
             </p>
 
-            <div class="toggle-row">
-
-                <span>Village</span>
-
-                <div
-                    class="toggle"
-                    id="toggle-village"
-                    onclick="toggleSound('village')"
-                >
-                    <div class="toggle-dot"></div>
-                </div>
-
-            </div>
+            <span class="sound-status">
+                Village atmosphere
+            </span>
 
         </div>
 
 
-        <!-- ROMANTIC -->
-
-        <div class="sound-card">
+        <div class="glass-card sound-card">
 
             <div class="sound-icon">💕</div>
 
-            <h3>Romantic Dialogues</h3>
+            <h3>
+                Malayalam Dialogues
+            </h3>
 
             <p>
-                Emotional Malayalam movie-style dialogue moments.
+                Little conversations and moments that carry
+                the feeling of Malayalam cinema.
             </p>
 
-            <div class="toggle-row">
-
-                <span>Dialogues</span>
-
-                <div
-                    class="toggle"
-                    id="toggle-romantic"
-                    onclick="toggleSound('romantic')"
-                >
-                    <div class="toggle-dot"></div>
-                </div>
-
-            </div>
+            <span class="sound-status">
+                Dialogue collection
+            </span>
 
         </div>
 
 
-        <!-- FEEL GOOD -->
-
-        <div class="sound-card">
+        <div class="glass-card sound-card">
 
             <div class="sound-icon">🎵</div>
 
-            <h3>Feel-Good</h3>
+            <h3>
+                Feel-Good Kerala
+            </h3>
 
             <p>
-                Positive sounds and music for a peaceful Kerala mood.
+                Music and sounds for those moments when
+                you simply want to feel good.
             </p>
 
-            <div class="toggle-row">
-
-                <span>Feel Good</span>
-
-                <div
-                    class="toggle"
-                    id="toggle-feelgood"
-                    onclick="toggleSound('feelgood')"
-                >
-                    <div class="toggle-dot"></div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- ================= CONTROLS ================= -->
-
-    <div class="controls">
-
-        <h3>Build Your Kerala Sound</h3>
-
-        <div class="button-row">
-
-            <button
-                class="play-btn"
-                onclick="playSelected()"
-            >
-                ▶ Play Selected
-            </button>
-
-            <button
-                class="stop-btn"
-                onclick="stopAll()"
-            >
-                ■ Stop All
-            </button>
-
-        </div>
-
-
-        <div class="volume-box">
-
-            <label>
-                Master Volume
-            </label>
-
-            <input
-                id="volume"
-                type="range"
-                min="0"
-                max="100"
-                value="60"
-                oninput="changeVolume(this.value)"
-            >
-
-        </div>
-
-
-        <div class="now-playing">
-
-            Now Playing:
-            <strong id="nowPlaying">
-                Nothing
-            </strong>
+            <span class="sound-status">
+                Music collection
+            </span>
 
         </div>
 
@@ -574,488 +1399,997 @@ footer {
 </section>
 
 
-<!-- ================= YOUTUBE SECTION ================= -->
-
-<section class="youtube-section">
-
-    <h2>YouTube Sources</h2>
-
-    <p class="youtube-description">
-        These sounds are played directly from YouTube.
-    </p>
-
-
-    <div class="players-grid">
-
-        <!-- RAIN -->
-
-        <div class="player-card">
-
-            <div class="player-title">
-                🌧️ Mazha
-            </div>
-
-            <div
-                class="player-container"
-                id="player-rain"
-            ></div>
-
-        </div>
-
-
-        <!-- VILLAGE -->
-
-        <div class="player-card">
-
-            <div class="player-title">
-                🌴 Morning Village
-            </div>
-
-            <div
-                class="player-container"
-                id="player-village"
-            ></div>
-
-        </div>
-
-
-        <!-- ROMANTIC -->
-
-        <div class="player-card">
-
-            <div class="player-title">
-                💕 Romantic Dialogues
-            </div>
-
-            <div
-                class="player-container"
-                id="player-romantic"
-            ></div>
-
-        </div>
-
-
-        <!-- FEEL GOOD -->
-
-        <div class="player-card">
-
-            <div class="player-title">
-                🎵 Feel-Good Sounds
-            </div>
-
-            <div
-                class="player-container"
-                id="player-feelgood"
-            ></div>
-
-        </div>
-
-    </div>
-
-</section>
-
-</main>
-
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
-    ECHOES OF KERALA
-    <br><br>
-    God's Own Country
+    <p>
+        <strong>Echoes of Kerala</strong>
+    </p>
+
+    <p style="margin-top:8px">
+        See Kerala. Hear Kerala. Feel Kerala.
+    </p>
+
+    <p style="margin-top:20px;font-size:.75rem">
+        © 2026 Echoes of Kerala
+    </p>
 
 </footer>
 
 
-<!-- ===================================================== -->
-<!-- YOUTUBE IFRAME PLAYER API -->
-<!-- ===================================================== -->
+<div class="toast" id="toast"></div>
 
-<script>
 
-const sounds = {
+<!-- =========================
+     FIREBASE
+     REPLACE CONFIG IN STEP 4
+========================= -->
 
-    rain: {
-        videoId: "b4bjRqGAmQ8",
-        name: "🌧️ Mazha"
+<script type="module">
+
+/*
+=========================================================
+FIREBASE CONFIG
+=========================================================
+
+DO NOT change anything here yet.
+
+In Step 4, you will paste your Firebase project
+configuration inside firebaseConfig.
+*/
+
+const firebaseConfig = {
+
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT.firebasestorage.app",
+    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+    appId: "YOUR_APP_ID"
+
+};
+
+
+/*
+=========================================================
+IMPORT FIREBASE
+=========================================================
+*/
+
+import {
+    initializeApp
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    orderBy,
+    limit,
+    serverTimestamp
+} from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
+
+
+let db = null;
+let firebaseReady = false;
+
+
+/*
+=========================================================
+INITIALIZE FIREBASE
+=========================================================
+*/
+
+try{
+
+    if(
+        firebaseConfig.apiKey !== "YOUR_API_KEY" &&
+        firebaseConfig.projectId !== "YOUR_PROJECT_ID"
+    ){
+
+        const app = initializeApp(firebaseConfig);
+
+        db = getFirestore(app);
+
+        firebaseReady = true;
+
+    }
+
+}catch(error){
+
+    console.error(
+        "Firebase initialization failed:",
+        error
+    );
+
+}
+
+
+/*
+=========================================================
+WEATHER
+=========================================================
+*/
+
+const weatherLocation =
+document.getElementById("weatherLocation");
+
+const weatherCondition =
+document.getElementById("weatherCondition");
+
+const weatherTemp =
+document.getElementById("weatherTemp");
+
+const humidity =
+document.getElementById("humidity");
+
+const wind =
+document.getElementById("wind");
+
+const updated =
+document.getElementById("updated");
+
+const locationSelect =
+document.getElementById("locationSelect");
+
+const refreshWeather =
+document.getElementById("refreshWeather");
+
+const windowSky =
+document.getElementById("windowSky");
+
+const windowSun =
+document.getElementById("windowSun");
+
+const cloud =
+document.getElementById("cloud");
+
+const rain =
+document.getElementById("rain");
+
+
+function weatherDescription(code){
+
+    const descriptions = {
+
+        0:"Clear sky ☀️",
+        1:"Mainly clear 🌤️",
+        2:"Partly cloudy ⛅",
+        3:"Overcast ☁️",
+        45:"Fog 🌫️",
+        48:"Fog 🌫️",
+        51:"Light drizzle 🌦️",
+        53:"Drizzle 🌦️",
+        55:"Heavy drizzle 🌧️",
+        61:"Light rain 🌦️",
+        63:"Rain 🌧️",
+        65:"Heavy rain 🌧️",
+        71:"Snow ❄️",
+        73:"Snow ❄️",
+        75:"Heavy snow ❄️",
+        80:"Rain showers 🌦️",
+        81:"Rain showers 🌧️",
+        82:"Heavy rain showers ⛈️",
+        95:"Thunderstorm ⛈️",
+        96:"Thunderstorm ⛈️",
+        99:"Thunderstorm ⛈️"
+
+    };
+
+    return descriptions[code] || "Kerala weather";
+}
+
+
+function isRain(code){
+
+    return [
+        51,53,55,
+        61,63,65,
+        80,81,82,
+        95,96,99
+    ].includes(code);
+
+}
+
+
+function updateWindow(code){
+
+    rain.style.display = "none";
+
+    cloud.style.opacity = ".3";
+
+    windowSun.style.opacity = "1";
+
+    if(isRain(code)){
+
+        rain.style.display = "block";
+
+        windowSky.style.background =
+        "linear-gradient(#526777,#83939b 60%,#4a624c 61%)";
+
+        windowSun.style.opacity = "0";
+
+        cloud.style.opacity = "1";
+
+    }
+
+    else if(code >= 1 && code <= 3){
+
+        windowSky.style.background =
+        "linear-gradient(#91b3bf,#d0dcd3 60%,#587b54 61%)";
+
+        cloud.style.opacity = ".9";
+
+        windowSun.style.opacity = ".45";
+
+    }
+
+    else{
+
+        windowSky.style.background =
+        "linear-gradient(#82c6e5,#d6edd7 60%,#547c4e 61%)";
+
+        cloud.style.opacity = ".25";
+
+        windowSun.style.opacity = "1";
+
+    }
+
+}
+
+
+async function loadWeather(){
+
+    try{
+
+        const parts =
+        locationSelect.value.split(",");
+
+        const latitude = parts[0];
+        const longitude = parts[1];
+        const locationName = parts.slice(2).join(",");
+
+
+        weatherLocation.textContent =
+        locationName + ", Kerala";
+
+
+        weatherCondition.textContent =
+        "Loading...";
+
+
+        const url =
+        `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata`;
+
+
+        const response =
+        await fetch(url);
+
+
+        if(!response.ok){
+            throw new Error("Weather request failed");
+        }
+
+
+        const data =
+        await response.json();
+
+
+        const current =
+        data.current;
+
+
+        weatherTemp.textContent =
+        Math.round(current.temperature_2m) + "°C";
+
+
+        weatherCondition.textContent =
+        weatherDescription(current.weather_code);
+
+
+        humidity.textContent =
+        current.relative_humidity_2m + "%";
+
+
+        wind.textContent =
+        Math.round(current.wind_speed_10m) + " km/h";
+
+
+        const now =
+        new Date();
+
+
+        updated.textContent =
+        now.toLocaleTimeString(
+            "en-IN",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        );
+
+
+        updateWindow(
+            current.weather_code
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        weatherCondition.textContent =
+        "Weather unavailable";
+
+        showToast(
+            "Could not load weather right now."
+        );
+
+    }
+
+}
+
+
+locationSelect.addEventListener(
+    "change",
+    loadWeather
+);
+
+refreshWeather.addEventListener(
+    "click",
+    loadWeather
+);
+
+
+/*
+=========================================================
+OPEN WINDOW
+=========================================================
+*/
+
+const openWindowBtn =
+document.getElementById("openWindowBtn");
+
+
+let windowOpened = false;
+
+
+openWindowBtn.addEventListener(
+    "click",
+    ()=>{
+
+        windowOpened = !windowOpened;
+
+
+        if(windowOpened){
+
+            openWindowBtn.textContent =
+            "WINDOW OPENED ✓";
+
+            document
+            .getElementById("keralaWindow")
+            .style.transform =
+            "scale(1.015)";
+
+            showToast(
+                "Welcome to Kerala. 🌴"
+            );
+
+        }
+
+        else{
+
+            openWindowBtn.textContent =
+            "OPEN THE WINDOW 🪟";
+
+            document
+            .getElementById("keralaWindow")
+            .style.transform =
+            "scale(1)";
+
+        }
+
+    }
+);
+
+
+/*
+=========================================================
+TIME OF DAY
+=========================================================
+*/
+
+function applyTimeOfDay(){
+
+    const hour =
+    new Date().getHours();
+
+
+    if(hour >= 5 && hour < 11){
+
+        // Morning
+
+        document
+        .querySelector(".eyebrow")
+        .textContent =
+        "A Kerala Morning";
+
+    }
+
+    else if(hour >= 11 && hour < 17){
+
+        // Afternoon
+
+        document
+        .querySelector(".eyebrow")
+        .textContent =
+        "Kerala, Right Now";
+
+    }
+
+    else if(hour >= 17 && hour < 20){
+
+        // Evening
+
+        document
+        .querySelector(".eyebrow")
+        .textContent =
+        "A Kerala Evening";
+
+    }
+
+    else{
+
+        // Night
+
+        document
+        .querySelector(".eyebrow")
+        .textContent =
+        "Kerala After Dark";
+
+        windowSun.style.opacity = "0";
+
+        windowSky.style.background =
+        "linear-gradient(#071526,#172c35 60%,#182d1e 61%)";
+
+    }
+
+}
+
+
+applyTimeOfDay();
+
+
+/*
+=========================================================
+MEMORIES
+=========================================================
+*/
+
+const memoryForm =
+document.getElementById("memoryForm");
+
+const memoriesGrid =
+document.getElementById("memoriesGrid");
+
+const randomMemoryBtn =
+document.getElementById("randomMemory");
+
+
+let memories = [];
+
+let currentFilter = "all";
+
+
+const moodData = {
+
+    happy:{
+        emoji:"❤️",
+        name:"Happy"
     },
 
-    village: {
-        videoId: "eX3ioEkKpH0",
-        name: "🌴 Morning Village"
+    sad:{
+        emoji:"🌧️",
+        name:"Sad"
     },
 
-    romantic: {
-        videos: [
-            "1-uQfBHJ1KM",
-            "AhKc-B9Q3xo",
-            "PCdmvKEna4w"
-        ],
-        name: "💕 Romantic Dialogues",
-        current: 0
+    nostalgic:{
+        emoji:"🌅",
+        name:"Nostalgic"
     },
 
-    feelgood: {
-        videos: [
-            "3sjUeqA4Jd8",
-            "YkK46DhKK2E",
-            "aCri47vCNho",
-            "qqhEeTFY_yQ"
-        ],
-        name: "🎵 Feel-Good Sounds",
-        current: 0
+    funny:{
+        emoji:"😂",
+        name:"Funny"
+    },
+
+    childhood:{
+        emoji:"🏠",
+        name:"Childhood"
     }
 
 };
 
 
-let players = {};
+function escapeHTML(text){
 
-let selected = {
+    const div =
+    document.createElement("div");
 
-    rain: false,
-    village: false,
-    romantic: false,
-    feelgood: false
+    div.textContent =
+    text;
 
-};
-
-let apiReady = false;
-
-
-/* ===================================================== */
-/* LOAD YOUTUBE API */
-/* ===================================================== */
-
-const tag = document.createElement("script");
-
-tag.src = "https://www.youtube.com/iframe_api";
-
-document.head.appendChild(tag);
-
-
-/* ===================================================== */
-/* YOUTUBE API READY */
-/* ===================================================== */
-
-function onYouTubeIframeAPIReady() {
-
-    apiReady = true;
-
-    createPlayers();
+    return div.innerHTML;
 
 }
 
 
-/* ===================================================== */
-/* CREATE PLAYERS */
-/* ===================================================== */
+function formatDate(timestamp){
 
-function createPlayers() {
+    if(!timestamp){
+        return "Just now";
+    }
 
-    players.rain = new YT.Player(
-        "player-rain",
-        {
 
-            videoId: sounds.rain.videoId,
+    try{
 
-            playerVars: {
-                playsinline: 1,
-                rel: 0,
-                controls: 1
-            },
+        const date =
+        timestamp.toDate
+        ? timestamp.toDate()
+        : new Date(timestamp);
 
-            events: {
-                onReady: onPlayerReady
+
+        return date.toLocaleDateString(
+            "en-IN",
+            {
+                day:"numeric",
+                month:"short",
+                year:"numeric"
             }
-
-        }
-    );
-
-
-    players.village = new YT.Player(
-        "player-village",
-        {
-
-            videoId: sounds.village.videoId,
-
-            playerVars: {
-                playsinline: 1,
-                rel: 0,
-                controls: 1
-            },
-
-            events: {
-                onReady: onPlayerReady
-            }
-
-        }
-    );
-
-
-    players.romantic = new YT.Player(
-        "player-romantic",
-        {
-
-            videoId: sounds.romantic.videos[0],
-
-            playerVars: {
-                playsinline: 1,
-                rel: 0,
-                controls: 1
-            },
-
-            events: {
-                onReady: onPlayerReady,
-                onStateChange: function(event) {
-
-                    if (
-                        event.data === YT.PlayerState.ENDED
-                    ) {
-
-                        nextTrack("romantic");
-
-                    }
-
-                }
-
-            }
-
-        }
-    );
-
-
-    players.feelgood = new YT.Player(
-        "player-feelgood",
-        {
-
-            videoId: sounds.feelgood.videos[0],
-
-            playerVars: {
-                playsinline: 1,
-                rel: 0,
-                controls: 1
-            },
-
-            events: {
-                onReady: onPlayerReady,
-                onStateChange: function(event) {
-
-                    if (
-                        event.data === YT.PlayerState.ENDED
-                    ) {
-
-                        nextTrack("feelgood");
-
-                    }
-
-                }
-
-            }
-
-        }
-    );
-
-}
-
-
-/* ===================================================== */
-/* PLAYER READY */
-/* ===================================================== */
-
-function onPlayerReady(event) {
-
-    event.target.setVolume(
-        Number(
-            document.getElementById("volume").value
-        )
-    );
-
-}
-
-
-/* ===================================================== */
-/* TOGGLE SOUND */
-/* ===================================================== */
-
-function toggleSound(type) {
-
-    selected[type] = !selected[type];
-
-    const toggle =
-        document.getElementById(
-            "toggle-" + type
         );
 
-    if (selected[type]) {
+    }catch{
 
-        toggle.classList.add("active");
-
-    } else {
-
-        toggle.classList.remove("active");
-
-        if (players[type]) {
-
-            players[type].pauseVideo();
-
-        }
+        return "Just now";
 
     }
 
-    updateNowPlaying();
-
 }
 
 
-/* ===================================================== */
-/* PLAY SELECTED */
-/* ===================================================== */
+function renderMemories(){
 
-function playSelected() {
+    const filtered =
+    currentFilter === "all"
+    ? memories
+    : memories.filter(
+        memory =>
+        memory.mood === currentFilter
+    );
 
-    if (!apiReady) {
 
-        alert(
-            "YouTube is still loading. Please wait a moment and try again."
-        );
+    if(filtered.length === 0){
+
+        memoriesGrid.innerHTML = `
+
+            <div class="empty-memory">
+
+                No memories here yet.
+
+                <br>
+
+                Be the first person to leave one. 💭
+
+            </div>
+
+        `;
 
         return;
 
     }
 
 
-    let anythingPlaying = false;
+    memoriesGrid.innerHTML =
+    filtered.map(memory => {
+
+        const mood =
+        moodData[memory.mood]
+        || moodData.happy;
 
 
-    Object.keys(selected).forEach(type => {
+        return `
 
-        if (
-            selected[type] &&
-            players[type]
-        ) {
+        <article class="memory-card">
 
-            players[type].playVideo();
+            <div class="memory-mood">
+                ${mood.emoji}
+            </div>
 
-            anythingPlaying = true;
+            <div class="memory-text">
+                "${escapeHTML(memory.text)}"
+            </div>
 
-        }
+            <div class="memory-author">
+                — ${escapeHTML(
+                    memory.name || "Anonymous"
+                )}
+            </div>
 
-    });
+            <div class="memory-date">
+                ${formatDate(memory.createdAt)}
+            </div>
+
+        </article>
+
+        `;
+
+    }).join("");
+
+}
 
 
-    if (!anythingPlaying) {
+async function loadMemories(){
 
-        alert(
-            "Select at least one Kerala sound first."
+    /*
+    -----------------------------------------
+    FIREBASE NOT CONFIGURED YET
+    -----------------------------------------
+    */
+
+    if(!firebaseReady){
+
+        memories = [
+
+            {
+                mood:"nostalgic",
+                text:
+                "The smell of rain, the sound of the ceiling fan and sitting near the window while Kerala turned green outside.",
+                name:"Anonymous",
+                createdAt:null
+            },
+
+            {
+                mood:"childhood",
+                text:
+                "Running outside after school while waiting for the rain to stop. Those simple days still feel special.",
+                name:"Anonymous",
+                createdAt:null
+            },
+
+            {
+                mood:"happy",
+                text:
+                "A small tea shop, a hot chai and a long conversation with friends. That's Kerala for me.",
+                name:"Anonymous",
+                createdAt:null
+            }
+
+        ];
+
+        renderMemories();
+
+        return;
+
+    }
+
+
+    try{
+
+        const memoriesRef =
+        collection(
+            db,
+            "memories"
         );
+
+
+        const q =
+        query(
+            memoriesRef,
+            orderBy(
+                "createdAt",
+                "desc"
+            ),
+            limit(50)
+        );
+
+
+        const snapshot =
+        await getDocs(q);
+
+
+        memories =
+        snapshot.docs.map(
+            doc => ({
+                id:doc.id,
+                ...doc.data()
+            })
+        );
+
+
+        renderMemories();
+
+
+    }catch(error){
+
+        console.error(error);
+
+        memoriesGrid.innerHTML = `
+
+            <div class="empty-memory">
+
+                Memories could not be loaded.
+
+                <br>
+
+                Please check Firebase configuration.
+
+            </div>
+
+        `;
 
     }
 
 }
 
 
-/* ===================================================== */
-/* STOP ALL */
-/* ===================================================== */
+memoryForm.addEventListener(
+    "submit",
+    async event => {
 
-function stopAll() {
-
-    Object.keys(players).forEach(type => {
-
-        if (players[type]) {
-
-            players[type].pauseVideo();
-
-        }
-
-    });
-
-}
+        event.preventDefault();
 
 
-/* ===================================================== */
-/* VOLUME */
-/* ===================================================== */
+        const mood =
+        document.getElementById(
+            "memoryMood"
+        ).value;
 
-function changeVolume(value) {
 
-    Object.keys(players).forEach(type => {
+        const name =
+        document.getElementById(
+            "memoryName"
+        ).value.trim();
 
-        if (players[type]) {
 
-            players[type].setVolume(
-                Number(value)
+        const text =
+        document.getElementById(
+            "memoryText"
+        ).value.trim();
+
+
+        if(!mood || !text){
+
+            showToast(
+                "Please choose a feeling and write your memory."
             );
 
+            return;
+
         }
 
-    });
 
-}
+        if(text.length < 5){
 
+            showToast(
+                "Your memory is too short."
+            );
 
-/* ===================================================== */
-/* NEXT TRACK */
-/* ===================================================== */
+            return;
 
-function nextTrack(type) {
-
-    const sound = sounds[type];
-
-    sound.current++;
-
-    if (
-        sound.current >=
-        sound.videos.length
-    ) {
-
-        sound.current = 0;
-
-    }
+        }
 
 
-    const nextVideo =
-        sound.videos[sound.current];
+        const memory = {
+
+            mood:mood,
+
+            name:name || "Anonymous",
+
+            text:text,
+
+            createdAt:new Date()
+
+        };
 
 
-    if (players[type]) {
+        /*
+        -------------------------------------
+        FIREBASE
+        -------------------------------------
+        */
 
-        players[type].loadVideoById(
-            nextVideo
+        if(firebaseReady){
+
+            try{
+
+                await addDoc(
+                    collection(
+                        db,
+                        "memories"
+                    ),
+                    {
+                        mood:mood,
+                        name:name || "Anonymous",
+                        text:text,
+                        createdAt:serverTimestamp()
+                    }
+                );
+
+
+                showToast(
+                    "Your memory has been shared. 💭"
+                );
+
+
+                memoryForm.reset();
+
+
+                await loadMemories();
+
+
+            }catch(error){
+
+                console.error(error);
+
+                showToast(
+                    "Could not save your memory."
+                );
+
+            }
+
+            return;
+
+        }
+
+
+        /*
+        -------------------------------------
+        DEMO MODE
+        -------------------------------------
+        */
+
+        memories.unshift(memory);
+
+        renderMemories();
+
+        memoryForm.reset();
+
+        showToast(
+            "Memory added in demo mode. Firebase is not connected yet."
         );
 
     }
-
-}
-
-
-/* ===================================================== */
-/* NOW PLAYING TEXT */
-/* ===================================================== */
-
-function updateNowPlaying() {
-
-    const active = Object.keys(selected)
-        .filter(type => selected[type])
-        .map(type => sounds[type].name);
+);
 
 
-    const element =
-        document.getElementById("nowPlaying");
+/*
+=========================================================
+FILTERS
+=========================================================
+*/
+
+document
+.querySelectorAll(".filter-btn")
+.forEach(button => {
+
+    button.addEventListener(
+        "click",
+        ()=>{
+
+            document
+            .querySelectorAll(".filter-btn")
+            .forEach(
+                btn =>
+                btn.classList.remove(
+                    "active"
+                )
+            );
 
 
-    if (active.length === 0) {
+            button.classList.add(
+                "active"
+            );
 
-        element.textContent = "Nothing";
 
-    } else {
+            currentFilter =
+            button.dataset.filter;
 
-        element.textContent =
-            active.join(" + ");
+
+            renderMemories();
+
+        }
+    );
+
+});
+
+
+/*
+=========================================================
+RANDOM MEMORY
+=========================================================
+*/
+
+randomMemoryBtn.addEventListener(
+    "click",
+    ()=>{
+
+        if(memories.length === 0){
+
+            showToast(
+                "There are no memories yet."
+            );
+
+            return;
+
+        }
+
+
+        const random =
+        memories[
+            Math.floor(
+                Math.random() *
+                memories.length
+            )
+        ];
+
+
+        const mood =
+        moodData[random.mood]
+        || moodData.happy;
+
+
+        alert(
+            `${mood.emoji} ${mood.name}\n\n"${random.text}"\n\n— ${random.name || "Anonymous"}`
+        );
 
     }
+);
+
+
+/*
+=========================================================
+TOAST
+=========================================================
+*/
+
+const toast =
+document.getElementById("toast");
+
+
+function showToast(message){
+
+    toast.textContent =
+    message;
+
+    toast.classList.add("show");
+
+
+    setTimeout(
+        ()=>{
+            toast.classList.remove(
+                "show"
+            );
+        },
+        3500
+    );
 
 }
+
+
+/*
+=========================================================
+START
+=========================================================
+*/
+
+loadWeather();
+
+loadMemories();
 
 </script>
 
