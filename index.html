@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kerala Soundscape</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        linear-gradient(
+            rgba(0, 25, 15, 0.72),
+            rgba(0, 12, 8, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+    min-height: 100vh;
+}
+
+.overlay {
+    min-height: 100vh;
+    padding: 30px 20px 70px;
+    backdrop-filter: blur(2px);
+    position: relative;
+}
+
+.overlay::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255,255,255,0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(217,197,138,0.07),
+            transparent 30%
+        );
+
+    pointer-events: none;
+}
+
+header {
+    max-width: 950px;
+    margin: auto;
+    text-align: center;
+    padding: 60px 20px 45px;
+}
+
+.small-title {
+    color: #d9c58a;
+    letter-spacing: 7px;
+    font-size: 13px;
+    margin-bottom: 18px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: clamp(45px, 9vw, 90px);
+    letter-spacing: 4px;
+    line-height: 1;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    color: #e8dfc0;
+    font-size: clamp(18px, 3vw, 26px);
+    font-style: italic;
+}
+
+.intro {
+    max-width: 650px;
+    margin: 25px auto 0;
+
+    color: #d0d8d2;
+
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.soundscape {
+    max-width: 1050px;
+    margin: auto;
+}
+
+.soundscape-title {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.soundscape-title h2 {
+    font-size: 31px;
+    margin-bottom: 10px;
+}
+
+.soundscape-title p {
+    color: #bdc8c1;
+    font-family: Arial, sans-serif;
+}
+
+.sound-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.sound-card {
+    position: relative;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.09),
+            rgba(0,25,15,0.58)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    backdrop-filter: blur(18px);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.sound-card:hover {
+    transform: translateY(-6px);
+
+    border-color: rgba(217,197,138,0.5);
+}
+
+.sound-card.active {
+    border-color: #d9c58a;
+
+    box-shadow:
+        0 0 35px rgba(217,197,138,0.12),
+        inset 0 0 30px rgba(217,197,138,0.04);
+}
+
+.sound-card.errored {
+    border-color: rgba(200,90,90,0.55);
+    opacity: 0.7;
+}
+
+.sound-icon {
+    font-size: 45px;
+    margin-bottom: 13px;
+}
+
+.sound-card h3 {
+    font-size: 24px;
+    margin-bottom: 9px;
+}
+
+.sound-card p {
+    color: #bac5bd;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    min-height: 66px;
+
+    margin-bottom: 12px;
+}
+
+.sound-error-msg {
+    display: none;
+    color: #e8a3a3;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.sound-card.errored .sound-error-msg {
+    display: block;
+}
+
+.toggle {
+    width: 100%;
+
+    padding: 14px;
+
+    border-radius: 13px;
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    background: rgba(255,255,255,0.07);
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.25s;
+}
+
+.toggle:hover {
+    background: rgba(255,255,255,0.14);
+}
+
+.toggle:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+.sound-card.active .toggle {
+    background: #d9c58a;
+    color: #152017;
+
+    font-weight: bold;
+}
+
+.master {
+    margin-top: 28px;
+
+    padding: 28px;
+
+    border-radius: 22px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.08),
+            rgba(0,25,15,0.7)
+        );
+
+    border: 1px solid rgba(255,255,255,0.14);
+
+    backdrop-filter: blur(18px);
+
+    text-align: center;
+}
+
+.master h3 {
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.master-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.master-btn {
+    padding: 14px 25px;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    border: none;
+
+    transition: 0.25s;
+}
+
+.play-btn {
+    background: #d9c58a;
+    color: #132117;
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(217,197,138,0.2);
+}
+
+.stop-btn {
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stop-btn:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.volume-box {
+    max-width: 420px;
+    margin: 27px auto 0;
+}
+
+.volume-box label {
+    display: block;
+
+    color: #d0d8d2;
+
+    font-family: Arial, sans-serif;
+
+    margin-bottom: 10px;
+}
+
+input[type="range"] {
+    width: 100%;
+
+    accent-color: #d9c58a;
+
+    cursor: pointer;
+}
+
+.now-playing {
+    margin-top: 25px;
+
+    padding: 18px;
+
+    border-radius: 15px;
+
+    background: rgba(255,255,255,0.055);
+
+    color: #d9c58a;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    min-height: 54px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+
+    margin-top: 55px;
+
+    color: #9eaaa2;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+@media (max-width: 700px) {
+
+    .overlay {
+        padding: 15px 14px 50px;
+    }
+
+    header {
+        padding-top: 45px;
+    }
+
+    .sound-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sound-card {
+        padding: 23px;
+    }
+
+    .sound-card p {
+        min-height: auto;
+    }
+
+    .master {
+        padding: 23px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="overlay">
+
+<header>
+
+    <div class="small-title">
+        KERALA
+    </div>
+
+    <h1>
+        Soundscape
+    </h1>
+
+    <div class="subtitle">
+        God's Own Country
+    </div>
+
+    <p class="intro">
+        Close your eyes. Listen carefully.
+        Let the sounds of Kerala take you somewhere familiar.
+    </p>
+
+</header>
+
+
+<main class="soundscape">
+
+    <div class="soundscape-title">
+
+        <h2>
+            🎧 Your Kerala Soundscape
+        </h2>
+
+        <p>
+            Mix the sounds and create your own Kerala atmosphere.
+        </p>
+
+    </div>
+
+
+    <div class="sound-grid">
+
+        <div class="sound-card" id="card-rain">
+
+            <div class="sound-icon">🌧️</div>
+
+            <h3>Mazha</h3>
+
+            <p>
+                The peaceful sound of Kerala rain,
+                falling through trees, rooftops and roads.
+            </p>
+
+            <div class="sound-error-msg">Audio file not found — add audio/rain.mp3</div>
+
+            <button class="toggle" onclick="toggleSound('rain')">OFF</button>
+
+        </div>
+
+
+        <div class="sound-card" id="card-village">
+
+            <div class="sound-icon">🌴</div>
+
+            <h3>Morning Village</h3>
+
+            <p>
+                Birds, nature, distant voices and
+                the peaceful morning of a Kerala village.
+            </p>
+
+            <div class="sound-error-msg">Audio file not found — add audio/village.mp3</div>
+
+            <button class="toggle" onclick="toggleSound('village')">OFF</button>
+
+        </div>
+
+
+        <div class="sound-card" id="card-romantic">
+
+            <div class="sound-icon">💕</div>
+
+            <h3>Romantic Dialogues</h3>
+
+            <p>
+                A collection of romantic dialogue
+                sounds for a softer Kerala atmosphere.
+            </p>
+
+            <div class="sound-error-msg">Audio files not found — add audio/romantic-1/2/3.mp3</div>
+
+            <button class="toggle" onclick="toggleSound('romantic')">OFF</button>
+
+        </div>
+
+
+        <div class="sound-card" id="card-feelgood">
+
+            <div class="sound-icon">🎵</div>
+
+            <h3>Feel-Good Sounds</h3>
+
+            <p>
+                Add a warm Malayalam-inspired
+                musical atmosphere to your soundscape.
+            </p>
+
+            <div class="sound-error-msg">Audio files not found — add audio/feelgood-1..4.mp3</div>
+
+            <button class="toggle" onclick="toggleSound('feelgood')">OFF</button>
+
+        </div>
+
+    </div>
+
+
+    <div class="master">
+
+        <h3>🎛️ Sound Controls</h3>
+
+        <div class="master-buttons">
+
+            <button class="master-btn play-btn" onclick="playSelected()">▶ Play Selected</button>
+
+            <button class="master-btn stop-btn" onclick="stopAll()">■ Stop All</button>
+
+        </div>
+
+
+        <div class="volume-box">
+
+            <label for="volume">🔊 Master Volume — <span id="volumeLabel">70%</span></label>
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="0.7"
+                oninput="changeVolume(this.value)"
+            >
+
+        </div>
+
+
+        <div class="now-playing" id="nowPlaying">
+            Nothing playing
+        </div>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    Kerala &mdash; God's Own Country
+
+    <br>
+
+    A digital experience of Kerala.
+
+</footer>
+
+</div>
+
+
+<audio id="rain" src="audio/rain.mp3" loop preload="none"></audio>
+<audio id="village" src="audio/village.mp3" loop preload="none"></audio>
+
+<audio id="romantic1" src="audio/romantic-1.mp3" preload="none"></audio>
+<audio id="romantic2" src="audio/romantic-2.mp3" preload="none"></audio>
+<audio id="romantic3" src="audio/romantic-3.mp3" preload="none"></audio>
+
+<audio id="feelgood1" src="audio/feelgood-1.mp3" preload="none"></audio>
+<audio id="feelgood2" src="audio/feelgood-2.mp3" preload="none"></audio>
+<audio id="feelgood3" src="audio/feelgood-3.mp3" preload="none"></audio>
+<audio id="feelgood4" src="audio/feelgood-4.mp3" preload="none"></audio>
+
+
+<script>
+
+const sounds = {
+    rain: [document.getElementById("rain")],
+    village: [document.getElementById("village")],
+    romantic: [
+        document.getElementById("romantic1"),
+        document.getElementById("romantic2"),
+        document.getElementById("romantic3")
+    ],
+    feelgood: [
+        document.getElementById("feelgood1"),
+        document.getElementById("feelgood2"),
+        document.getElementById("feelgood3"),
+        document.getElementById("feelgood4")
+    ]
+};
+
+const names = {
+    rain: "🌧️ Mazha",
+    village: "🌴 Morning Village",
+    romantic: "💕 Romantic Dialogues",
+    feelgood: "🎵 Feel-Good Sounds"
+};
+
+const activeSounds = {
+    rain: false,
+    village: false,
+    romantic: false,
+    feelgood: false
+};
+
+// Tracks whether a sound group's audio file(s) actually failed to load,
+// so we can disable the card instead of silently doing nothing.
+const brokenSounds = {
+    rain: false,
+    village: false,
+    romantic: false,
+    feelgood: false
+};
+
+function markBroken(name) {
+    if (brokenSounds[name]) return;
+    brokenSounds[name] = true;
+
+    const card = document.getElementById("card-" + name);
+    const button = card.querySelector(".toggle");
+
+    card.classList.add("errored");
+    card.classList.remove("active");
+    button.disabled = true;
+    button.innerText = "UNAVAILABLE";
+
+    activeSounds[name] = false;
+    updateNowPlaying();
+}
+
+// Wire up error listeners once, up front, instead of only discovering
+// a missing file the moment someone clicks play.
+Object.keys(sounds).forEach(name => {
+    sounds[name].forEach(audio => {
+        audio.addEventListener("error", () => markBroken(name));
+    });
+});
+
+function toggleSound(name) {
+
+    if (brokenSounds[name]) return;
+
+    const audioList = sounds[name];
+
+    activeSounds[name] = !activeSounds[name];
+
+    const card = document.getElementById("card-" + name);
+    const button = card.querySelector(".toggle");
+
+    if (activeSounds[name]) {
+
+        audioList.forEach(audio => {
+            audio.currentTime = 0;
+            audio.volume = document.getElementById("volume").value;
+            audio.play().catch(() => {
+                // Autoplay can be blocked until the user interacts with the
+                // page at least once; a real missing-file error is caught
+                // separately by the "error" listener above.
+                console.log("Playback blocked until user interacts with the page.");
+            });
+        });
+
+        card.classList.add("active");
+        button.innerText = "ON";
+
+    } else {
+
+        audioList.forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+
+        card.classList.remove("active");
+        button.innerText = "OFF";
+
+    }
+
+    updateNowPlaying();
+}
+
+function playSelected() {
+
+    let selected = false;
+
+    Object.keys(sounds).forEach(name => {
+        if (activeSounds[name] && !brokenSounds[name]) {
+            selected = true;
+            sounds[name].forEach(audio => {
+                audio.volume = document.getElementById("volume").value;
+                audio.play().catch(error => {
+                    console.log(error);
+                });
+            });
+        }
+    });
+
+    if (!selected) {
+        alert("Select at least one sound first.");
+    }
+
+    updateNowPlaying();
+}
+
+function stopAll() {
+
+    Object.keys(sounds).forEach(name => {
+
+        sounds[name].forEach(audio => {
+            audio.pause();
+            audio.currentTime = 0;
+        });
+
+        activeSounds[name] = false;
+
+        if (brokenSounds[name]) return;
+
+        const card = document.getElementById("card-" + name);
+        card.classList.remove("active");
+        card.querySelector(".toggle").innerText = "OFF";
+
+    });
+
+    updateNowPlaying();
+}
+
+function changeVolume(value) {
+
+    document.getElementById("volumeLabel").innerText =
+        Math.round(value * 100) + "%";
+
+    Object.keys(sounds).forEach(name => {
+        sounds[name].forEach(audio => {
+            audio.volume = value;
+        });
+    });
+}
+
+function updateNowPlaying() {
+
+    const playing = Object.keys(activeSounds)
+        .filter(name => activeSounds[name])
+        .map(name => names[name]);
+
+    const display = document.getElementById("nowPlaying");
+
+    if (playing.length === 0) {
+        display.innerText = "Nothing playing";
+    } else {
+        display.innerText = "Now playing: " + playing.join("  •  ");
+    }
+}
+
+changeVolume(0.7);
+
+</script>
+
+</body>
+</html>
