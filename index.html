@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Kerala Soundscape</title>
+<title>Echoes of Kerala — God's Own Country</title>
 
 <style>
-
 * {
     margin: 0;
     padding: 0;
@@ -19,442 +18,380 @@ html {
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Arial, Helvetica, sans-serif;
     background:
-        linear-gradient(
-            rgba(0, 25, 15, 0.72),
-            rgba(0, 12, 8, 0.94)
-        ),
-        url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-
+        linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.78)),
+        url("https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=2000&q=85")
+        center/cover fixed;
     color: white;
     min-height: 100vh;
 }
 
-/* =========================
-   BACKGROUND EFFECT
-========================= */
-
-.overlay {
-    min-height: 100vh;
-    padding: 30px 20px 70px;
-    backdrop-filter: blur(2px);
-}
-
-.overlay::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-        radial-gradient(
-            circle at 20% 20%,
-            rgba(255,255,255,0.08),
-            transparent 30%
-        ),
-        radial-gradient(
-            circle at 80% 80%,
-            rgba(217,197,138,0.07),
-            transparent 30%
-        );
-
-    pointer-events: none;
-}
-
-/* =========================
-   HEADER
-========================= */
+/* ================= HEADER ================= */
 
 header {
-    max-width: 950px;
-    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 60px 20px 45px;
+    padding: 30px;
+}
+
+.hero {
+    max-width: 900px;
 }
 
 .small-title {
-    color: #d9c58a;
     letter-spacing: 7px;
     font-size: 13px;
-    margin-bottom: 18px;
+    color: #d5d5d5;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-h1 {
-    font-size: clamp(45px, 9vw, 90px);
-    letter-spacing: 4px;
-    line-height: 1;
-    margin-bottom: 18px;
+.hero h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 10vw, 120px);
+    line-height: .9;
+    font-weight: 400;
+    letter-spacing: -4px;
 }
 
-.subtitle {
-    color: #e8dfc0;
-    font-size: clamp(18px, 3vw, 26px);
+.hero h1 span {
+    display: block;
     font-style: italic;
 }
 
-.intro {
-    max-width: 650px;
-    margin: 25px auto 0;
-
-    color: #d0d8d2;
-
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    line-height: 1.8;
+.hero p {
+    margin-top: 28px;
+    font-size: 17px;
+    letter-spacing: 5px;
+    color: #ddd;
 }
 
-/* =========================
-   SOUNDSCAPE
-========================= */
+.scroll {
+    margin-top: 70px;
+    font-size: 12px;
+    letter-spacing: 4px;
+    opacity: .7;
+}
 
-.soundscape {
-    max-width: 1050px;
+/* ================= MAIN ================= */
+
+main {
+    width: min(1200px, 92%);
     margin: auto;
+    padding-bottom: 100px;
 }
 
-.soundscape-title {
+.section-title {
     text-align: center;
-    margin-bottom: 28px;
+    margin-bottom: 45px;
 }
 
-.soundscape-title h2 {
-    font-size: 31px;
-    margin-bottom: 10px;
+.section-title h2 {
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 65px);
+    font-weight: 400;
 }
 
-.soundscape-title p {
-    color: #bdc8c1;
-    font-family: Arial, sans-serif;
+.section-title p {
+    margin-top: 12px;
+    color: #bbb;
+    letter-spacing: 2px;
 }
 
-/* =========================
-   SOUND CARDS
-========================= */
+/* ================= SOUND CARDS ================= */
 
 .sound-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 25px;
 }
 
 .sound-card {
     position: relative;
+    min-height: 260px;
+    border-radius: 24px;
+    padding: 30px;
+    overflow: hidden;
 
-    padding: 28px;
+    background: rgba(255,255,255,.09);
+    border: 1px solid rgba(255,255,255,.16);
+    backdrop-filter: blur(15px);
 
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.09),
-            rgba(0,25,15,0.58)
-        );
-
-    border: 1px solid rgba(255,255,255,0.14);
-
-    backdrop-filter: blur(18px);
-
-    transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: .35s ease;
 }
 
 .sound-card:hover {
-    transform: translateY(-6px);
-
-    border-color: rgba(217,197,138,0.5);
-}
-
-.sound-card.active {
-    border-color: #d9c58a;
-
-    box-shadow:
-        0 0 35px rgba(217,197,138,0.12),
-        inset 0 0 30px rgba(217,197,138,0.04);
+    transform: translateY(-7px);
+    background: rgba(255,255,255,.13);
+    border-color: rgba(255,255,255,.3);
 }
 
 .sound-icon {
     font-size: 45px;
-    margin-bottom: 13px;
+    margin-bottom: 20px;
 }
 
 .sound-card h3 {
-    font-size: 24px;
-    margin-bottom: 9px;
+    font-family: Georgia, serif;
+    font-size: 32px;
+    font-weight: 400;
 }
 
 .sound-card p {
-    color: #bac5bd;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 14px;
+    color: #c7c7c7;
+    margin-top: 10px;
     line-height: 1.6;
-
-    min-height: 66px;
-
-    margin-bottom: 20px;
 }
 
-/* =========================
-   TOGGLE BUTTON
-========================= */
+/* Toggle */
+
+.toggle-row {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .toggle {
-    width: 100%;
-
-    padding: 14px;
-
-    border-radius: 13px;
-
-    border: 1px solid rgba(255,255,255,0.18);
-
-    background: rgba(255,255,255,0.07);
-
-    color: white;
-
+    width: 65px;
+    height: 34px;
+    border-radius: 30px;
+    background: rgba(255,255,255,.2);
+    padding: 4px;
     cursor: pointer;
-
-    font-size: 15px;
-
-    transition: 0.25s;
+    transition: .3s;
 }
 
-.toggle:hover {
-    background: rgba(255,255,255,0.14);
+.toggle-dot {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: white;
+    transition: .3s;
 }
 
-.sound-card.active .toggle {
-    background: #d9c58a;
-    color: #152017;
-
-    font-weight: bold;
+.toggle.active {
+    background: #79c98b;
 }
 
-/* =========================
-   MASTER CONTROL
-========================= */
+.toggle.active .toggle-dot {
+    transform: translateX(31px);
+}
 
-.master {
-    margin-top: 28px;
+/* ================= CONTROLS ================= */
 
-    padding: 28px;
-
-    border-radius: 22px;
-
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,0.08),
-            rgba(0,25,15,0.7)
-        );
-
-    border: 1px solid rgba(255,255,255,0.14);
-
-    backdrop-filter: blur(18px);
-
+.controls {
+    margin-top: 55px;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(0,0,0,.42);
+    border: 1px solid rgba(255,255,255,.13);
+    backdrop-filter: blur(15px);
     text-align: center;
 }
 
-.master h3 {
-    font-size: 23px;
-    margin-bottom: 20px;
+.controls h3 {
+    font-family: Georgia, serif;
+    font-size: 27px;
+    font-weight: 400;
 }
 
-.master-buttons {
+.button-row {
+    margin-top: 25px;
     display: flex;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
     flex-wrap: wrap;
 }
 
-.master-btn {
+button {
+    border: none;
     padding: 14px 25px;
-
-    border-radius: 13px;
-
+    border-radius: 50px;
     cursor: pointer;
-
-    font-size: 15px;
-
-    font-weight: bold;
-
-    transition: 0.25s;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: .25s;
 }
 
 .play-btn {
-    background: #d9c58a;
-    color: #132117;
-
-    border: none;
-}
-
-.play-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(217,197,138,0.2);
+    background: white;
+    color: black;
 }
 
 .stop-btn {
-    background: rgba(255,255,255,0.08);
-
+    background: rgba(255,255,255,.12);
     color: white;
-
-    border: 1px solid rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,.2);
 }
 
-.stop-btn:hover {
-    background: rgba(255,255,255,0.15);
+button:hover {
+    transform: translateY(-2px);
 }
 
-/* =========================
-   VOLUME
-========================= */
+/* Volume */
 
 .volume-box {
-    max-width: 420px;
-    margin: 27px auto 0;
+    margin: 25px auto 0;
+    max-width: 400px;
 }
 
 .volume-box label {
     display: block;
-
-    color: #d0d8d2;
-
-    font-family: Arial, sans-serif;
-
     margin-bottom: 10px;
+    color: #bbb;
+    font-size: 13px;
 }
 
 input[type="range"] {
     width: 100%;
-
-    accent-color: #d9c58a;
-
-    cursor: pointer;
 }
 
-/* =========================
-   NOW PLAYING
-========================= */
+/* ================= NOW PLAYING ================= */
 
 .now-playing {
     margin-top: 25px;
-
-    padding: 18px;
-
-    border-radius: 15px;
-
-    background: rgba(255,255,255,0.055);
-
-    color: #d9c58a;
-
-    font-family: Arial, sans-serif;
-
+    color: #aaa;
     font-size: 14px;
-
-    min-height: 54px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* =========================
-   FOOTER
-========================= */
+.now-playing strong {
+    color: white;
+}
+
+/* ================= YOUTUBE PLAYERS ================= */
+
+.youtube-section {
+    margin-top: 70px;
+}
+
+.youtube-section h2 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin-bottom: 12px;
+}
+
+.youtube-description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 35px;
+}
+
+.players-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.player-card {
+    background: rgba(255,255,255,.07);
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 20px;
+    overflow: hidden;
+    padding-bottom: 15px;
+}
+
+.player-title {
+    padding: 16px 18px;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+.player-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.player-container > div,
+.player-container iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ================= FOOTER ================= */
 
 footer {
     text-align: center;
-
-    margin-top: 55px;
-
-    color: #9eaaa2;
-
-    font-family: Arial, sans-serif;
-
+    padding: 50px 20px;
+    color: #888;
     font-size: 13px;
-
-    line-height: 1.7;
+    letter-spacing: 2px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* ================= RESPONSIVE ================= */
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
 
-    .overlay {
-        padding: 15px 14px 50px;
-    }
-
-    header {
-        padding-top: 45px;
-    }
-
-    .sound-grid {
+    .sound-grid,
+    .players-grid {
         grid-template-columns: 1fr;
     }
 
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .hero p {
+        font-size: 13px;
+        letter-spacing: 3px;
+    }
+
     .sound-card {
-        padding: 23px;
-    }
-
-    .sound-card p {
-        min-height: auto;
-    }
-
-    .master {
-        padding: 23px;
+        min-height: 230px;
     }
 }
-
 </style>
 </head>
 
-
 <body>
 
-<div class="overlay">
+<!-- ================= HERO ================= -->
 
 <header>
 
-    <div class="small-title">
-        KERALA
+    <div class="hero">
+
+        <div class="small-title">
+            God's Own Country
+        </div>
+
+        <h1>
+            Echoes
+            <span>of Kerala</span>
+        </h1>
+
+        <p>
+            SEE • HEAR • FEEL
+        </p>
+
+        <div class="scroll">
+            SCROLL TO LISTEN ↓
+        </div>
+
     </div>
-
-    <h1>
-        Soundscape
-    </h1>
-
-    <div class="subtitle">
-        God’s Own Country
-    </div>
-
-    <p class="intro">
-        Close your eyes. Listen carefully.
-        Let the sounds of Kerala take you somewhere familiar.
-    </p>
 
 </header>
 
 
-<main class="soundscape">
+<main>
 
-    <div class="soundscape-title">
+<!-- ================= SOUND SECTION ================= -->
 
-        <h2>
-            🎧 Your Kerala Soundscape
-        </h2>
+<section>
+
+    <div class="section-title">
+
+        <h2>Listen to Kerala</h2>
 
         <p>
-            Mix the sounds and create your own Kerala atmosphere.
+            Choose the sounds you want to experience together.
         </p>
 
     </div>
@@ -462,161 +399,144 @@ footer {
 
     <div class="sound-grid">
 
+        <!-- RAIN -->
 
-        <!-- =====================
-             RAIN
-        ====================== -->
+        <div class="sound-card">
 
-        <div class="sound-card" id="card-rain">
+            <div class="sound-icon">🌧️</div>
 
-            <div class="sound-icon">
-                🌧️
-            </div>
-
-            <h3>
-                Mazha
-            </h3>
+            <h3>Mazha</h3>
 
             <p>
-                The peaceful sound of Kerala rain,
-                falling through trees, rooftops and roads.
+                The sound of Kerala rain falling on a quiet evening.
             </p>
 
-            <button
-                class="toggle"
-                onclick="toggleSound('rain')">
+            <div class="toggle-row">
 
-                OFF
+                <span>Rain</span>
 
-            </button>
+                <div
+                    class="toggle"
+                    id="toggle-rain"
+                    onclick="toggleSound('rain')"
+                >
+                    <div class="toggle-dot"></div>
+                </div>
+
+            </div>
 
         </div>
 
 
+        <!-- VILLAGE -->
 
-        <!-- =====================
-             VILLAGE
-        ====================== -->
+        <div class="sound-card">
 
-        <div class="sound-card" id="card-village">
+            <div class="sound-icon">🌴</div>
 
-            <div class="sound-icon">
-                🌴
-            </div>
-
-            <h3>
-                Morning Village
-            </h3>
+            <h3>Morning Village</h3>
 
             <p>
-                Birds, nature, distant voices and
-                the peaceful morning of a Kerala village.
+                Birds, nature and the peaceful sound of a Kerala morning.
             </p>
 
-            <button
-                class="toggle"
-                onclick="toggleSound('village')">
+            <div class="toggle-row">
 
-                OFF
+                <span>Village</span>
 
-            </button>
+                <div
+                    class="toggle"
+                    id="toggle-village"
+                    onclick="toggleSound('village')"
+                >
+                    <div class="toggle-dot"></div>
+                </div>
+
+            </div>
 
         </div>
 
 
+        <!-- ROMANTIC -->
 
-        <!-- =====================
-             ROMANTIC
-        ====================== -->
+        <div class="sound-card">
 
-        <div class="sound-card" id="card-romantic">
+            <div class="sound-icon">💕</div>
 
-            <div class="sound-icon">
-                💕
-            </div>
-
-            <h3>
-                Romantic Dialogues
-            </h3>
+            <h3>Romantic Dialogues</h3>
 
             <p>
-                A collection of romantic dialogue
-                sounds for a softer Kerala atmosphere.
+                Emotional Malayalam movie-style dialogue moments.
             </p>
 
-            <button
-                class="toggle"
-                onclick="toggleSound('romantic')">
+            <div class="toggle-row">
 
-                OFF
+                <span>Dialogues</span>
 
-            </button>
+                <div
+                    class="toggle"
+                    id="toggle-romantic"
+                    onclick="toggleSound('romantic')"
+                >
+                    <div class="toggle-dot"></div>
+                </div>
+
+            </div>
 
         </div>
 
 
+        <!-- FEEL GOOD -->
 
-        <!-- =====================
-             FEEL GOOD
-        ====================== -->
+        <div class="sound-card">
 
-        <div class="sound-card" id="card-feelgood">
+            <div class="sound-icon">🎵</div>
 
-            <div class="sound-icon">
-                🎵
-            </div>
-
-            <h3>
-                Feel-Good Sounds
-            </h3>
+            <h3>Feel-Good</h3>
 
             <p>
-                Add a warm Malayalam-inspired
-                musical atmosphere to your soundscape.
+                Positive sounds and music for a peaceful Kerala mood.
             </p>
 
-            <button
-                class="toggle"
-                onclick="toggleSound('feelgood')">
+            <div class="toggle-row">
 
-                OFF
+                <span>Feel Good</span>
 
-            </button>
+                <div
+                    class="toggle"
+                    id="toggle-feelgood"
+                    onclick="toggleSound('feelgood')"
+                >
+                    <div class="toggle-dot"></div>
+                </div>
+
+            </div>
 
         </div>
 
     </div>
 
 
+    <!-- ================= CONTROLS ================= -->
 
-    <!-- =====================
-         MASTER CONTROLS
-    ====================== -->
+    <div class="controls">
 
-    <div class="master">
+        <h3>Build Your Kerala Sound</h3>
 
-        <h3>
-            🎛️ Sound Controls
-        </h3>
-
-
-        <div class="master-buttons">
+        <div class="button-row">
 
             <button
-                class="master-btn play-btn"
-                onclick="playSelected()">
-
+                class="play-btn"
+                onclick="playSelected()"
+            >
                 ▶ Play Selected
-
             </button>
 
-
             <button
-                class="master-btn stop-btn"
-                onclick="stopAll()">
-
+                class="stop-btn"
+                onclick="stopAll()"
+            >
                 ■ Stop All
-
             </button>
 
         </div>
@@ -625,420 +545,517 @@ footer {
         <div class="volume-box">
 
             <label>
-                🔊 Master Volume
+                Master Volume
             </label>
 
             <input
-                type="range"
                 id="volume"
+                type="range"
                 min="0"
-                max="1"
-                step="0.01"
-                value="0.7"
+                max="100"
+                value="60"
                 oninput="changeVolume(this.value)"
             >
 
         </div>
 
 
-        <div
-            class="now-playing"
-            id="nowPlaying">
+        <div class="now-playing">
 
-            Nothing playing
+            Now Playing:
+            <strong id="nowPlaying">
+                Nothing
+            </strong>
 
         </div>
 
     </div>
+
+</section>
+
+
+<!-- ================= YOUTUBE SECTION ================= -->
+
+<section class="youtube-section">
+
+    <h2>YouTube Sources</h2>
+
+    <p class="youtube-description">
+        These sounds are played directly from YouTube.
+    </p>
+
+
+    <div class="players-grid">
+
+        <!-- RAIN -->
+
+        <div class="player-card">
+
+            <div class="player-title">
+                🌧️ Mazha
+            </div>
+
+            <div
+                class="player-container"
+                id="player-rain"
+            ></div>
+
+        </div>
+
+
+        <!-- VILLAGE -->
+
+        <div class="player-card">
+
+            <div class="player-title">
+                🌴 Morning Village
+            </div>
+
+            <div
+                class="player-container"
+                id="player-village"
+            ></div>
+
+        </div>
+
+
+        <!-- ROMANTIC -->
+
+        <div class="player-card">
+
+            <div class="player-title">
+                💕 Romantic Dialogues
+            </div>
+
+            <div
+                class="player-container"
+                id="player-romantic"
+            ></div>
+
+        </div>
+
+
+        <!-- FEEL GOOD -->
+
+        <div class="player-card">
+
+            <div class="player-title">
+                🎵 Feel-Good Sounds
+            </div>
+
+            <div
+                class="player-container"
+                id="player-feelgood"
+            ></div>
+
+        </div>
+
+    </div>
+
+</section>
 
 </main>
 
 
 <footer>
 
-    Kerala — God’s Own Country
-
-    <br>
-
-    A digital experience of Kerala.
+    ECHOES OF KERALA
+    <br><br>
+    God's Own Country
 
 </footer>
 
-</div>
 
-
-
-<!-- ==================================
-     AUDIO ELEMENTS
-=================================== -->
-
-
-<!-- RAIN -->
-
-<audio
-    id="rain"
-    src="audio/rain.mp3"
-    loop>
-</audio>
-
-
-
-<!-- VILLAGE -->
-
-<audio
-    id="village"
-    src="audio/village.mp3"
-    loop>
-</audio>
-
-
-
-<!-- ROMANTIC DIALOGUES -->
-
-<audio
-    id="romantic1"
-    src="audio/romantic-1.mp3">
-</audio>
-
-<audio
-    id="romantic2"
-    src="audio/romantic-2.mp3">
-</audio>
-
-<audio
-    id="romantic3"
-    src="audio/romantic-3.mp3">
-</audio>
-
-
-
-<!-- FEEL GOOD -->
-
-<audio
-    id="feelgood1"
-    src="audio/feelgood-1.mp3">
-</audio>
-
-<audio
-    id="feelgood2"
-    src="audio/feelgood-2.mp3">
-</audio>
-
-<audio
-    id="feelgood3"
-    src="audio/feelgood-3.mp3">
-</audio>
-
-<audio
-    id="feelgood4"
-    src="audio/feelgood-4.mp3">
-</audio>
-
-
+<!-- ===================================================== -->
+<!-- YOUTUBE IFRAME PLAYER API -->
+<!-- ===================================================== -->
 
 <script>
 
-/* ==================================
-   AUDIO SETUP
-=================================== */
-
-
 const sounds = {
 
-    rain: [
-        document.getElementById("rain")
-    ],
+    rain: {
+        videoId: "b4bjRqGAmQ8",
+        name: "🌧️ Mazha"
+    },
 
-    village: [
-        document.getElementById("village")
-    ],
+    village: {
+        videoId: "eX3ioEkKpH0",
+        name: "🌴 Morning Village"
+    },
 
-    romantic: [
-        document.getElementById("romantic1"),
-        document.getElementById("romantic2"),
-        document.getElementById("romantic3")
-    ],
+    romantic: {
+        videos: [
+            "1-uQfBHJ1KM",
+            "AhKc-B9Q3xo",
+            "PCdmvKEna4w"
+        ],
+        name: "💕 Romantic Dialogues",
+        current: 0
+    },
 
-    feelgood: [
-        document.getElementById("feelgood1"),
-        document.getElementById("feelgood2"),
-        document.getElementById("feelgood3"),
-        document.getElementById("feelgood4")
-    ]
-
-};
-
-
-
-/* ==================================
-   DISPLAY NAMES
-=================================== */
-
-
-const names = {
-
-    rain: "🌧️ Mazha",
-
-    village: "🌴 Morning Village",
-
-    romantic: "💕 Romantic Dialogues",
-
-    feelgood: "🎵 Feel-Good Sounds"
+    feelgood: {
+        videos: [
+            "3sjUeqA4Jd8",
+            "YkK46DhKK2E",
+            "aCri47vCNho",
+            "qqhEeTFY_yQ"
+        ],
+        name: "🎵 Feel-Good Sounds",
+        current: 0
+    }
 
 };
 
 
+let players = {};
 
-/* ==================================
-   ACTIVE STATUS
-=================================== */
-
-
-const activeSounds = {
+let selected = {
 
     rain: false,
-
     village: false,
-
     romantic: false,
-
     feelgood: false
 
 };
 
+let apiReady = false;
 
 
-/* ==================================
-   TOGGLE SOUND
-=================================== */
+/* ===================================================== */
+/* LOAD YOUTUBE API */
+/* ===================================================== */
+
+const tag = document.createElement("script");
+
+tag.src = "https://www.youtube.com/iframe_api";
+
+document.head.appendChild(tag);
 
 
-function toggleSound(name) {
+/* ===================================================== */
+/* YOUTUBE API READY */
+/* ===================================================== */
 
-    const audioList = sounds[name];
+function onYouTubeIframeAPIReady() {
 
-    activeSounds[name] = !activeSounds[name];
+    apiReady = true;
 
+    createPlayers();
 
-    const card =
-        document.getElementById("card-" + name);
-
-
-    const button =
-        card.querySelector(".toggle");
+}
 
 
+/* ===================================================== */
+/* CREATE PLAYERS */
+/* ===================================================== */
 
-    /* TURN ON */
+function createPlayers() {
 
-    if (activeSounds[name]) {
+    players.rain = new YT.Player(
+        "player-rain",
+        {
 
-        audioList.forEach(audio => {
+            videoId: sounds.rain.videoId,
 
-            audio.currentTime = 0;
+            playerVars: {
+                playsinline: 1,
+                rel: 0,
+                controls: 1
+            },
 
-            audio.volume =
-                document.getElementById("volume").value;
+            events: {
+                onReady: onPlayerReady
+            }
 
-            audio.play().catch(error => {
-
-                console.log(
-                    "Browser requires user interaction."
-                );
-
-            });
-
-        });
+        }
+    );
 
 
-        card.classList.add("active");
+    players.village = new YT.Player(
+        "player-village",
+        {
 
-        button.innerText = "ON";
+            videoId: sounds.village.videoId,
+
+            playerVars: {
+                playsinline: 1,
+                rel: 0,
+                controls: 1
+            },
+
+            events: {
+                onReady: onPlayerReady
+            }
+
+        }
+    );
+
+
+    players.romantic = new YT.Player(
+        "player-romantic",
+        {
+
+            videoId: sounds.romantic.videos[0],
+
+            playerVars: {
+                playsinline: 1,
+                rel: 0,
+                controls: 1
+            },
+
+            events: {
+                onReady: onPlayerReady,
+                onStateChange: function(event) {
+
+                    if (
+                        event.data === YT.PlayerState.ENDED
+                    ) {
+
+                        nextTrack("romantic");
+
+                    }
+
+                }
+
+            }
+
+        }
+    );
+
+
+    players.feelgood = new YT.Player(
+        "player-feelgood",
+        {
+
+            videoId: sounds.feelgood.videos[0],
+
+            playerVars: {
+                playsinline: 1,
+                rel: 0,
+                controls: 1
+            },
+
+            events: {
+                onReady: onPlayerReady,
+                onStateChange: function(event) {
+
+                    if (
+                        event.data === YT.PlayerState.ENDED
+                    ) {
+
+                        nextTrack("feelgood");
+
+                    }
+
+                }
+
+            }
+
+        }
+    );
+
+}
+
+
+/* ===================================================== */
+/* PLAYER READY */
+/* ===================================================== */
+
+function onPlayerReady(event) {
+
+    event.target.setVolume(
+        Number(
+            document.getElementById("volume").value
+        )
+    );
+
+}
+
+
+/* ===================================================== */
+/* TOGGLE SOUND */
+/* ===================================================== */
+
+function toggleSound(type) {
+
+    selected[type] = !selected[type];
+
+    const toggle =
+        document.getElementById(
+            "toggle-" + type
+        );
+
+    if (selected[type]) {
+
+        toggle.classList.add("active");
+
+    } else {
+
+        toggle.classList.remove("active");
+
+        if (players[type]) {
+
+            players[type].pauseVideo();
+
+        }
 
     }
-
-
-
-    /* TURN OFF */
-
-    else {
-
-        audioList.forEach(audio => {
-
-            audio.pause();
-
-            audio.currentTime = 0;
-
-        });
-
-
-        card.classList.remove("active");
-
-        button.innerText = "OFF";
-
-    }
-
 
     updateNowPlaying();
 
 }
 
 
-
-/* ==================================
-   PLAY SELECTED
-=================================== */
-
+/* ===================================================== */
+/* PLAY SELECTED */
+/* ===================================================== */
 
 function playSelected() {
 
-    let selected = false;
+    if (!apiReady) {
+
+        alert(
+            "YouTube is still loading. Please wait a moment and try again."
+        );
+
+        return;
+
+    }
 
 
-    Object.keys(sounds).forEach(name => {
-
-        if (activeSounds[name]) {
-
-            selected = true;
+    let anythingPlaying = false;
 
 
-            sounds[name].forEach(audio => {
+    Object.keys(selected).forEach(type => {
 
-                audio.volume =
-                    document.getElementById("volume").value;
+        if (
+            selected[type] &&
+            players[type]
+        ) {
 
-                audio.play().catch(error => {
+            players[type].playVideo();
 
-                    console.log(error);
-
-                });
-
-            });
+            anythingPlaying = true;
 
         }
 
     });
 
 
-    if (!selected) {
+    if (!anythingPlaying) {
 
         alert(
-            "Select at least one sound first."
+            "Select at least one Kerala sound first."
         );
 
     }
 
-
-    updateNowPlaying();
-
 }
 
 
-
-/* ==================================
-   STOP EVERYTHING
-=================================== */
-
+/* ===================================================== */
+/* STOP ALL */
+/* ===================================================== */
 
 function stopAll() {
 
-    Object.keys(sounds).forEach(name => {
+    Object.keys(players).forEach(type => {
 
+        if (players[type]) {
 
-        sounds[name].forEach(audio => {
+            players[type].pauseVideo();
 
-            audio.pause();
-
-            audio.currentTime = 0;
-
-        });
-
-
-        activeSounds[name] = false;
-
-
-        const card =
-            document.getElementById("card-" + name);
-
-
-        card.classList.remove("active");
-
-
-        card.querySelector(".toggle").innerText =
-            "OFF";
+        }
 
     });
-
-
-    updateNowPlaying();
 
 }
 
 
-
-/* ==================================
-   MASTER VOLUME
-=================================== */
-
+/* ===================================================== */
+/* VOLUME */
+/* ===================================================== */
 
 function changeVolume(value) {
 
-    Object.keys(sounds).forEach(name => {
+    Object.keys(players).forEach(type => {
 
-        sounds[name].forEach(audio => {
+        if (players[type]) {
 
-            audio.volume = value;
+            players[type].setVolume(
+                Number(value)
+            );
 
-        });
+        }
 
     });
 
 }
 
 
+/* ===================================================== */
+/* NEXT TRACK */
+/* ===================================================== */
 
-/* ==================================
-   NOW PLAYING DISPLAY
-=================================== */
+function nextTrack(type) {
 
+    const sound = sounds[type];
 
-function updateNowPlaying() {
+    sound.current++;
 
-    const playing = Object.keys(activeSounds)
+    if (
+        sound.current >=
+        sound.videos.length
+    ) {
 
-        .filter(name => activeSounds[name])
-
-        .map(name => names[name]);
-
-
-    const display =
-        document.getElementById("nowPlaying");
-
-
-    if (playing.length === 0) {
-
-        display.innerText =
-            "Nothing playing";
+        sound.current = 0;
 
     }
 
-    else {
 
-        display.innerText =
-            "Now playing: " +
-            playing.join("  •  ");
+    const nextVideo =
+        sound.videos[sound.current];
+
+
+    if (players[type]) {
+
+        players[type].loadVideoById(
+            nextVideo
+        );
 
     }
 
 }
 
 
+/* ===================================================== */
+/* NOW PLAYING TEXT */
+/* ===================================================== */
 
-/* ==================================
-   INITIAL VOLUME
-=================================== */
+function updateNowPlaying() {
 
-changeVolume(0.7);
+    const active = Object.keys(selected)
+        .filter(type => selected[type])
+        .map(type => sounds[type].name);
+
+
+    const element =
+        document.getElementById("nowPlaying");
+
+
+    if (active.length === 0) {
+
+        element.textContent = "Nothing";
+
+    } else {
+
+        element.textContent =
+            active.join(" + ");
+
+    }
+
+}
 
 </script>
 
