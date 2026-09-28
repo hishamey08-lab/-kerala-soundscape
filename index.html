@@ -1,40 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Echoes of Kerala — Refresh Your Mind</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Echoes of Kerala — Refresh Your Mind
+</title>
+
 
 <style>
+
+/* =====================================================
+   ROOT
+===================================================== */
+
 :root{
+
     --bg:#06110b;
     --bg2:#0c2115;
+
     --green:#9be3a5;
     --green2:#5eae6c;
+
     --cream:#f5ead1;
     --white:#f5fff7;
+
     --muted:#a7b8ab;
+
     --glass:rgba(255,255,255,.075);
+
     --border:rgba(255,255,255,.13);
-    --shadow:0 30px 90px rgba(0,0,0,.45);
+
+    --shadow:
+        0 30px 90px rgba(0,0,0,.45);
+
 }
+
+
+/* =====================================================
+   RESET
+===================================================== */
 
 *{
+
     margin:0;
     padding:0;
+
     box-sizing:border-box;
+
 }
+
 
 html{
+
     scroll-behavior:smooth;
+
 }
 
+
 body{
+
     background:
-        radial-gradient(circle at 15% 10%,rgba(86,170,102,.16),transparent 30%),
-        radial-gradient(circle at 85% 40%,rgba(43,117,62,.13),transparent 35%),
-        linear-gradient(145deg,#040b07,#09170e 55%,#06100a);
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(86,170,102,.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(43,117,62,.13),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #040b07,
+            #09170e 55%,
+            #06100a
+        );
 
     color:var(--white);
 
@@ -47,47 +99,65 @@ body{
         sans-serif;
 
     overflow-x:hidden;
+
 }
+
 
 button{
+
     font:inherit;
+
     cursor:pointer;
+
 }
+
 
 a{
+
     color:inherit;
+
     text-decoration:none;
+
 }
 
 
-/* =========================================
-   BACKGROUND
-========================================= */
+/* =====================================================
+   BACKGROUND PARTICLES
+===================================================== */
 
 body::before{
+
     content:"";
+
     position:fixed;
+
     inset:0;
 
     pointer-events:none;
+
     z-index:-1;
 
     background-image:
+
         radial-gradient(
-            rgba(255,255,255,.08) 1px,
+            rgba(255,255,255,.08)
+            1px,
             transparent 1px
         );
 
     background-size:45px 45px;
+
     opacity:.12;
+
 }
 
 
-/* =========================================
+/* =====================================================
    NAVIGATION
-========================================= */
+===================================================== */
 
 nav{
+
     position:fixed;
 
     top:0;
@@ -97,115 +167,205 @@ nav{
     z-index:1000;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     padding:15px 6%;
 
-    background:rgba(3,12,7,.72);
+    background:
+        rgba(3,12,7,.72);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:
+        blur(20px);
 
-    border-bottom:1px solid rgba(255,255,255,.07);
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
 }
 
+
 .logo-area{
+
     display:flex;
+
     align-items:center;
 
     gap:12px;
+
 }
 
+
 .logo-area img{
+
     width:42px;
     height:42px;
 
     object-fit:contain;
 
     border-radius:10px;
+
 }
+
 
 .logo-text{
+
     font-weight:800;
+
     letter-spacing:2px;
+
 }
+
 
 .logo-text span{
+
     color:var(--green);
+
 }
+
 
 .nav-links{
+
     display:flex;
+
     gap:24px;
+
 }
 
+
 .nav-links a{
+
     color:#d4e2d7;
 
     font-size:.88rem;
 
     transition:.3s;
+
 }
+
 
 .nav-links a:hover{
+
     color:var(--green);
+
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* =====================================================
+   HERO / INTRO
+===================================================== */
 
 .hero{
+
     min-height:100vh;
 
     position:relative;
 
     display:flex;
+
     align-items:center;
+
     justify-content:center;
 
     padding:120px 6% 70px;
 
     overflow:hidden;
+
 }
 
+
+/* YOUR LOGO BACKGROUND IMAGE */
+
 .hero::before{
+
     content:"";
 
     position:absolute;
+
+    inset:0;
+
+    background-image:
+
+        linear-gradient(
+            to bottom,
+            rgba(2,9,5,.20),
+            rgba(2,9,5,.82)
+        ),
+
+        url("Logo background.png");
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    transform:scale(1.03);
+
+    z-index:0;
+
+}
+
+
+/* Dark cinematic overlay */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
     inset:0;
 
     background:
-        linear-gradient(
-            to bottom,
-            rgba(2,9,5,.25),
-            rgba(2,9,5,.8)
+
+        radial-gradient(
+            circle at 50% 40%,
+            transparent 15%,
+            rgba(2,8,5,.30) 60%,
+            rgba(2,8,5,.82) 100%
         );
+
+    z-index:1;
+
+    pointer-events:none;
+
 }
 
+
 .hero-content{
+
     width:100%;
-    max-width:1200px;
+
+    max-width:1250px;
 
     position:relative;
+
     z-index:2;
 
     display:grid;
 
     grid-template-columns:
-        1.05fr .95fr;
+        1fr
+        1fr;
 
     align-items:center;
 
-    gap:60px;
+    gap:55px;
+
 }
+
 
 .hero-left{
+
     max-width:700px;
+
 }
 
+
 .eyebrow{
+
     color:var(--green);
 
     text-transform:uppercase;
@@ -215,33 +375,53 @@ nav{
     font-size:.72rem;
 
     margin-bottom:18px;
+
 }
 
+
 .hero h1{
-    font-size:clamp(4rem,9vw,8rem);
+
+    font-size:
+        clamp(4rem,9vw,8rem);
 
     line-height:.85;
 
     letter-spacing:-6px;
+
 }
+
 
 .hero h1 span{
+
     color:var(--green);
+
 }
 
+
 .hero-description{
+
     margin-top:30px;
 
     max-width:620px;
 
-    color:#c8d7cd;
+    color:#d2ded5;
 
     line-height:1.8;
 
     font-size:1.05rem;
+
 }
 
+
+.hero-description strong{
+
+    color:white;
+
+}
+
+
 .hero-buttons{
+
     display:flex;
 
     gap:14px;
@@ -249,10 +429,13 @@ nav{
     flex-wrap:wrap;
 
     margin-top:30px;
+
 }
+
 
 .primary-btn,
 .secondary-btn{
+
     border:none;
 
     padding:15px 24px;
@@ -262,186 +445,257 @@ nav{
     font-weight:800;
 
     transition:.3s;
+
 }
 
+
 .primary-btn{
+
     background:var(--green);
 
     color:#06110b;
 
     box-shadow:
         0 12px 35px
-        rgba(125,210,139,.15);
+        rgba(125,210,139,.18);
+
 }
+
 
 .secondary-btn{
-    background:rgba(255,255,255,.07);
 
-    border:1px solid var(--border);
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid var(--border);
 
     color:white;
+
 }
+
 
 .primary-btn:hover,
 .secondary-btn:hover{
+
     transform:translateY(-3px);
+
 }
 
 
-/* =========================================
+/* =====================================================
    POSTER WALL
-========================================= */
+===================================================== */
 
 .poster-wall{
+
     position:relative;
 
-    height:500px;
+    width:100%;
 
-    perspective:1000px;
+    height:560px;
+
+    perspective:1400px;
+
 }
 
+
+/* Poster */
+
 .poster{
+
     position:absolute;
 
-    width:210px;
-    height:300px;
+    width:220px;
 
-    border-radius:16px;
+    height:320px;
 
     overflow:hidden;
 
-    border:1px solid rgba(255,255,255,.2);
+    border-radius:18px;
+
+    background:#111;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
 
     box-shadow:
-        0 25px 60px rgba(0,0,0,.55);
 
-    background:
-        linear-gradient(
-            160deg,
-            #315c3a,
-            #152a1b 55%,
-            #0b130d
-        );
+        0 30px 70px
+        rgba(0,0,0,.65),
 
-    display:flex;
+        0 0 35px
+        rgba(155,227,165,.08);
 
-    align-items:flex-end;
+    transition:
 
-    transition:.5s;
+        transform .6s ease,
+        box-shadow .6s ease;
+
+    transform-style:preserve-3d;
+
+    animation:
+        floatingPoster 6s ease-in-out infinite;
+
 }
 
-.poster::before{
-    content:"";
 
-    position:absolute;
-    inset:0;
+.poster img{
 
-    background:
-        radial-gradient(
-            circle at 50% 30%,
-            rgba(255,225,170,.35),
-            transparent 35%
-        ),
-        linear-gradient(
-            to bottom,
-            transparent 40%,
-            rgba(0,0,0,.8)
-        );
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
 }
 
-.poster-content{
-    position:relative;
+
+/* Individual positions */
+
+.poster-one{
+
+    left:2%;
+
+    top:10%;
+
+    transform:
+        rotate(-10deg)
+        translateZ(-20px);
+
+    z-index:1;
+
+    animation-delay:0s;
+
+}
+
+
+.poster-two{
+
+    left:26%;
+
+    top:2%;
+
+    transform:
+        rotate(-2deg)
+        translateZ(50px);
+
+    z-index:4;
+
+    animation-delay:-1.5s;
+
+}
+
+
+.poster-three{
+
+    right:26%;
+
+    top:6%;
+
+    transform:
+        rotate(5deg)
+        translateZ(25px);
+
+    z-index:3;
+
+    animation-delay:-3s;
+
+}
+
+
+.poster-four{
+
+    right:2%;
+
+    top:14%;
+
+    transform:
+        rotate(11deg)
+        translateZ(-20px);
 
     z-index:2;
 
-    padding:20px;
+    animation-delay:-4.5s;
+
 }
 
-.poster-title{
-    font-family:Georgia,serif;
 
-    font-size:1.6rem;
-
-    color:#fff4d6;
-}
-
-.poster-sub{
-    margin-top:7px;
-
-    color:#d6d9c8;
-
-    font-size:.72rem;
-
-    letter-spacing:2px;
-
-    text-transform:uppercase;
-}
-
-.poster.one{
-    left:10%;
-    top:8%;
-
-    transform:
-        rotate(-9deg)
-        translateZ(-20px);
-}
-
-.poster.two{
-    left:35%;
-    top:18%;
-
-    transform:
-        rotate(2deg)
-        translateZ(30px);
-
-    z-index:3;
-}
-
-.poster.three{
-    right:4%;
-    top:5%;
-
-    transform:
-        rotate(9deg)
-        translateZ(-30px);
-}
-
-.poster.four{
-    left:20%;
-    bottom:0;
-
-    transform:
-        rotate(-3deg)
-        translateZ(10px);
-
-    z-index:4;
-}
+/* Poster hover */
 
 .poster:hover{
-    transform:
-        rotate(0)
-        translateY(-10px)
-        scale(1.04);
 
-    z-index:10;
+    animation-play-state:paused;
+
+    transform:
+        rotate(0deg)
+        translateY(-20px)
+        translateZ(100px)
+        scale(1.07);
+
+    z-index:20;
+
+    box-shadow:
+
+        0 45px 100px
+        rgba(0,0,0,.78),
+
+        0 0 50px
+        rgba(155,227,165,.16);
+
 }
 
 
-/* =========================================
-   SECTION
-========================================= */
+/* Floating animation */
+
+@keyframes floatingPoster{
+
+    0%{
+
+        margin-top:0;
+
+    }
+
+    50%{
+
+        margin-top:-10px;
+
+    }
+
+    100%{
+
+        margin-top:0;
+
+    }
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
 
 section{
+
     padding:110px 6%;
+
 }
 
+
 .section-heading{
+
     max-width:760px;
 
     margin-bottom:45px;
+
 }
 
+
 .section-small{
+
     color:var(--green);
 
     text-transform:uppercase;
@@ -449,37 +703,51 @@ section{
     letter-spacing:4px;
 
     font-size:.72rem;
+
 }
 
+
 .section-heading h2{
-    font-size:clamp(2.7rem,6vw,5rem);
+
+    font-size:
+        clamp(2.7rem,6vw,5rem);
 
     line-height:.95;
 
-    margin:12px 0 20px;
+    margin:
+        12px 0 20px;
+
 }
 
+
 .section-heading p{
+
     color:var(--muted);
 
     line-height:1.8;
+
 }
 
 
-/* =========================================
-   REFRESH YOUR MIND
-========================================= */
+/* =====================================================
+   REFRESH MIND
+===================================================== */
 
 .mind-section{
+
     background:
+
         radial-gradient(
             circle at 50% 20%,
             rgba(80,150,91,.12),
             transparent 40%
         );
+
 }
 
+
 .mind-card{
+
     max-width:1100px;
 
     margin:auto;
@@ -491,15 +759,18 @@ section{
     border-radius:35px;
 
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,.10),
             rgba(255,255,255,.035)
         );
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        var(--shadow);
 
     display:flex;
 
@@ -510,38 +781,53 @@ section{
     position:relative;
 
     overflow:hidden;
+
 }
 
+
 .mind-card::before{
+
     content:"";
 
     position:absolute;
 
     width:350px;
+
     height:350px;
 
     border-radius:50%;
 
     right:-120px;
+
     top:-150px;
 
     background:
         rgba(142,216,151,.08);
 
     filter:blur(10px);
+
 }
+
 
 .mind-icon{
+
     font-size:4rem;
+
 }
+
 
 .mind-card h3{
-    font-size:clamp(2rem,5vw,4rem);
+
+    font-size:
+        clamp(2rem,5vw,4rem);
 
     margin-top:15px;
+
 }
 
+
 .mind-card p{
+
     max-width:700px;
 
     margin-top:15px;
@@ -549,75 +835,102 @@ section{
     color:var(--muted);
 
     line-height:1.8;
+
 }
 
 
-/* =========================================
+/* =====================================================
    WEATHER
-========================================= */
+===================================================== */
 
 .weather-section{
+
     padding-top:70px;
+
 }
 
+
 .weather-grid{
+
     max-width:1100px;
 
     margin:auto;
 
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap:20px;
+
 }
 
+
 .card{
+
     padding:30px;
 
     border-radius:28px;
 
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,.09),
             rgba(255,255,255,.035)
         );
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        var(--shadow);
+
 }
 
+
 .weather-location{
+
     color:var(--green);
 
     font-weight:700;
+
 }
 
+
 .weather-temp{
+
     font-size:4rem;
 
     font-weight:800;
 
     margin-top:15px;
+
 }
 
+
 .weather-condition{
+
     color:#d8e8dc;
 
     margin-top:8px;
+
 }
 
+
 .weather-info{
+
     color:var(--muted);
 
     line-height:1.8;
 
     margin-top:15px;
+
 }
 
+
 .location-select{
+
     width:100%;
 
     margin-top:20px;
@@ -626,28 +939,35 @@ section{
 
     border-radius:14px;
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
     background:#102319;
 
     color:white;
+
 }
 
 
-/* =========================================
+/* =====================================================
    SOUNDS
-========================================= */
+===================================================== */
 
 .sounds-section{
+
     background:
+
         radial-gradient(
             circle at 50% 10%,
             rgba(92,169,107,.10),
             transparent 45%
         );
+
 }
 
+
 .sound-grid{
+
     max-width:1100px;
 
     margin:auto;
@@ -658,9 +978,12 @@ section{
         repeat(2,1fr);
 
     gap:20px;
+
 }
 
+
 .sound-card{
+
     padding:32px;
 
     min-height:330px;
@@ -668,52 +991,76 @@ section{
     border-radius:28px;
 
     background:
+
         linear-gradient(
             145deg,
             rgba(255,255,255,.09),
             rgba(255,255,255,.035)
         );
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        var(--shadow);
 
     transition:.35s;
+
 }
+
 
 .sound-card:hover{
-    transform:translateY(-5px);
+
+    transform:
+        translateY(-5px);
+
 }
 
+
 .sound-card.active{
+
     border-color:
         rgba(155,227,165,.7);
 
     box-shadow:
+
         0 0 50px
         rgba(100,190,115,.12),
+
         var(--shadow);
+
 }
+
 
 .sound-icon{
+
     font-size:3rem;
+
 }
 
+
 .sound-card h3{
+
     margin-top:15px;
 
     font-size:1.7rem;
+
 }
 
+
 .sound-description{
+
     margin-top:8px;
 
     color:var(--muted);
 
     line-height:1.6;
+
 }
 
+
 .track-name{
+
     margin-top:22px;
 
     color:var(--green);
@@ -721,9 +1068,12 @@ section{
     font-weight:800;
 
     min-height:24px;
+
 }
 
+
 .sound-controls{
+
     display:flex;
 
     align-items:center;
@@ -731,31 +1081,44 @@ section{
     gap:10px;
 
     margin-top:22px;
+
 }
 
+
 .sound-btn{
+
     width:45px;
+
     height:45px;
 
     border-radius:50%;
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    background:rgba(255,255,255,.07);
+    background:
+        rgba(255,255,255,.07);
 
     color:white;
 
     transition:.25s;
+
 }
 
+
 .sound-btn:hover{
+
     background:var(--green);
 
     color:#06110b;
+
 }
 
+
 .sound-btn.play{
+
     width:58px;
+
     height:58px;
 
     background:var(--green);
@@ -763,17 +1126,23 @@ section{
     color:#06110b;
 
     font-size:1.1rem;
+
 }
 
+
 .track-counter{
+
     margin-left:auto;
 
     color:#829487;
 
     font-size:.8rem;
+
 }
 
+
 .volume{
+
     display:flex;
 
     align-items:center;
@@ -783,40 +1152,53 @@ section{
     margin-top:22px;
 
     color:var(--muted);
+
 }
+
 
 .volume input{
+
     width:100%;
 
-    accent-color:var(--green);
+    accent-color:
+        var(--green);
+
 }
 
 
-/* =========================================
+/* =====================================================
    QUOTE
-========================================= */
+===================================================== */
 
 .quote-section{
+
     text-align:center;
 
-    padding:130px 6%;
+    padding:140px 6%;
+
 }
 
+
 .quote{
-    max-width:1000px;
+
+    max-width:950px;
 
     margin:auto;
 
     font-family:Georgia,serif;
 
-    font-size:clamp(2rem,5vw,4rem);
+    font-size:
+        clamp(2rem,5vw,4rem);
 
     line-height:1.2;
 
     color:#f1e7d0;
+
 }
 
+
 .quote-small{
+
     margin-top:25px;
 
     color:var(--green);
@@ -826,55 +1208,68 @@ section{
     letter-spacing:4px;
 
     font-size:.7rem;
+
 }
 
 
-/* =========================================
+/* =====================================================
    FOOTER
-========================================= */
+===================================================== */
 
 footer{
+
     padding:60px 6%;
 
     text-align:center;
 
-    border-top:1px solid var(--border);
+    border-top:
+        1px solid var(--border);
 
     color:#819187;
+
 }
+
 
 footer strong{
+
     color:var(--green);
+
 }
 
 
-/* =========================================
+/* =====================================================
    YOUTUBE PLAYERS
-========================================= */
+===================================================== */
 
 .youtube-audio{
+
     position:fixed;
 
     width:1px;
+
     height:1px;
 
     left:-100px;
+
     top:-100px;
 
     opacity:0;
 
     pointer-events:none;
+
 }
 
 
-/* =========================================
+/* =====================================================
    TOAST
-========================================= */
+===================================================== */
 
 .toast{
+
     position:fixed;
 
     right:20px;
+
     bottom:20px;
 
     z-index:5000;
@@ -887,99 +1282,221 @@ footer strong{
 
     background:#102319;
 
-    border:1px solid var(--border);
+    border:
+        1px solid var(--border);
 
-    box-shadow:var(--shadow);
+    box-shadow:
+        var(--shadow);
 
-    transform:translateY(120px);
+    transform:
+        translateY(120px);
 
     opacity:0;
 
     transition:.4s;
+
 }
+
 
 .toast.show{
-    transform:translateY(0);
+
+    transform:
+        translateY(0);
 
     opacity:1;
+
 }
 
 
-/* =========================================
+/* =====================================================
    MOBILE
-========================================= */
+===================================================== */
 
-@media(max-width:900px){
+@media(max-width:1000px){
 
     .hero-content{
+
         grid-template-columns:1fr;
+
     }
 
-    .poster-wall{
-        height:430px;
 
-        max-width:550px;
+    .hero-left{
+
+        text-align:center;
 
         margin:auto;
+
     }
+
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .poster-wall{
+
+        max-width:700px;
+
+        margin:auto;
+
+    }
+
 
     .weather-grid{
+
         grid-template-columns:1fr;
+
     }
 
+
     .sound-grid{
+
         grid-template-columns:1fr;
+
     }
+
 }
+
 
 @media(max-width:600px){
 
     nav{
+
         padding:12px 5%;
+
     }
+
 
     .nav-links{
+
         display:none;
+
     }
+
 
     section{
+
         padding:80px 5%;
+
     }
+
 
     .hero{
-        padding:110px 5% 60px;
+
+        padding:
+            110px 5% 60px;
+
     }
+
 
     .hero h1{
+
         letter-spacing:-4px;
+
     }
+
+
+    .poster-wall{
+
+        height:410px;
+
+    }
+
 
     .poster{
-        width:150px;
-        height:220px;
+
+        width:145px;
+
+        height:215px;
+
+        border-radius:13px;
+
     }
 
-    .poster-title{
-        font-size:1.15rem;
+
+    .poster-one{
+
+        left:0;
+
+        top:15%;
+
     }
+
+
+    .poster-two{
+
+        left:20%;
+
+        top:3%;
+
+    }
+
+
+    .poster-three{
+
+        right:20%;
+
+        top:8%;
+
+    }
+
+
+    .poster-four{
+
+        right:0;
+
+        top:17%;
+
+    }
+
 
     .mind-card{
+
         padding:30px;
+
     }
 
+
     .sound-card{
+
         padding:25px;
+
     }
+
+
+    .quote-section{
+
+        padding:
+            100px 5%;
+
+    }
+
 }
+
 </style>
+
 </head>
+
 
 <body>
 
 
-<!-- =========================================
+<!-- =====================================================
      NAVIGATION
-========================================= -->
+===================================================== -->
 
 <nav>
 
@@ -991,14 +1508,19 @@ footer strong{
         >
 
         <div class="logo-text">
-            ECHOES <span>OF</span> KERALA
+
+            ECHOES
+            <span>OF</span>
+            KERALA
+
         </div>
 
     </div>
 
+
     <div class="nav-links">
 
-        <a href="#sounds">
+        <a href="#mind">
             Refresh
         </a>
 
@@ -1015,135 +1537,134 @@ footer strong{
 </nav>
 
 
-<!-- =========================================
+<!-- =====================================================
      HERO / INTRO
-========================================= -->
+===================================================== -->
 
 <header class="hero">
 
     <div class="hero-content">
 
+
+        <!-- HERO TEXT -->
+
         <div class="hero-left">
 
             <div class="eyebrow">
+
                 God's Own Country
+
             </div>
 
+
             <h1>
+
                 Echoes<br>
-                <span>of Kerala.</span>
+
+                <span>
+                    of Kerala.
+                </span>
+
             </h1>
+
 
             <p class="hero-description">
 
                 A small place to pause,
-                breathe and remember the peaceful
-                side of Kerala.
+                breathe and remember
+                the peaceful side of Kerala.
 
                 <br><br>
 
                 <strong>
-                    Refresh your mind with us.
+
+                    Refresh your mind.
                     Relax with us.
+
                 </strong>
 
             </p>
 
+
             <div class="hero-buttons">
 
-                <!-- CHANGED:
-                     Refresh Your Mind now
-                     goes directly to sounds -->
+
+                <!-- DIRECTLY TO SOUNDS -->
 
                 <a
                     href="#sounds"
                     class="primary-btn"
                 >
+
                     🌿 Refresh Your Mind
+
                 </a>
+
+
+                <!-- WEATHER -->
 
                 <a
                     href="#weather"
                     class="secondary-btn"
                 >
+
                     🌦️ Check Kerala Weather
+
                 </a>
+
 
             </div>
 
         </div>
 
 
-        <!-- POSTER AREA -->
+        <!-- =================================================
+             POSTERS
+             ONLY IMAGES — NO CAPTIONS
+        ================================================== -->
 
         <div class="poster-wall">
 
-            <div class="poster one">
 
-                <div class="poster-content">
+            <div class="poster poster-one">
 
-                    <div class="poster-title">
-                        Oru Kerala
-                    </div>
-
-                    <div class="poster-sub">
-                        Memories
-                    </div>
-
-                </div>
+                <img
+                    src="poster1.png"
+                    alt="Kerala Film Poster 1"
+                >
 
             </div>
 
 
-            <div class="poster two">
+            <div class="poster poster-two">
 
-                <div class="poster-content">
-
-                    <div class="poster-title">
-                        Ormakal
-                    </div>
-
-                    <div class="poster-sub">
-                        Feel • Breathe • Relax
-                    </div>
-
-                </div>
+                <img
+                    src="poster2.png"
+                    alt="Kerala Film Poster 2"
+                >
 
             </div>
 
 
-            <div class="poster three">
+            <div class="poster poster-three">
 
-                <div class="poster-content">
-
-                    <div class="poster-title">
-                        Mazha
-                    </div>
-
-                    <div class="poster-sub">
-                        Kerala Rain
-                    </div>
-
-                </div>
+                <img
+                    src="poster3.png"
+                    alt="Kerala Film Poster 3"
+                >
 
             </div>
 
 
-            <div class="poster four">
+            <div class="poster poster-four">
 
-                <div class="poster-content">
-
-                    <div class="poster-title">
-                        Naadu
-                    </div>
-
-                    <div class="poster-sub">
-                        God's Own Country
-                    </div>
-
-                </div>
+                <img
+                    src="poster4.png"
+                    alt="Kerala Film Poster 4"
+                >
 
             </div>
+
 
         </div>
 
@@ -1152,29 +1673,41 @@ footer strong{
 </header>
 
 
-<!-- =========================================
+<!-- =====================================================
      REFRESH YOUR MIND
-========================================= -->
+===================================================== -->
 
 <section
     id="mind"
     class="mind-section"
 >
 
+
     <div class="section-heading">
 
         <div class="section-small">
+
             Take a breath
+
         </div>
 
+
         <h2>
+
             Refresh your mind.
+
         </h2>
 
+
         <p>
-            Leave the noise behind for a moment.
-            Listen to Kerala, breathe slowly,
+
+            Leave the noise behind
+            for a moment.
+
+            Listen to Kerala,
+            breathe slowly,
             and simply relax.
+
         </p>
 
     </div>
@@ -1182,53 +1715,76 @@ footer strong{
 
     <div class="mind-card">
 
+
         <div class="mind-icon">
+
             🌴
+
         </div>
 
+
         <h3>
+
             Welcome back to Kerala.
+
         </h3>
 
+
         <p>
+
             Rain outside.
+
             Birds somewhere nearby.
+
             A village waking up.
+
             Malayalam music in the background.
 
             <br><br>
 
             Nothing complicated.
+
             Just a peaceful moment.
+
         </p>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      WEATHER
-========================================= -->
+===================================================== -->
 
 <section
     id="weather"
     class="weather-section"
 >
 
+
     <div class="section-heading">
 
         <div class="section-small">
+
             Kerala right now
+
         </div>
 
+
         <h2>
+
             Check the weather.
+
         </h2>
 
+
         <p>
-            Choose a place in Kerala and
-            see its current weather.
+
+            Choose a place in Kerala
+            and see its current weather.
+
         </p>
 
     </div>
@@ -1236,32 +1792,46 @@ footer strong{
 
     <div class="weather-grid">
 
+
+        <!-- CURRENT WEATHER -->
+
         <div class="card">
+
 
             <div
                 class="weather-location"
                 id="weatherLocation"
             >
+
                 Kochi, Kerala
+
             </div>
+
 
             <div
                 class="weather-temp"
                 id="weatherTemp"
             >
+
                 --°C
+
             </div>
+
 
             <div
                 class="weather-condition"
                 id="weatherCondition"
             >
+
                 Loading...
+
             </div>
+
 
             <div class="weather-info">
 
                 Humidity:
+
                 <span id="humidity">
                     --
                 </span>
@@ -1269,58 +1839,91 @@ footer strong{
                 <br>
 
                 Wind:
+
                 <span id="wind">
                     --
                 </span>
 
             </div>
 
+
         </div>
 
 
+        <!-- LOCATION -->
+
         <div class="card">
 
+
             <h3>
+
                 Choose your place
+
             </h3>
 
+
             <p class="sound-description">
+
                 Kerala feels different
                 in every place.
+
             </p>
+
 
             <select
                 id="locationSelect"
                 class="location-select"
             >
 
+
                 <option value="9.9312,76.2673,Kochi">
+
                     Kochi
+
                 </option>
+
 
                 <option value="8.5241,76.9366,Thiruvananthapuram">
+
                     Thiruvananthapuram
+
                 </option>
+
 
                 <option value="11.2588,75.7804,Kozhikode">
+
                     Kozhikode
+
                 </option>
+
 
                 <option value="10.7867,76.6548,Palakkad">
+
                     Palakkad
+
                 </option>
+
 
                 <option value="10.8505,76.2711,Thrissur">
+
                     Thrissur
+
                 </option>
+
 
                 <option value="9.2648,76.7870,Alappuzha">
+
                     Alappuzha
+
                 </option>
 
+
                 <option value="9.5916,76.5222,Kottayam">
+
                     Kottayam
+
                 </option>
+
 
             </select>
 
@@ -1330,8 +1933,11 @@ footer strong{
                 class="primary-btn"
                 style="margin-top:18px;"
             >
+
                 Refresh Weather
+
             </button>
+
 
         </div>
 
@@ -1340,28 +1946,39 @@ footer strong{
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      SOUNDS
-========================================= -->
+===================================================== -->
 
 <section
     id="sounds"
     class="sounds-section"
 >
 
+
     <div class="section-heading">
 
+
         <div class="section-small">
+
             Your peaceful corner
+
         </div>
 
+
         <h2>
+
             Listen. Breathe. Relax.
+
         </h2>
 
+
         <p>
-            Choose an atmosphere and
-            let Kerala play in the background.
+
+            Choose an atmosphere
+            and let Kerala play
+            in the background.
+
         </p>
 
     </div>
@@ -1370,66 +1987,93 @@ footer strong{
     <div class="sound-grid">
 
 
-        <!-- =================================
+        <!-- =================================================
              RAIN
-        ================================== -->
+        ================================================== -->
 
         <div
             class="sound-card"
             id="card-rain"
         >
 
+
             <div class="sound-icon">
+
                 🌧️
+
             </div>
 
+
             <h3>
+
                 Kerala Rain
+
             </h3>
 
+
             <p class="sound-description">
-                Two different rain atmospheres
-                inside one option.
+
+                Two rain atmospheres
+                in one option.
+
             </p>
+
 
             <div
                 class="track-name"
                 id="name-rain"
             >
+
                 Normal Rain
+
             </div>
 
+
             <div class="sound-controls">
+
 
                 <button
                     class="sound-btn"
                     onclick="previousTrack('rain')"
                 >
+
                     ◀
+
                 </button>
+
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('rain')"
                 >
+
                     ▶
+
                 </button>
+
 
                 <button
                     class="sound-btn"
                     onclick="nextTrack('rain')"
                 >
+
                     ▶▶
+
                 </button>
+
 
                 <span
                     class="track-counter"
                     id="counter-rain"
                 >
+
                     1 / 2
+
                 </span>
 
+
             </div>
+
 
             <div class="volume">
 
@@ -1445,55 +2089,77 @@ footer strong{
 
             </div>
 
+
         </div>
 
 
-        <!-- =================================
+        <!-- =================================================
              BIRDS
-        ================================== -->
+        ================================================== -->
 
         <div
             class="sound-card"
             id="card-birds"
         >
 
+
             <div class="sound-icon">
+
                 🐦
+
             </div>
 
+
             <h3>
+
                 Kerala Birds
+
             </h3>
 
+
             <p class="sound-description">
-                A quiet morning surrounded
-                by birds and nature.
+
+                A quiet morning
+                surrounded by nature.
+
             </p>
+
 
             <div
                 class="track-name"
                 id="name-birds"
             >
+
                 Birds of Kerala
+
             </div>
 
+
             <div class="sound-controls">
+
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('birds')"
                 >
+
                     ▶
+
                 </button>
+
 
                 <button
                     class="sound-btn"
                     onclick="stopSound('birds')"
                 >
+
                     ■
+
                 </button>
 
+
             </div>
+
 
             <div class="volume">
 
@@ -1509,55 +2175,78 @@ footer strong{
 
             </div>
 
+
         </div>
 
 
-        <!-- =================================
+        <!-- =================================================
              VILLAGE
-        ================================== -->
+        ================================================== -->
 
         <div
             class="sound-card"
             id="card-village"
         >
 
+
             <div class="sound-icon">
+
                 🌴
+
             </div>
 
+
             <h3>
+
                 Morning Village
+
             </h3>
 
+
             <p class="sound-description">
-                Wake up slowly to the
-                peaceful sound of a Kerala village.
+
+                Wake up slowly to
+                the peaceful sound
+                of a Kerala village.
+
             </p>
+
 
             <div
                 class="track-name"
                 id="name-village"
             >
+
                 Kerala Village
+
             </div>
 
+
             <div class="sound-controls">
+
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('village')"
                 >
+
                     ▶
+
                 </button>
+
 
                 <button
                     class="sound-btn"
                     onclick="stopSound('village')"
                 >
+
                     ■
+
                 </button>
 
+
             </div>
+
 
             <div class="volume">
 
@@ -1573,69 +2262,97 @@ footer strong{
 
             </div>
 
+
         </div>
 
 
-        <!-- =================================
+        <!-- =================================================
              MALAYALAM SONGS
-        ================================== -->
+        ================================================== -->
 
         <div
             class="sound-card"
             id="card-songs"
         >
 
+
             <div class="sound-icon">
+
                 🎵
+
             </div>
 
+
             <h3>
+
                 Malayalam Feel-Good
+
             </h3>
 
+
             <p class="sound-description">
-                Three Malayalam playlists
-                inside one peaceful music option.
+
+                Three playlists in
+                one peaceful music option.
+
             </p>
+
 
             <div
                 class="track-name"
                 id="name-songs"
             >
+
                 Feel-Good Playlist 1
+
             </div>
 
+
             <div class="sound-controls">
+
 
                 <button
                     class="sound-btn"
                     onclick="previousTrack('songs')"
                 >
+
                     ◀
+
                 </button>
+
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('songs')"
                 >
+
                     ▶
+
                 </button>
+
 
                 <button
                     class="sound-btn"
                     onclick="nextTrack('songs')"
                 >
+
                     ▶▶
+
                 </button>
+
 
                 <span
                     class="track-counter"
                     id="counter-songs"
                 >
+
                     1 / 3
+
                 </span>
 
+
             </div>
+
 
             <div class="volume">
 
@@ -1651,51 +2368,65 @@ footer strong{
 
             </div>
 
+
         </div>
+
 
     </div>
 
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      FINAL THOUGHT
-========================================= -->
+===================================================== -->
 
 <section class="quote-section">
 
+
     <div class="quote">
 
-        “Somewhere between the sound of rain
-        and an old melody,
+        “Somewhere between the sound
+        of rain and an old melody,
         the mind remembers
         how to be calm.”
 
     </div>
 
+
     <div class="quote-small">
+
         Echoes of Kerala
+
     </div>
+
 
 </section>
 
 
-<!-- =========================================
+<!-- =====================================================
      FOOTER
-========================================= -->
+===================================================== -->
 
 <footer>
 
+
     <p>
+
         <strong>
             Echoes of Kerala
         </strong>
+
     </p>
 
+
     <p style="margin-top:10px;">
+
         Refresh your mind with us.
         Relax with us.
+
     </p>
+
 
     <p
         style="
@@ -1703,37 +2434,46 @@ footer strong{
         font-size:.75rem;
         "
     >
-        © 2026 Echoes of Kerala • God's Own Country
+
+        © 2026 Echoes of Kerala
+        • God's Own Country
+
     </p>
+
 
 </footer>
 
 
-<!-- =========================================
+<!-- =====================================================
      HIDDEN YOUTUBE PLAYERS
-========================================= -->
+===================================================== -->
 
 <div id="youtubePlayers">
+
 
     <div
         id="player-rain"
         class="youtube-audio"
     ></div>
 
+
     <div
         id="player-birds"
         class="youtube-audio"
     ></div>
+
 
     <div
         id="player-village"
         class="youtube-audio"
     ></div>
 
+
     <div
         id="player-songs"
         class="youtube-audio"
     ></div>
+
 
 </div>
 
@@ -1744,9 +2484,9 @@ footer strong{
 ></div>
 
 
-<!-- =========================================
+<!-- =====================================================
      YOUTUBE API
-========================================= -->
+===================================================== -->
 
 <script src="https://www.youtube.com/iframe_api"></script>
 
@@ -1754,12 +2494,15 @@ footer strong{
 <script>
 
 /* =====================================================
-   YOUTUBE VIDEO IDs
+   YOUR YOUTUBE SOUND FILES
 ===================================================== */
 
 const soundTracks = {
 
-    rain: [
+
+    /* ---------------- RAIN ---------------- */
+
+    rain:[
 
         {
             name:"Normal Rain",
@@ -1774,7 +2517,9 @@ const soundTracks = {
     ],
 
 
-    birds: [
+    /* ---------------- BIRDS ---------------- */
+
+    birds:[
 
         {
             name:"Birds of Kerala",
@@ -1784,7 +2529,9 @@ const soundTracks = {
     ],
 
 
-    village: [
+    /* ---------------- VILLAGE ---------------- */
+
+    village:[
 
         {
             name:"Kerala Village",
@@ -1794,7 +2541,9 @@ const soundTracks = {
     ],
 
 
-    songs: [
+    /* ---------------- SONGS ---------------- */
+
+    songs:[
 
         {
             name:"Feel-Good Playlist 1",
@@ -1820,52 +2569,64 @@ const soundTracks = {
    STATE
 ===================================================== */
 
-const indexes = {
+const indexes={
 
     rain:0,
+
     birds:0,
+
     village:0,
+
     songs:0
 
 };
 
 
-const playing = {
+const playing={
 
     rain:false,
+
     birds:false,
+
     village:false,
+
     songs:false
 
 };
 
 
-const volumes = {
+const volumes={
 
     rain:.70,
+
     birds:.70,
+
     village:.70,
+
     songs:.70
 
 };
 
 
-const players = {};
+const players={};
 
 
 /* =====================================================
-   YOUTUBE API READY
+   YOUTUBE READY
 ===================================================== */
 
-let youtubeReady = false;
+let youtubeReady=false;
 
 
 function onYouTubeIframeAPIReady(){
 
-    youtubeReady = true;
+    youtubeReady=true;
+
 
     Object.keys(soundTracks).forEach(
+
         type => createPlayer(type)
+
     );
 
 }
@@ -1877,6 +2638,7 @@ function onYouTubeIframeAPIReady(){
 
 function createPlayer(type){
 
+
     const track =
         soundTracks[type][indexes[type]];
 
@@ -1884,7 +2646,9 @@ function createPlayer(type){
     if(players[type]){
 
         try{
+
             players[type].destroy();
+
         }
 
         catch(e){}
@@ -1893,15 +2657,20 @@ function createPlayer(type){
 
 
     players[type] =
+
         new YT.Player(
+
             "player-"+type,
+
             {
 
                 height:"1",
 
                 width:"1",
 
+
                 videoId:track.id,
+
 
                 playerVars:{
 
@@ -1923,7 +2692,9 @@ function createPlayer(type){
                     onReady:function(event){
 
                         event.target.setVolume(
+
                             volumes[type]*100
+
                         );
 
                     },
@@ -1931,46 +2702,61 @@ function createPlayer(type){
 
                     onStateChange:function(event){
 
+
+                        /* PLAYING */
+
                         if(
+
                             event.data ===
                             YT.PlayerState.PLAYING
+
                         ){
 
                             playing[type]=true;
 
                             updateCard(type);
 
-                            updateMaster();
-
                         }
 
 
+                        /* PAUSED */
+
                         if(
+
                             event.data ===
                             YT.PlayerState.PAUSED
+
                         ){
 
                             playing[type]=false;
 
                             updateCard(type);
 
-                            updateMaster();
-
                         }
 
 
+                        /* ENDED */
+
                         if(
+
                             event.data ===
                             YT.PlayerState.ENDED
+
                         ){
 
+
                             if(
+
                                 soundTracks[type].length > 1
+
                             ){
 
                                 nextTrack(
+
                                     type,
+
                                     true
+
                                 );
 
                             }
@@ -1981,8 +2767,6 @@ function createPlayer(type){
 
                                 updateCard(type);
 
-                                updateMaster();
-
                             }
 
                         }
@@ -1992,6 +2776,7 @@ function createPlayer(type){
                 }
 
             }
+
         );
 
 }
@@ -2002,6 +2787,7 @@ function createPlayer(type){
 ===================================================== */
 
 function toggleSound(type){
+
 
     if(!youtubeReady){
 
@@ -2014,17 +2800,12 @@ function toggleSound(type){
     }
 
 
-    const player =
-        players[type];
+    const player=players[type];
 
 
     if(!player){
 
         createPlayer(type);
-
-        showToast(
-            "Preparing the sound..."
-        );
 
         return;
 
@@ -2033,13 +2814,16 @@ function toggleSound(type){
 
     try{
 
+
         const state =
             player.getPlayerState();
 
 
         if(
+
             state ===
             YT.PlayerState.PLAYING
+
         ){
 
             player.pauseVideo();
@@ -2059,10 +2843,8 @@ function toggleSound(type){
 
         updateCard(type);
 
-        updateMaster();
 
     }
-
 
     catch(error){
 
@@ -2083,35 +2865,40 @@ function toggleSound(type){
 
 function stopSound(type){
 
-    const player =
-        players[type];
+
+    const player=players[type];
 
 
     if(!player){
+
         return;
+
     }
 
 
     player.stopVideo();
+
 
     playing[type]=false;
 
 
     updateCard(type);
 
-    updateMaster();
-
 }
 
 
 /* =====================================================
-   NEXT TRACK
+   NEXT
 ===================================================== */
 
 function nextTrack(
+
     type,
+
     autoplay=false
+
 ){
+
 
     const total =
         soundTracks[type].length;
@@ -2124,7 +2911,9 @@ function nextTrack(
     if(players[type]){
 
         try{
+
             players[type].stopVideo();
+
         }
 
         catch(e){}
@@ -2132,7 +2921,11 @@ function nextTrack(
     }
 
 
+    playing[type]=false;
+
+
     indexes[type] =
+
         (indexes[type]+1)%total;
 
 
@@ -2145,7 +2938,9 @@ function nextTrack(
 
 
         setTimeout(
+
             function(){
+
 
                 if(
                     autoplay ||
@@ -2160,16 +2955,17 @@ function nextTrack(
 
                         updateCard(type);
 
-                        updateMaster();
-
                     }
 
                     catch(e){}
 
                 }
 
+
             },
+
             500
+
         );
 
     }
@@ -2178,10 +2974,11 @@ function nextTrack(
 
 
 /* =====================================================
-   PREVIOUS TRACK
+   PREVIOUS
 ===================================================== */
 
 function previousTrack(type){
+
 
     const total =
         soundTracks[type].length;
@@ -2194,7 +2991,9 @@ function previousTrack(type){
     if(players[type]){
 
         try{
+
             players[type].stopVideo();
+
         }
 
         catch(e){}
@@ -2202,7 +3001,11 @@ function previousTrack(type){
     }
 
 
+    playing[type]=false;
+
+
     indexes[type] =
+
         (indexes[type]-1+total)%total;
 
 
@@ -2215,7 +3018,9 @@ function previousTrack(type){
 
 
         setTimeout(
+
             function(){
+
 
                 if(wasPlaying){
 
@@ -2227,16 +3032,17 @@ function previousTrack(type){
 
                         updateCard(type);
 
-                        updateMaster();
-
                     }
 
                     catch(e){}
 
                 }
 
+
             },
+
             500
+
         );
 
     }
@@ -2250,11 +3056,13 @@ function previousTrack(type){
 
 function updateTrackUI(type){
 
+
     const track =
         soundTracks[type][indexes[type]];
 
 
     const name =
+
         document.getElementById(
             "name-"+type
         );
@@ -2262,13 +3070,14 @@ function updateTrackUI(type){
 
     if(name){
 
-        name.textContent =
+        name.textContent=
             track.name;
 
     }
 
 
     const counter =
+
         document.getElementById(
             "counter-"+type
         );
@@ -2276,7 +3085,8 @@ function updateTrackUI(type){
 
     if(counter){
 
-        counter.textContent =
+        counter.textContent=
+
             `${indexes[type]+1} / ${soundTracks[type].length}`;
 
     }
@@ -2285,19 +3095,23 @@ function updateTrackUI(type){
 
 
 /* =====================================================
-   UPDATE CARD
+   CARD UI
 ===================================================== */
 
 function updateCard(type){
 
-    const card =
+
+    const card=
+
         document.getElementById(
             "card-"+type
         );
 
 
     if(!card){
+
         return;
+
     }
 
 
@@ -2314,7 +3128,8 @@ function updateCard(type){
     }
 
 
-    const button =
+    const button=
+
         card.querySelector(
             ".sound-btn.play"
         );
@@ -2322,7 +3137,8 @@ function updateCard(type){
 
     if(button){
 
-        button.textContent =
+        button.textContent=
+
             playing[type]
             ? "Ⅱ"
             : "▶";
@@ -2333,30 +3149,19 @@ function updateCard(type){
 
 
 /* =====================================================
-   MASTER STATUS
-===================================================== */
-
-function updateMaster(){
-
-    const active =
-        Object.keys(playing)
-        .filter(
-            type => playing[type]
-        );
-
-}
-
-
-/* =====================================================
    VOLUME
 ===================================================== */
 
 function setVolume(
+
     type,
+
     value
+
 ){
 
-    const volume =
+
+    const volume=
         Number(value)/100;
 
 
@@ -2384,7 +3189,8 @@ function setVolume(
    WEATHER
 ===================================================== */
 
-const locationSelect =
+const locationSelect=
+
     document.getElementById(
         "locationSelect"
     );
@@ -2392,29 +3198,39 @@ const locationSelect =
 
 async function loadWeather(){
 
+
     try{
 
-        const parts =
-            locationSelect.value.split(",");
+
+        const parts=
+
+            locationSelect
+            .value
+            .split(",");
 
 
-        const latitude =
+        const latitude=
             parts[0];
 
 
-        const longitude =
+        const longitude=
             parts[1];
 
 
-        const locationName =
-            parts.slice(2).join(",");
+        const locationName=
+
+            parts
+            .slice(2)
+            .join(",");
 
 
-        const url =
+        const url=
+
             `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata`;
 
 
-        const response =
+        const response=
+
             await fetch(url);
 
 
@@ -2427,31 +3243,36 @@ async function loadWeather(){
         }
 
 
-        const data =
+        const data=
             await response.json();
 
 
-        const current =
+        const current=
             data.current;
 
 
         document.getElementById(
             "weatherLocation"
-        ).textContent =
-            locationName+", Kerala";
+        ).textContent=
+
+            locationName+
+            ", Kerala";
 
 
         document.getElementById(
             "weatherTemp"
-        ).textContent =
+        ).textContent=
+
             Math.round(
                 current.temperature_2m
-            )+"°C";
+            )+
+            "°C";
 
 
         document.getElementById(
             "weatherCondition"
-        ).textContent =
+        ).textContent=
+
             getWeatherDescription(
                 current.weather_code
             );
@@ -2459,19 +3280,23 @@ async function loadWeather(){
 
         document.getElementById(
             "humidity"
-        ).textContent =
-            current.relative_humidity_2m+"%";
+        ).textContent=
+
+            current.relative_humidity_2m+
+            "%";
 
 
         document.getElementById(
             "wind"
-        ).textContent =
+        ).textContent=
+
             Math.round(
                 current.wind_speed_10m
-            )+" km/h";
+            )+
+            " km/h";
+
 
     }
-
 
     catch(error){
 
@@ -2480,12 +3305,15 @@ async function loadWeather(){
 
         document.getElementById(
             "weatherCondition"
-        ).textContent =
+        ).textContent=
+
             "Weather unavailable";
 
 
         showToast(
+
             "Weather could not be loaded. Check your internet connection."
+
         );
 
     }
@@ -2499,7 +3327,9 @@ async function loadWeather(){
 
 function getWeatherDescription(code){
 
-    const map = {
+
+    const map={
+
 
         0:"Clear sky ☀️",
 
@@ -2546,8 +3376,12 @@ function getWeatherDescription(code){
     };
 
 
-    return map[code] ||
-        "Kerala weather";
+    return (
+
+        map[code] ||
+        "Kerala weather"
+
+    );
 
 }
 
@@ -2557,17 +3391,25 @@ function getWeatherDescription(code){
 ===================================================== */
 
 locationSelect.addEventListener(
+
     "change",
+
     loadWeather
+
 );
 
 
-document.getElementById(
-    "refreshWeather"
-).addEventListener(
-    "click",
-    loadWeather
-);
+document
+    .getElementById(
+        "refreshWeather"
+    )
+    .addEventListener(
+
+        "click",
+
+        loadWeather
+
+    );
 
 
 /* =====================================================
@@ -2576,13 +3418,15 @@ document.getElementById(
 
 function showToast(message){
 
-    const toast =
+
+    const toast=
+
         document.getElementById(
             "toast"
         );
 
 
-    toast.textContent =
+    toast.textContent=
         message;
 
 
@@ -2592,6 +3436,7 @@ function showToast(message){
 
 
     setTimeout(
+
         function(){
 
             toast.classList.remove(
@@ -2599,25 +3444,34 @@ function showToast(message){
             );
 
         },
+
         3000
+
     );
 
 }
 
 
 /* =====================================================
-   INITIALIZE UI
+   INITIALIZE
 ===================================================== */
 
 Object.keys(soundTracks)
-.forEach(
-    type => updateTrackUI(type)
-);
+
+    .forEach(
+
+        type =>
+            updateTrackUI(type)
+
+    );
 
 
 loadWeather();
 
+
 </script>
 
+
 </body>
+
 </html>
