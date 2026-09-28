@@ -1167,6 +1167,78 @@ section{
 
 
 /* =====================================================
+   CHILDHOOD MEMORIES
+===================================================== */
+
+.childhood-section{
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(155,227,165,.10),
+            transparent 45%
+        );
+}
+
+.childhood-card{
+    max-width:1100px;
+    margin:auto;
+    padding:32px;
+    border-radius:30px;
+    background:
+        linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+    border:1px solid var(--border);
+    box-shadow:var(--shadow);
+}
+
+.childhood-intro{
+    color:var(--muted);
+    line-height:1.8;
+    max-width:760px;
+    margin-bottom:28px;
+}
+
+.childhood-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.childhood-video{
+    overflow:hidden;
+    border-radius:20px;
+    border:1px solid var(--border);
+    background:#07110b;
+}
+
+.childhood-video iframe{
+    width:100%;
+    aspect-ratio:16/9;
+    display:block;
+    border:0;
+}
+
+.childhood-video h3{
+    padding:15px 16px 18px;
+    font-size:1rem;
+    color:#eef8f0;
+}
+
+@media(max-width:900px){
+    .childhood-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:600px){
+    .childhood-card{
+        padding:20px;
+    }
+    .childhood-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+/* =====================================================
    QUOTE
 ===================================================== */
 
@@ -1532,6 +1604,10 @@ footer strong{
             Sounds
         </a>
 
+        <a href="#childhood">
+            Childhood
+        </a>
+
     </div>
 
 </nav>
@@ -1875,55 +1951,61 @@ footer strong{
                 class="location-select"
             >
 
-
-                <option value="9.9312,76.2673,Kochi">
-
-                    Kochi
-
-                </option>
-
-
                 <option value="8.5241,76.9366,Thiruvananthapuram">
-
                     Thiruvananthapuram
-
                 </option>
 
-
-                <option value="11.2588,75.7804,Kozhikode">
-
-                    Kozhikode
-
+                <option value="8.8932,76.6141,Kollam">
+                    Kollam
                 </option>
 
-
-                <option value="10.7867,76.6548,Palakkad">
-
-                    Palakkad
-
+                <option value="9.2648,76.7870,Pathanamthitta">
+                    Pathanamthitta
                 </option>
 
-
-                <option value="10.8505,76.2711,Thrissur">
-
-                    Thrissur
-
-                </option>
-
-
-                <option value="9.2648,76.7870,Alappuzha">
-
+                <option value="9.4981,76.3388,Alappuzha">
                     Alappuzha
-
                 </option>
-
 
                 <option value="9.5916,76.5222,Kottayam">
-
                     Kottayam
-
                 </option>
 
+                <option value="9.8494,76.9826,Idukki">
+                    Idukki
+                </option>
+
+                <option value="9.9312,76.2673,Ernakulam">
+                    Ernakulam
+                </option>
+
+                <option value="10.5276,76.2144,Thrissur">
+                    Thrissur
+                </option>
+
+                <option value="10.7867,76.6548,Palakkad">
+                    Palakkad
+                </option>
+
+                <option value="11.0510,76.0711,Malappuram">
+                    Malappuram
+                </option>
+
+                <option value="11.2588,75.7804,Kozhikode">
+                    Kozhikode
+                </option>
+
+                <option value="11.6085,76.0834,Wayanad">
+                    Wayanad
+                </option>
+
+                <option value="11.8745,75.3704,Kannur">
+                    Kannur
+                </option>
+
+                <option value="12.5102,74.9852,Kasaragod">
+                    Kasaragod
+                </option>
 
             </select>
 
@@ -2371,6 +2453,104 @@ footer strong{
 
         </div>
 
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CHILDHOOD MEMORIES
+===================================================== -->
+
+<section
+    id="childhood"
+    class="childhood-section"
+>
+
+    <div class="section-heading">
+
+        <div class="section-small">
+            A little trip back in time
+        </div>
+
+        <h2>
+            Childhood Memories.
+        </h2>
+
+        <p>
+            For a few minutes, forget the rush of today
+            and revisit the cartoons and characters
+            that made childhood feel simple.
+        </p>
+
+    </div>
+
+    <div class="childhood-card">
+
+        <p class="childhood-intro">
+            Pick a memory and let the old days play again.
+            These videos are embedded directly from YouTube.
+        </p>
+
+        <div class="childhood-grid">
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/PvzmL1aHGnw?rel=0&modestbranding=1&playsinline=1" title="Detective Rajappan" loading="lazy" allowfullscreen></iframe>
+                <h3>Detective Rajappan</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/TN5MFnuHba4?rel=0&modestbranding=1&playsinline=1" title="Dosth Bada Dosth" loading="lazy" allowfullscreen></iframe>
+                <h3>Dosth Bada Dosth</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/6gbEA53Klzg?rel=0&modestbranding=1&playsinline=1" title="He-Man" loading="lazy" allowfullscreen></iframe>
+                <h3>He-Man</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/xLW35zFSiNQ?rel=0&modestbranding=1&playsinline=1" title="Mayakannan" loading="lazy" allowfullscreen></iframe>
+                <h3>Mayakannan</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/vmshe2H7Vdo?rel=0&modestbranding=1&playsinline=1" title="Lilly" loading="lazy" allowfullscreen></iframe>
+                <h3>Lilly</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/jzlheO3Icbk?rel=0&modestbranding=1&playsinline=1" title="Mr Thangu" loading="lazy" allowfullscreen></iframe>
+                <h3>Mr Thangu</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/YgdRlJUdsAw?rel=0&modestbranding=1&playsinline=1" title="Little Krishna" loading="lazy" allowfullscreen></iframe>
+                <h3>Little Krishna</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/9YxWaJ0x79k?rel=0&modestbranding=1&playsinline=1" title="Dragon Booster" loading="lazy" allowfullscreen></iframe>
+                <h3>Dragon Booster</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/xCcQIKntThs?rel=0&modestbranding=1&playsinline=1" title="Marsupilami" loading="lazy" allowfullscreen></iframe>
+                <h3>Marsupilami</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/jS5SoRCmfe0?rel=0&modestbranding=1&playsinline=1" title="Stuart Little" loading="lazy" allowfullscreen></iframe>
+                <h3>Stuart Little</h3>
+            </div>
+
+            <div class="childhood-video">
+                <iframe src="https://www.youtube.com/embed/-2TnU-v5VAg?rel=0&modestbranding=1&playsinline=1" title="Dorayude Prayanam" loading="lazy" allowfullscreen></iframe>
+                <h3>Dorayude Prayanam</h3>
+            </div>
+
+        </div>
 
     </div>
 
