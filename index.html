@@ -1,247 +1,3468 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Echoes of Kerala — Refresh Your Mind</title>
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
+
+<title>
+    Echoes of Kerala — Refresh Your Mind
+</title>
+
+
 <style>
-:root{--g:#9be3a5;--g2:#5eae6c;--bg:#06110b;--bg2:#0c2115;--cream:#f5ead1;--white:#f5fff7;--mut:#a7b8ab;--bd:#ffffff20;--shadow:0 30px 90px #0008}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--white);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:linear-gradient(145deg,#040b07,#09170e 55%,#06100a);overflow-x:hidden}body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(#ffffff12 1px,transparent 1px);background-size:45px 45px;opacity:.25}button,input,textarea,select{font:inherit}button{cursor:pointer}a{color:inherit;text-decoration:none}nav{position:fixed;z-index:1000;top:0;left:0;right:0;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;background:#030c07cc;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff12}.logo{display:flex;gap:10px;align-items:center;font-weight:800;letter-spacing:2px}.logo img{width:42px;height:42px;object-fit:contain}.logo i{font-style:normal;color:var(--g)}.links{display:flex;gap:18px;font-size:.88rem}.links a:hover{color:var(--g)}.mini,.btn{border-radius:99px;font-weight:800}.mini{padding:9px 14px;background:#ffffff0d;color:#fff;border:1px solid var(--bd)}.btn{border:0;padding:13px 20px}.primary{background:var(--g);color:#06110b}.secondary{background:#ffffff0d;color:#fff;border:1px solid var(--bd)}.hero{min-height:100vh;padding:120px 6% 70px;display:flex;align-items:center;background:linear-gradient(#03100655,#031006c9),url("Logo%20background.png") center/cover no-repeat}.heroGrid{max-width:1200px;width:100%;margin:auto;display:grid;grid-template-columns:1fr .95fr;gap:50px;align-items:center}.eyebrow,.small{color:var(--g);text-transform:uppercase;letter-spacing:4px;font-size:.72rem}.hero h1{font-size:clamp(4rem,9vw,8rem);line-height:.84;letter-spacing:-6px;margin:15px 0}.hero h1 span{color:var(--g)}.desc{max-width:650px;color:#c8d7cd;line-height:1.8}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:25px}.posters{height:500px;position:relative;perspective:1000px}.poster{position:absolute;width:210px;height:300px;overflow:hidden;border-radius:16px;border:1px solid #ffffff33;box-shadow:0 25px 60px #0009;transition:.45s}.poster img{width:100%;height:100%;object-fit:cover;display:block}.p1{left:8%;top:8%;transform:rotate(-9deg)}.p2{left:35%;top:18%;transform:rotate(2deg);z-index:3}.p3{right:4%;top:5%;transform:rotate(9deg)}.p4{left:20%;bottom:0;transform:rotate(-3deg);z-index:4}.poster:hover{transform:rotate(0) translateY(-10px) scale(1.04);z-index:10}section{padding:100px 6%}.heading{max-width:760px;margin:0 auto 40px}.heading h2{font-size:clamp(2.7rem,6vw,5rem);line-height:.95;margin:12px 0}.muted{color:var(--mut);line-height:1.7}.card,.sound,.chat,.memory,.profileCard{border:1px solid var(--bd);background:linear-gradient(145deg,#ffffff17,#ffffff08);box-shadow:var(--shadow);border-radius:28px}.card{padding:30px}.weatherGrid,.soundGrid,.memoryGrid,.communityGrid{max-width:1100px;margin:auto;display:grid;gap:20px}.weatherGrid,.communityGrid{grid-template-columns:1fr 1fr}.soundGrid{grid-template-columns:1fr 1fr}.memoryGrid{grid-template-columns:repeat(3,1fr)}.temp{font-size:4rem;font-weight:800;margin:15px 0}.select,.field{width:100%;padding:13px;margin-top:8px;border-radius:13px;border:1px solid var(--bd);background:#102319;color:#fff}.sound{padding:30px;min-height:300px;transition:.3s}.sound:hover{transform:translateY(-4px)}.sound.active{border-color:#9be3a588;box-shadow:0 0 50px #64be731f,var(--shadow)}.icon{font-size:3rem}.sound h3{font-size:1.6rem}.track{color:var(--g);font-weight:800;margin-top:18px;min-height:24px}.controls{display:flex;gap:9px;align-items:center;margin-top:18px}.circle{width:45px;height:45px;border-radius:50%;border:1px solid var(--bd);background:#ffffff0c;color:#fff}.circle:hover{background:var(--g);color:#06110b}.play{width:58px;height:58px;background:var(--g);color:#06110b}.count{margin-left:auto;color:#829487;font-size:.8rem}.volume{display:flex;gap:10px;align-items:center;margin-top:18px;color:var(--mut)}.volume input{width:100%;accent-color:var(--g)}.quote{text-align:center;padding:120px 6%}.quoteText{max-width:900px;margin:auto;font:clamp(2rem,5vw,4rem)/1.2 Georgia;color:#f1e7d0}.quote small{display:block;margin-top:25px;color:var(--g);letter-spacing:4px}.memory{overflow:hidden}.memory img{width:100%;height:190px;object-fit:cover}.memoryBody{padding:18px}.memoryBody p{color:var(--mut);line-height:1.6;white-space:pre-wrap}.meta{color:var(--g);font-size:.78rem;margin-top:10px}.chat{padding:28px}.chatList{height:320px;overflow:auto;padding:12px;border:1px solid var(--bd);border-radius:15px;margin:15px 0}.msg{padding:10px 12px;background:#ffffff0a;border-radius:12px;margin:7px 0}.msg b{color:var(--g)}.msgTime{font-size:.7rem;color:#728477}.chatForm{display:flex;gap:8px}.chatForm input{flex:1;padding:12px;border-radius:12px;border:1px solid var(--bd);background:#102319;color:#fff}.profileCard{padding:24px}.profile{display:flex;gap:15px;align-items:center}.avatar{width:74px;height:74px;border-radius:50%;object-fit:cover;background:#17301e;border:2px solid #9be3a555}.pill{display:inline-block;margin-top:8px;padding:6px 10px;border-radius:99px;background:#9be3a51a;color:var(--g);font-size:.75rem}.modal{display:none;position:fixed;inset:0;z-index:5000;align-items:center;justify-content:center;padding:20px;background:#000b;backdrop-filter:blur(10px)}.modal.show{display:flex}.box{width:min(560px,100%);max-height:90vh;overflow:auto;background:#0b1b11;border:1px solid var(--bd);border-radius:25px;padding:28px;box-shadow:var(--shadow)}.box h2{margin-top:0}.form{margin-top:14px}.form label{display:block;font-size:.85rem;margin-bottom:6px}.row{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}.toast{position:fixed;right:20px;bottom:20px;z-index:6000;padding:14px 18px;border-radius:14px;background:#102319;border:1px solid var(--bd);transform:translateY(120px);opacity:0;transition:.3s}.toast.show{transform:none;opacity:1}.yt{position:fixed;width:1px;height:1px;left:-100px;top:-100px;opacity:0;pointer-events:none}footer{text-align:center;padding:55px 6%;border-top:1px solid var(--bd);color:#819187}footer strong{color:var(--g)}.notice{padding:14px 16px;border-radius:15px;background:#9be3a50d;border:1px solid #9be3a522;color:#b9c9bd;line-height:1.6;font-size:.88rem}
-@media(max-width:900px){.heroGrid,.weatherGrid,.soundGrid,.communityGrid{grid-template-columns:1fr}.memoryGrid{grid-template-columns:1fr 1fr}.posters{height:430px}.links{display:none}}@media(max-width:600px){.memoryGrid{grid-template-columns:1fr}.poster{width:150px;height:220px}.hero h1{letter-spacing:-4px}.chatForm{flex-direction:column}}
+
+/* =====================================================
+   ROOT
+===================================================== */
+
+:root{
+
+    --bg:#06110b;
+    --bg2:#0c2115;
+
+    --green:#9be3a5;
+    --green2:#5eae6c;
+
+    --cream:#f5ead1;
+    --white:#f5fff7;
+
+    --muted:#a7b8ab;
+
+    --glass:rgba(255,255,255,.075);
+
+    --border:rgba(255,255,255,.13);
+
+    --shadow:
+        0 30px 90px rgba(0,0,0,.45);
+
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+*{
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+
+body{
+
+    background:
+
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(86,170,102,.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 40%,
+            rgba(43,117,62,.13),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            145deg,
+            #040b07,
+            #09170e 55%,
+            #06100a
+        );
+
+    color:var(--white);
+
+    font-family:
+        Inter,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+button{
+
+    font:inherit;
+
+    cursor:pointer;
+
+}
+
+
+a{
+
+    color:inherit;
+
+    text-decoration:none;
+
+}
+
+
+/* =====================================================
+   BACKGROUND PARTICLES
+===================================================== */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    background-image:
+
+        radial-gradient(
+            rgba(255,255,255,.08)
+            1px,
+            transparent 1px
+        );
+
+    background-size:45px 45px;
+
+    opacity:.12;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+    right:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:15px 6%;
+
+    background:
+        rgba(3,12,7,.72);
+
+    backdrop-filter:
+        blur(20px);
+
+    border-bottom:
+        1px solid rgba(255,255,255,.07);
+
+}
+
+
+.logo-area{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+}
+
+
+.logo-area img{
+
+    width:42px;
+    height:42px;
+
+    object-fit:contain;
+
+    border-radius:10px;
+
+}
+
+
+.logo-text{
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+
+.logo-text span{
+
+    color:var(--green);
+
+}
+
+
+.nav-links{
+
+    display:flex;
+
+    gap:24px;
+
+}
+
+
+.nav-links a{
+
+    color:#d4e2d7;
+
+    font-size:.88rem;
+
+    transition:.3s;
+
+}
+
+
+.nav-links a:hover{
+
+    color:var(--green);
+
+}
+
+
+/* =====================================================
+   HERO / INTRO
+===================================================== */
+
+.hero{
+
+    min-height:100vh;
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:120px 6% 70px;
+
+    overflow:hidden;
+
+}
+
+
+/* YOUR LOGO BACKGROUND IMAGE */
+
+.hero{
+    background:
+        linear-gradient(
+            rgba(3,12,7,.35),
+            rgba(3,12,7,.75)
+        ),
+        url("background.png") center/cover no-repeat;
+}
+
+    background-size:cover;
+
+    background-position:center;
+
+    background-repeat:no-repeat;
+
+    transform:scale(1.5);
+
+    z-index:0;
+
+}
+
+
+/* Dark cinematic overlay */
+
+.hero::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 40%,
+            transparent 15%,
+            rgba(2,8,5,.30) 60%,
+            rgba(2,8,5,.82) 100%
+        );
+
+    z-index:1;
+
+    pointer-events:none;
+
+}
+
+
+.hero-content{
+
+    width:100%;
+
+    max-width:1250px;
+
+    position:relative;
+
+    z-index:2;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    align-items:center;
+
+    gap:55px;
+
+}
+
+
+.hero-left{
+
+    max-width:700px;
+
+}
+
+
+.eyebrow{
+
+    color:var(--green);
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-size:.72rem;
+
+    margin-bottom:18px;
+
+}
+
+
+.hero h1{
+
+    font-size:
+        clamp(4rem,9vw,8rem);
+
+    line-height:.85;
+
+    letter-spacing:-6px;
+
+}
+
+
+.hero h1 span{
+
+    color:var(--green);
+
+}
+
+
+.hero-description{
+
+    margin-top:30px;
+
+    max-width:620px;
+
+    color:#d2ded5;
+
+    line-height:1.8;
+
+    font-size:1.05rem;
+
+}
+
+
+.hero-description strong{
+
+    color:white;
+
+}
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:14px;
+
+    flex-wrap:wrap;
+
+    margin-top:30px;
+
+}
+
+
+.primary-btn,
+.secondary-btn{
+
+    border:none;
+
+    padding:15px 24px;
+
+    border-radius:100px;
+
+    font-weight:800;
+
+    transition:.3s;
+
+}
+
+
+.primary-btn{
+
+    background:var(--green);
+
+    color:#06110b;
+
+    box-shadow:
+        0 12px 35px
+        rgba(125,210,139,.18);
+
+}
+
+
+.secondary-btn{
+
+    background:
+        rgba(255,255,255,.08);
+
+    border:
+        1px solid var(--border);
+
+    color:white;
+
+}
+
+
+.primary-btn:hover,
+.secondary-btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+
+/* =====================================================
+   POSTER WALL
+===================================================== */
+
+.poster-wall{
+
+    position:relative;
+
+    width:100%;
+
+    height:560px;
+
+    perspective:1400px;
+
+}
+
+
+/* Poster */
+
+.poster{
+
+    position:absolute;
+
+    width:220px;
+
+    height:320px;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+    background:#111;
+
+    border:
+        1px solid
+        rgba(255,255,255,.20);
+
+    box-shadow:
+
+        0 30px 70px
+        rgba(0,0,0,.65),
+
+        0 0 35px
+        rgba(155,227,165,.08);
+
+    transition:
+
+        transform .6s ease,
+        box-shadow .6s ease;
+
+    transform-style:preserve-3d;
+
+    animation:
+        floatingPoster 6s ease-in-out infinite;
+
+}
+
+
+.poster img{
+
+    width:100%;
+
+    height:100%;
+
+    display:block;
+
+    object-fit:cover;
+
+}
+
+
+/* Individual positions */
+
+.poster-one{
+
+    left:2%;
+
+    top:10%;
+
+    transform:
+        rotate(-10deg)
+        translateZ(-20px);
+
+    z-index:1;
+
+    animation-delay:0s;
+
+}
+
+
+.poster-two{
+
+    left:26%;
+
+    top:2%;
+
+    transform:
+        rotate(-2deg)
+        translateZ(50px);
+
+    z-index:4;
+
+    animation-delay:-1.5s;
+
+}
+
+
+.poster-three{
+
+    right:26%;
+
+    top:6%;
+
+    transform:
+        rotate(5deg)
+        translateZ(25px);
+
+    z-index:3;
+
+    animation-delay:-3s;
+
+}
+
+
+.poster-four{
+
+    right:2%;
+
+    top:14%;
+
+    transform:
+        rotate(11deg)
+        translateZ(-20px);
+
+    z-index:2;
+
+    animation-delay:-4.5s;
+
+}
+
+
+/* Poster hover */
+
+.poster:hover{
+
+    animation-play-state:paused;
+
+    transform:
+        rotate(0deg)
+        translateY(-20px)
+        translateZ(100px)
+        scale(1.07);
+
+    z-index:20;
+
+    box-shadow:
+
+        0 45px 100px
+        rgba(0,0,0,.78),
+
+        0 0 50px
+        rgba(155,227,165,.16);
+
+}
+
+
+/* Floating animation */
+
+@keyframes floatingPoster{
+
+    0%{
+
+        margin-top:0;
+
+    }
+
+    50%{
+
+        margin-top:-10px;
+
+    }
+
+    100%{
+
+        margin-top:0;
+
+    }
+
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section{
+
+    padding:110px 6%;
+
+}
+
+
+.section-heading{
+
+    max-width:760px;
+
+    margin-bottom:45px;
+
+}
+
+
+.section-small{
+
+    color:var(--green);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.72rem;
+
+}
+
+
+.section-heading h2{
+
+    font-size:
+        clamp(2.7rem,6vw,5rem);
+
+    line-height:.95;
+
+    margin:
+        12px 0 20px;
+
+}
+
+
+.section-heading p{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   REFRESH MIND
+===================================================== */
+
+.mind-section{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 20%,
+            rgba(80,150,91,.12),
+            transparent 40%
+        );
+
+}
+
+
+.mind-card{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    min-height:360px;
+
+    padding:55px;
+
+    border-radius:35px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+.mind-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:350px;
+
+    height:350px;
+
+    border-radius:50%;
+
+    right:-120px;
+
+    top:-150px;
+
+    background:
+        rgba(142,216,151,.08);
+
+    filter:blur(10px);
+
+}
+
+
+.mind-icon{
+
+    font-size:4rem;
+
+}
+
+
+.mind-card h3{
+
+    font-size:
+        clamp(2rem,5vw,4rem);
+
+    margin-top:15px;
+
+}
+
+
+.mind-card p{
+
+    max-width:700px;
+
+    margin-top:15px;
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+}
+
+
+/* =====================================================
+   WEATHER
+===================================================== */
+
+.weather-section{
+
+    padding-top:70px;
+
+}
+
+
+.weather-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap:20px;
+
+}
+
+
+.card{
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+}
+
+
+.weather-location{
+
+    color:var(--green);
+
+    font-weight:700;
+
+}
+
+
+.weather-temp{
+
+    font-size:4rem;
+
+    font-weight:800;
+
+    margin-top:15px;
+
+}
+
+
+.weather-condition{
+
+    color:#d8e8dc;
+
+    margin-top:8px;
+
+}
+
+
+.weather-info{
+
+    color:var(--muted);
+
+    line-height:1.8;
+
+    margin-top:15px;
+
+}
+
+
+.location-select{
+
+    width:100%;
+
+    margin-top:20px;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    border:
+        1px solid var(--border);
+
+    background:#102319;
+
+    color:white;
+
+}
+
+
+/* =====================================================
+   SOUNDS
+===================================================== */
+
+.sounds-section{
+
+    background:
+
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(92,169,107,.10),
+            transparent 45%
+        );
+
+}
+
+
+.sound-grid{
+
+    max-width:1100px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+
+.sound-card{
+
+    padding:32px;
+
+    min-height:330px;
+
+    border-radius:28px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+    transition:.35s;
+
+}
+
+
+.sound-card:hover{
+
+    transform:
+        translateY(-5px);
+
+}
+
+
+.sound-card.active{
+
+    border-color:
+        rgba(155,227,165,.7);
+
+    box-shadow:
+
+        0 0 50px
+        rgba(100,190,115,.12),
+
+        var(--shadow);
+
+}
+
+
+.sound-icon{
+
+    font-size:3rem;
+
+}
+
+
+.sound-card h3{
+
+    margin-top:15px;
+
+    font-size:1.7rem;
+
+}
+
+
+.sound-description{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    line-height:1.6;
+
+}
+
+
+.track-name{
+
+    margin-top:22px;
+
+    color:var(--green);
+
+    font-weight:800;
+
+    min-height:24px;
+
+}
+
+
+.sound-controls{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-top:22px;
+
+}
+
+
+.sound-btn{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:50%;
+
+    border:
+        1px solid var(--border);
+
+    background:
+        rgba(255,255,255,.07);
+
+    color:white;
+
+    transition:.25s;
+
+}
+
+
+.sound-btn:hover{
+
+    background:var(--green);
+
+    color:#06110b;
+
+}
+
+
+.sound-btn.play{
+
+    width:58px;
+
+    height:58px;
+
+    background:var(--green);
+
+    color:#06110b;
+
+    font-size:1.1rem;
+
+}
+
+
+.track-counter{
+
+    margin-left:auto;
+
+    color:#829487;
+
+    font-size:.8rem;
+
+}
+
+
+.volume{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    margin-top:22px;
+
+    color:var(--muted);
+
+}
+
+
+.volume input{
+
+    width:100%;
+
+    accent-color:
+        var(--green);
+
+}
+
+
+/* =====================================================
+   QUOTE
+===================================================== */
+
+.quote-section{
+
+    text-align:center;
+
+    padding:140px 6%;
+
+}
+
+
+.quote{
+
+    max-width:950px;
+
+    margin:auto;
+
+    font-family:Georgia,serif;
+
+    font-size:
+        clamp(2rem,5vw,4rem);
+
+    line-height:1.2;
+
+    color:#f1e7d0;
+
+}
+
+
+.quote-small{
+
+    margin-top:25px;
+
+    color:var(--green);
+
+    text-transform:uppercase;
+
+    letter-spacing:4px;
+
+    font-size:.7rem;
+
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+
+    padding:60px 6%;
+
+    text-align:center;
+
+    border-top:
+        1px solid var(--border);
+
+    color:#819187;
+
+}
+
+
+footer strong{
+
+    color:var(--green);
+
+}
+
+
+/* =====================================================
+   YOUTUBE PLAYERS
+===================================================== */
+
+.youtube-audio{
+
+    position:fixed;
+
+    width:1px;
+
+    height:1px;
+
+    left:-100px;
+
+    top:-100px;
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+.toast{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:5000;
+
+    max-width:360px;
+
+    padding:15px 20px;
+
+    border-radius:15px;
+
+    background:#102319;
+
+    border:
+        1px solid var(--border);
+
+    box-shadow:
+        var(--shadow);
+
+    transform:
+        translateY(120px);
+
+    opacity:0;
+
+    transition:.4s;
+
+}
+
+
+.toast.show{
+
+    transform:
+        translateY(0);
+
+    opacity:1;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:1000px){
+
+    .hero-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .hero-left{
+
+        text-align:center;
+
+        margin:auto;
+
+    }
+
+
+    .hero-description{
+
+        margin-left:auto;
+
+        margin-right:auto;
+
+    }
+
+
+    .hero-buttons{
+
+        justify-content:center;
+
+    }
+
+
+    .poster-wall{
+
+        max-width:700px;
+
+        margin:auto;
+
+    }
+
+
+    .weather-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
+    .sound-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+
+@media(max-width:600px){
+
+    nav{
+
+        padding:12px 5%;
+
+    }
+
+
+    .nav-links{
+
+        display:none;
+
+    }
+
+
+    section{
+
+        padding:80px 5%;
+
+    }
+
+
+    .hero{
+
+        padding:
+            110px 5% 60px;
+
+    }
+
+
+    .hero h1{
+
+        letter-spacing:-4px;
+
+    }
+
+
+    .poster-wall{
+
+        height:410px;
+
+    }
+
+
+    .poster{
+
+        width:145px;
+
+        height:215px;
+
+        border-radius:13px;
+
+    }
+
+
+    .poster-one{
+
+        left:0;
+
+        top:15%;
+
+    }
+
+
+    .poster-two{
+
+        left:20%;
+
+        top:3%;
+
+    }
+
+
+    .poster-three{
+
+        right:20%;
+
+        top:8%;
+
+    }
+
+
+    .poster-four{
+
+        right:0;
+
+        top:17%;
+
+    }
+
+
+    .mind-card{
+
+        padding:30px;
+
+    }
+
+
+    .sound-card{
+
+        padding:25px;
+
+    }
+
+
+    .quote-section{
+
+        padding:
+            100px 5%;
+
+    }
+
+}
+
 </style>
+
 </head>
+
+
 <body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
 <nav>
-  <div class="logo"><img src="Logo.png" alt="Echoes of Kerala logo"><span>ECHOES <i>OF</i> KERALA</span></div>
-  <div class="links"><a href="#sounds">Sounds</a><a href="#weather">Weather</a><a href="#memories">Memories</a><a href="#community">Community</a></div>
-  <button class="mini" id="accountBtn">Login</button>
+
+    <div class="logo-area">
+
+        <img
+            src="Logo.png"
+            alt="Echoes of Kerala Logo"
+        >
+
+        <div class="logo-text">
+
+            ECHOES
+            <span>OF</span>
+            KERALA
+
+        </div>
+
+    </div>
+
+
+    <div class="nav-links">
+
+        <a href="#mind">
+            Refresh
+        </a>
+
+        <a href="#weather">
+            Weather
+        </a>
+
+        <a href="#sounds">
+            Sounds
+        </a>
+
+    </div>
+
 </nav>
 
+
+<!-- =====================================================
+     HERO / INTRO
+===================================================== -->
+
 <header class="hero">
-  <div class="heroGrid">
-    <div>
-      <div class="eyebrow">A quiet corner of Kerala</div>
-      <h1>Echoes<br><span>of Kerala.</span></h1>
-      <p class="desc">A peaceful digital space to pause, breathe, listen to rain, remember old moments and share memories with a respectful community.</p>
-      <div class="actions"><a class="btn primary" href="#sounds">🌿 Refresh Your Mind</a><a class="btn secondary" href="#weather">🌦️ Check Kerala Weather</a></div>
+
+    <div class="hero-content">
+
+
+        <!-- HERO TEXT -->
+
+        <div class="hero-left">
+
+            <div class="eyebrow">
+
+                God's Own Country
+
+            </div>
+
+
+            <h1>
+
+                Echoes<br>
+
+                <span>
+                    of Kerala.
+                </span>
+
+            </h1>
+
+
+            <p class="hero-description">
+
+                A small place to pause,
+                breathe and remember
+                the peaceful side of Kerala.
+
+                <br><br>
+
+                <strong>
+
+                    Refresh your mind.
+                    Relax with us.
+
+                </strong>
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+
+                <!-- DIRECTLY TO SOUNDS -->
+
+                <a
+                    href="#sounds"
+                    class="primary-btn"
+                >
+
+                    🌿 Refresh Your Mind
+
+                </a>
+
+
+                <!-- WEATHER -->
+
+                <a
+                    href="#weather"
+                    class="secondary-btn"
+                >
+
+                    🌦️ Check Kerala Weather
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             POSTERS
+             ONLY IMAGES — NO CAPTIONS
+        ================================================== -->
+
+        <div class="poster-wall">
+
+
+            <div class="poster poster-one">
+
+                <img
+                    src="poster1.png.jpg"
+                    alt="Kerala Film Poster 1"
+                >
+
+            </div>
+
+
+            <div class="poster poster-two">
+
+                <img
+                    src="poster2.png.jpg"
+                    alt="Kerala Film Poster 2"
+                >
+
+            </div>
+
+
+            <div class="poster poster-three">
+
+                <img
+                    src="poster3.png.jpg"
+                    alt="Kerala Film Poster 3"
+                >
+
+            </div>
+
+
+            <div class="poster poster-four">
+
+                <img
+                    src="poster4.png.jpg"
+                    alt="Kerala Film Poster 4"
+                >
+
+            </div>
+
+
+        </div>
+
     </div>
-    <div class="posters">
-      <div class="poster p1"><img src="poster1.png" alt="Kerala film poster"></div>
-      <div class="poster p2"><img src="poster2.png" alt="Kerala film poster"></div>
-      <div class="poster p3"><img src="poster3.png" alt="Kerala film poster"></div>
-      <div class="poster p4"><img src="poster4.png" alt="Kerala film poster"></div>
-    </div>
-  </div>
+
 </header>
 
-<section>
-  <div class="heading"><div class="small">Take a breath</div><h2>Refresh your mind.</h2><p class="muted">Rain outside. Birds nearby. A village waking up. Malayalam music in the background. Nothing complicated — just a peaceful moment.</p></div>
-  <div class="card" style="max-width:1100px;margin:auto"><div style="font-size:4rem">🌴</div><h2>Welcome back to Kerala.</h2><p class="muted">Use the sound section below whenever you need a quiet digital corner. Your memories can also live here — public or private.</p><a class="btn primary" href="#sounds">🎧 Go to Sounds</a></div>
+
+<!-- =====================================================
+     REFRESH YOUR MIND
+===================================================== -->
+
+<section
+    id="mind"
+    class="mind-section"
+>
+
+
+    <div class="section-heading">
+
+        <div class="section-small">
+
+            Take a breath
+
+        </div>
+
+
+        <h2>
+
+            Refresh your mind.
+
+        </h2>
+
+
+        <p>
+
+            Leave the noise behind
+            for a moment.
+
+            Listen to Kerala,
+            breathe slowly,
+            and simply relax.
+
+        </p>
+
+    </div>
+
+
+    <div class="mind-card">
+
+
+        <div class="mind-icon">
+
+            🌴
+
+        </div>
+
+
+        <h3>
+
+            Welcome back to Kerala.
+
+        </h3>
+
+
+        <p>
+
+            Rain outside.
+
+            Birds somewhere nearby.
+
+            A village waking up.
+
+            Malayalam music in the background.
+
+            <br><br>
+
+            Nothing complicated.
+
+            Just a peaceful moment.
+
+        </p>
+
+
+    </div>
+
 </section>
 
-<section id="weather">
-  <div class="heading"><div class="small">Kerala right now</div><h2>Check the weather.</h2><p class="muted">Choose a place in Kerala and see its current weather.</p></div>
-  <div class="weatherGrid">
-    <div class="card"><b id="weatherLocation" style="color:var(--g)">Kochi, Kerala</b><div class="temp" id="weatherTemp">--°C</div><div id="weatherCondition">Loading...</div><p class="muted">Humidity: <span id="humidity">--</span><br>Wind: <span id="wind">--</span></p></div>
-    <div class="card"><h3>Choose your place</h3><select id="locationSelect" class="select"><option value="9.9312,76.2673,Kochi">Kochi</option><option value="8.5241,76.9366,Thiruvananthapuram">Thiruvananthapuram</option><option value="11.2588,75.7804,Kozhikode">Kozhikode</option><option value="10.7867,76.6548,Palakkad">Palakkad</option><option value="10.8505,76.2711,Thrissur">Thrissur</option><option value="9.2648,76.7870,Alappuzha">Alappuzha</option><option value="9.5916,76.5222,Kottayam">Kottayam</option></select><button class="btn primary" id="refreshWeather" style="margin-top:15px">Refresh Weather</button></div>
-  </div>
+
+<!-- =====================================================
+     WEATHER
+===================================================== -->
+
+<section
+    id="weather"
+    class="weather-section"
+>
+
+
+    <div class="section-heading">
+
+        <div class="section-small">
+
+            Kerala right now
+
+        </div>
+
+
+        <h2>
+
+            Check the weather.
+
+        </h2>
+
+
+        <p>
+
+            Choose a place in Kerala
+            and see its current weather.
+
+        </p>
+
+    </div>
+
+
+    <div class="weather-grid">
+
+
+        <!-- CURRENT WEATHER -->
+
+        <div class="card">
+
+
+            <div
+                class="weather-location"
+                id="weatherLocation"
+            >
+
+                Kochi, Kerala
+
+            </div>
+
+
+            <div
+                class="weather-temp"
+                id="weatherTemp"
+            >
+
+                --°C
+
+            </div>
+
+
+            <div
+                class="weather-condition"
+                id="weatherCondition"
+            >
+
+                Loading...
+
+            </div>
+
+
+            <div class="weather-info">
+
+                Humidity:
+
+                <span id="humidity">
+                    --
+                </span>
+
+                <br>
+
+                Wind:
+
+                <span id="wind">
+                    --
+                </span>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- LOCATION -->
+
+        <div class="card">
+
+
+            <h3>
+
+                Choose your place
+
+            </h3>
+
+
+            <p class="sound-description">
+
+                Kerala feels different
+                in every place.
+
+            </p>
+
+
+            <select
+                id="locationSelect"
+                class="location-select"
+            >
+
+
+                <option value="9.9312,76.2673,Kochi">
+
+                    Kochi
+
+                </option>
+
+
+                <option value="8.5241,76.9366,Thiruvananthapuram">
+
+                    Thiruvananthapuram
+
+                </option>
+
+
+                <option value="11.2588,75.7804,Kozhikode">
+
+                    Kozhikode
+
+                </option>
+
+
+                <option value="10.7867,76.6548,Palakkad">
+
+                    Palakkad
+
+                </option>
+
+
+                <option value="10.8505,76.2711,Thrissur">
+
+                    Thrissur
+
+                </option>
+
+
+                <option value="9.2648,76.7870,Alappuzha">
+
+                    Alappuzha
+
+                </option>
+
+
+                <option value="9.5916,76.5222,Kottayam">
+
+                    Kottayam
+
+                </option>
+
+
+            </select>
+
+
+            <button
+                id="refreshWeather"
+                class="primary-btn"
+                style="margin-top:18px;"
+            >
+
+                Refresh Weather
+
+            </button>
+
+
+        </div>
+
+    </div>
+
 </section>
 
-<section id="sounds">
-  <div class="heading"><div class="small">Your peaceful corner</div><h2>Listen. Breathe. Relax.</h2><p class="muted">Choose an atmosphere and let Kerala play in the background.</p></div>
-  <div class="soundGrid">
-    <div class="sound" id="card-rain"><div class="icon">🌧️</div><h3>Kerala Rain</h3><p class="muted">Normal and heavy rain in one option.</p><div class="track" id="name-rain">Normal Rain</div><div class="controls"><button class="circle" onclick="previousTrack('rain')">◀</button><button class="circle play" onclick="toggleSound('rain')">▶</button><button class="circle" onclick="nextTrack('rain')">▶▶</button><span class="count" id="counter-rain">1 / 2</span></div><div class="volume">🔊<input type="range" min="0" max="100" value="70" oninput="setVolume('rain',this.value)"></div></div>
-    <div class="sound" id="card-birds"><div class="icon">🐦</div><h3>Kerala Birds</h3><p class="muted">A quiet morning surrounded by nature.</p><div class="track">Birds of Kerala</div><div class="controls"><button class="circle play" onclick="toggleSound('birds')">▶</button><button class="circle" onclick="stopSound('birds')">■</button></div><div class="volume">🔊<input type="range" min="0" max="100" value="70" oninput="setVolume('birds',this.value)"></div></div>
-    <div class="sound" id="card-village"><div class="icon">🌴</div><h3>Morning Village</h3><p class="muted">Wake slowly to a peaceful Kerala village.</p><div class="track">Kerala Village</div><div class="controls"><button class="circle play" onclick="toggleSound('village')">▶</button><button class="circle" onclick="stopSound('village')">■</button></div><div class="volume">🔊<input type="range" min="0" max="100" value="70" oninput="setVolume('village',this.value)"></div></div>
-    <div class="sound" id="card-songs"><div class="icon">🎵</div><h3>Malayalam Feel-Good</h3><p class="muted">Three playlists inside one peaceful music option.</p><div class="track" id="name-songs">Feel-Good Playlist 1</div><div class="controls"><button class="circle" onclick="previousTrack('songs')">◀</button><button class="circle play" onclick="toggleSound('songs')">▶</button><button class="circle" onclick="nextTrack('songs')">▶▶</button><span class="count" id="counter-songs">1 / 3</span></div><div class="volume">🔊<input type="range" min="0" max="100" value="70" oninput="setVolume('songs',this.value)"></div></div>
-  </div>
+
+<!-- =====================================================
+     SOUNDS
+===================================================== -->
+
+<section
+    id="sounds"
+    class="sounds-section"
+>
+
+
+    <div class="section-heading">
+
+
+        <div class="section-small">
+
+            Your peaceful corner
+
+        </div>
+
+
+        <h2>
+
+            Listen. Breathe. Relax.
+
+        </h2>
+
+
+        <p>
+
+            Choose an atmosphere
+            and let Kerala play
+            in the background.
+
+        </p>
+
+    </div>
+
+
+    <div class="sound-grid">
+
+
+        <!-- =================================================
+             RAIN
+        ================================================== -->
+
+        <div
+            class="sound-card"
+            id="card-rain"
+        >
+
+
+            <div class="sound-icon">
+
+                🌧️
+
+            </div>
+
+
+            <h3>
+
+                Kerala Rain
+
+            </h3>
+
+
+            <p class="sound-description">
+
+                Two rain atmospheres
+                in one option.
+
+            </p>
+
+
+            <div
+                class="track-name"
+                id="name-rain"
+            >
+
+                Normal Rain
+
+            </div>
+
+
+            <div class="sound-controls">
+
+
+                <button
+                    class="sound-btn"
+                    onclick="previousTrack('rain')"
+                >
+
+                    ◀
+
+                </button>
+
+
+                <button
+                    class="sound-btn play"
+                    onclick="toggleSound('rain')"
+                >
+
+                    ▶
+
+                </button>
+
+
+                <button
+                    class="sound-btn"
+                    onclick="nextTrack('rain')"
+                >
+
+                    ▶▶
+
+                </button>
+
+
+                <span
+                    class="track-counter"
+                    id="counter-rain"
+                >
+
+                    1 / 2
+
+                </span>
+
+
+            </div>
+
+
+            <div class="volume">
+
+                🔊
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="70"
+                    oninput="setVolume('rain',this.value)"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             BIRDS
+        ================================================== -->
+
+        <div
+            class="sound-card"
+            id="card-birds"
+        >
+
+
+            <div class="sound-icon">
+
+                🐦
+
+            </div>
+
+
+            <h3>
+
+                Kerala Birds
+
+            </h3>
+
+
+            <p class="sound-description">
+
+                A quiet morning
+                surrounded by nature.
+
+            </p>
+
+
+            <div
+                class="track-name"
+                id="name-birds"
+            >
+
+                Birds of Kerala
+
+            </div>
+
+
+            <div class="sound-controls">
+
+
+                <button
+                    class="sound-btn play"
+                    onclick="toggleSound('birds')"
+                >
+
+                    ▶
+
+                </button>
+
+
+                <button
+                    class="sound-btn"
+                    onclick="stopSound('birds')"
+                >
+
+                    ■
+
+                </button>
+
+
+            </div>
+
+
+            <div class="volume">
+
+                🔊
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="70"
+                    oninput="setVolume('birds',this.value)"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             VILLAGE
+        ================================================== -->
+
+        <div
+            class="sound-card"
+            id="card-village"
+        >
+
+
+            <div class="sound-icon">
+
+                🌴
+
+            </div>
+
+
+            <h3>
+
+                Morning Village
+
+            </h3>
+
+
+            <p class="sound-description">
+
+                Wake up slowly to
+                the peaceful sound
+                of a Kerala village.
+
+            </p>
+
+
+            <div
+                class="track-name"
+                id="name-village"
+            >
+
+                Kerala Village
+
+            </div>
+
+
+            <div class="sound-controls">
+
+
+                <button
+                    class="sound-btn play"
+                    onclick="toggleSound('village')"
+                >
+
+                    ▶
+
+                </button>
+
+
+                <button
+                    class="sound-btn"
+                    onclick="stopSound('village')"
+                >
+
+                    ■
+
+                </button>
+
+
+            </div>
+
+
+            <div class="volume">
+
+                🔊
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="70"
+                    oninput="setVolume('village',this.value)"
+                >
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             MALAYALAM SONGS
+        ================================================== -->
+
+        <div
+            class="sound-card"
+            id="card-songs"
+        >
+
+
+            <div class="sound-icon">
+
+                🎵
+
+            </div>
+
+
+            <h3>
+
+                Malayalam Feel-Good
+
+            </h3>
+
+
+            <p class="sound-description">
+
+                Three playlists in
+                one peaceful music option.
+
+            </p>
+
+
+            <div
+                class="track-name"
+                id="name-songs"
+            >
+
+                Feel-Good Playlist 1
+
+            </div>
+
+
+            <div class="sound-controls">
+
+
+                <button
+                    class="sound-btn"
+                    onclick="previousTrack('songs')"
+                >
+
+                    ◀
+
+                </button>
+
+
+                <button
+                    class="sound-btn play"
+                    onclick="toggleSound('songs')"
+                >
+
+                    ▶
+
+                </button>
+
+
+                <button
+                    class="sound-btn"
+                    onclick="nextTrack('songs')"
+                >
+
+                    ▶▶
+
+                </button>
+
+
+                <span
+                    class="track-counter"
+                    id="counter-songs"
+                >
+
+                    1 / 3
+
+                </span>
+
+
+            </div>
+
+
+            <div class="volume">
+
+                🔊
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="70"
+                    oninput="setVolume('songs',this.value)"
+                >
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
 </section>
 
-<section id="memories">
-  <div class="heading"><div class="small">Keep a moment</div><h2>Your memories.</h2><p class="muted">Create an account to build your personal lobby, add a memory publicly or keep it private.</p></div>
-  <div class="communityGrid">
-    <div class="card"><h3>🌿 Public memories</h3><p class="muted">Share a peaceful moment for the community to see.</p><button class="btn primary" onclick="openMemory('public')">Add Your Memory — Public</button></div>
-    <div class="card"><h3>🔒 Private memories</h3><p class="muted">Keep a memory inside your own account.</p><button class="btn secondary" onclick="openMemory('private')">Add Your Memory — Private</button></div>
-  </div>
-  <div style="height:25px"></div><div class="memoryGrid" id="publicMemories"><div class="card"><p class="muted">Login to load public memories.</p></div></div>
+
+<!-- =====================================================
+     FINAL THOUGHT
+===================================================== -->
+
+<section class="quote-section">
+
+
+    <div class="quote">
+
+        “Somewhere between the sound
+        of rain and an old melody,
+        the mind remembers
+        how to be calm.”
+
+    </div>
+
+
+    <div class="quote-small">
+
+        Echoes of Kerala
+
+    </div>
+
+
 </section>
 
-<section id="community">
-  <div class="heading"><div class="small">Live community</div><h2>Find peaceful friends.</h2><p class="muted">A simple public community chat for sharing interests and positive conversations.</p></div>
-  <div class="chat">
-    <div class="notice">For everyone's safety, keep personal details such as phone numbers, passwords, exact addresses and private contact information out of the chat. Use the report option if someone behaves inappropriately.</div>
-    <div class="chatList" id="chatList"><p class="muted">Login to enter the community.</p></div>
-    <div class="chatForm"><input id="chatInput" maxlength="500" placeholder="Share something peaceful..." onkeydown="if(event.key==='Enter')sendChat()"><button class="btn primary" onclick="sendChat()">Send</button></div>
-  </div>
-</section>
 
-<section class="quote"><div class="quoteText">“Somewhere between the sound of rain and an old melody, the mind remembers how to be calm.”</div><small>ECHOES OF KERALA</small></section>
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-<footer><p><strong>Echoes of Kerala</strong></p><p style="margin-top:10px">Refresh your mind with us. Relax with us.</p><p style="font-size:.75rem;margin-top:20px">© 2026 Echoes of Kerala • God's Own Country</p></footer>
+<footer>
 
-<!-- LOGIN -->
-<div id="loginModal" class="modal"><div class="box"><h2 id="loginTitle">Welcome back 🌿</h2><p class="muted">Create an account or sign in to access your personal lobby and memories.</p><div class="form"><label>Email</label><input id="email" class="field" type="email" autocomplete="email"></div><div class="form"><label>Password</label><input id="password" class="field" type="password" autocomplete="current-password"></div><div class="row"><button class="btn primary" onclick="submitAuth()">Continue</button><button class="mini" onclick="toggleAuth()" id="authSwitch">Create account</button><button class="mini" onclick="closeModal('loginModal')">Close</button></div><p id="loginMsg" class="muted"></p></div></div>
 
-<!-- PROFILE -->
-<div id="profileModal" class="modal"><div class="box"><h2>Create your profile 🌿</h2><p class="muted">This is the profile shown inside your personal lobby and community chat.</p><div class="form"><label>Display name</label><input id="displayName" class="field" maxlength="40" placeholder="Your name"></div><div class="form"><label>Username</label><input id="username" class="field" maxlength="25" placeholder="@yourname"></div><div class="form"><label>Short bio</label><textarea id="bio" class="field" maxlength="160" placeholder="A little about you"></textarea></div><div class="form"><label>Vibe</label><select id="vibe" class="field"><option>🌧️ Rain lover</option><option>🎵 Music lover</option><option>🌴 Nature lover</option><option>📺 Nostalgia lover</option><option>📚 Quiet soul</option></select></div><div class="form"><label>Profile photo</label><input id="profilePhoto" class="field" type="file" accept="image/*"></div><div class="row"><button class="btn primary" onclick="saveProfile()">Save Profile</button></div><p id="profileMsg" class="muted"></p></div></div>
+    <p>
 
-<!-- PERSONAL LOBBY -->
-<div id="lobbyModal" class="modal"><div class="box"><div class="profile"><img id="avatar" class="avatar" src="Logo.png"><div><h2 id="lobbyName" style="margin:0">Your Lobby</h2><div id="lobbyUser" class="pill">@member</div><p id="lobbyBio" class="muted" style="margin-bottom:0"></p></div></div><div class="row"><button class="btn primary" onclick="openMemory('public')">Add memory — Public</button><button class="mini" onclick="openMemory('private')">Add memory — Private</button><button class="mini" onclick="closeModal('lobbyModal')">Close</button><button class="mini" onclick="signOutUser()">Logout</button></div><hr style="border-color:#ffffff12;margin:25px 0"><h3>Your memories</h3><div class="memoryGrid" id="myMemories" style="grid-template-columns:1fr"></div></div></div>
+        <strong>
+            Echoes of Kerala
+        </strong>
 
-<!-- MEMORY -->
-<div id="memoryModal" class="modal"><div class="box"><h2 id="memoryTitle">Add Your Memory</h2><p id="privacyText" class="muted"></p><div class="form"><label>Title</label><input id="memoryHeading" class="field" maxlength="80" placeholder="A rainy evening..."/></div><div class="form"><label>Your memory</label><textarea id="memoryText" class="field" maxlength="1200" rows="6" placeholder="Write your memory..."></textarea></div><div class="form"><label>Year</label><input id="memoryYear" class="field" type="number" min="1900" max="2100" value="2026"></div><div class="form"><label>Photo (optional)</label><input id="memoryFile" class="field" type="file" accept="image/*"></div><div class="row"><button class="btn primary" onclick="saveMemory()">Save Memory</button><button class="mini" onclick="closeModal('memoryModal')">Cancel</button></div><p id="memoryMsg" class="muted"></p></div></div>
+    </p>
 
-<div id="toast" class="toast"></div>
-<div id="player-rain" class="yt"></div><div id="player-birds" class="yt"></div><div id="player-village" class="yt"></div><div id="player-songs" class="yt"></div>
+
+    <p style="margin-top:10px;">
+
+        Refresh your mind with us.
+        Relax with us.
+
+    </p>
+
+
+    <p
+        style="
+        margin-top:20px;
+        font-size:.75rem;
+        "
+    >
+
+        © 2026 Echoes of Kerala
+        • God's Own Country
+
+    </p>
+
+
+</footer>
+
+
+<!-- =====================================================
+     HIDDEN YOUTUBE PLAYERS
+===================================================== -->
+
+<div id="youtubePlayers">
+
+
+    <div
+        id="player-rain"
+        class="youtube-audio"
+    ></div>
+
+
+    <div
+        id="player-birds"
+        class="youtube-audio"
+    ></div>
+
+
+    <div
+        id="player-village"
+        class="youtube-audio"
+    ></div>
+
+
+    <div
+        id="player-songs"
+        class="youtube-audio"
+    ></div>
+
+
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+></div>
+
+
+<!-- =====================================================
+     YOUTUBE API
+===================================================== -->
+
 <script src="https://www.youtube.com/iframe_api"></script>
 
-<script type="module">
-/* =====================================================
-   1. PASTE YOUR FIREBASE CONFIG HERE
-   Firebase Console → Project settings → Your apps → Web app
-===================================================== */
-const firebaseConfig={
-  apiKey:"PASTE_YOUR_API_KEY",
-  authDomain:"PASTE_YOUR_PROJECT.firebaseapp.com",
-  projectId:"PASTE_YOUR_PROJECT_ID",
-  storageBucket:"PASTE_YOUR_STORAGE_BUCKET",
-  messagingSenderId:"PASTE_YOUR_SENDER_ID",
-  appId:"PASTE_YOUR_APP_ID"
-};
-
-import{initializeApp}from"https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-import{getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,onAuthStateChanged,signOut}from"https://www.gstatic.com/firebasejs/12.3.0/firebase-auth.js";
-import{getFirestore,doc,setDoc,getDoc,addDoc,collection,query,where,orderBy,limit,onSnapshot,serverTimestamp}from"https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
-import{getStorage,ref,uploadBytes,getDownloadURL}from"https://www.gstatic.com/firebasejs/12.3.0/firebase-storage.js";
-
-const app=initializeApp(firebaseConfig),auth=getAuth(app),db=getFirestore(app),storage=getStorage(app);
-let user=null,mode="login",privacy="public",chatOff=null,publicOff=null,myOff=null;
-const $=id=>document.getElementById(id);
-window.closeModal=id=>$(id).classList.remove("show");
-window.openLogin=()=>$("loginModal").classList.add("show");
-$("accountBtn").onclick=()=>user?loadLobby():openLogin();
-
-window.toggleAuth=()=>{mode=mode==="login"?"signup":"login";$("loginTitle").textContent=mode==="login"?"Welcome back 🌿":"Create your account 🌿";$("authSwitch").textContent=mode==="login"?"Create account":"I already have an account";$("loginMsg").textContent=""};
-window.submitAuth=async()=>{try{const e=$("email").value.trim(),p=$("password").value;if(!e)throw Error("Enter your email.");if(p.length<6)throw Error("Password must be at least 6 characters.");if(mode==="signup")await createUserWithEmailAndPassword(auth,e,p);else await signInWithEmailAndPassword(auth,e,p);closeModal("loginModal")}catch(e){$("loginMsg").textContent=e.message}};
-
-onAuthStateChanged(auth,async u=>{
-  user=u;
-  if(!u){
-    $("accountBtn").textContent="Login";
-    $("chatList").innerHTML='<p class="muted">Login to enter the community.</p>';
-    if(chatOff)chatOff(); if(publicOff)publicOff(); if(myOff)myOff(); return;
-  }
-  $("accountBtn").textContent="My Lobby";
-  const p=await getDoc(doc(db,"profiles",u.uid));
-  if(!p.exists())$("profileModal").classList.add("show");else loadLobby(p.data());
-  loadPublic();listenChat();
-});
-
-async function uploadImage(file,path){
-  if(!file)return"";
-  if(file.size>5*1024*1024)throw Error("Image must be 5 MB or smaller.");
-  if(!file.type.startsWith("image/"))throw Error("Please choose an image.");
-  const r=ref(storage,path);await uploadBytes(r,file,{contentType:file.type});return getDownloadURL(r);
-}
-
-window.saveProfile=async()=>{try{
-  if(!user)throw Error("Please login first.");
-  const d=$("displayName").value.trim(),un=$("username").value.trim().replace(/^@/,"").toLowerCase();
-  if(!d||un.length<3)throw Error("Enter a display name and a username with at least 3 characters.");
-  let f=$("profilePhoto").files[0],url=f?await uploadImage(f,`profiles/${user.uid}/avatar-${Date.now()}`):"";
-  await setDoc(doc(db,"profiles",user.uid),{uid:user.uid,displayName:d,username:un,bio:$("bio").value.trim(),vibe:$("vibe").value,photoURL:url,createdAt:serverTimestamp()},{merge:true});
-  closeModal("profileModal");loadLobby((await getDoc(doc(db,"profiles",user.uid))).data());toast("Profile created 🌿");
-}catch(e){$("profileMsg").textContent=e.message}};
-
-async function loadLobby(p){
-  $("lobbyName").textContent=p.displayName||"Your Lobby";
-  $("lobbyUser").textContent="@"+(p.username||"member");
-  $("lobbyBio").textContent=((p.bio||"")+" "+(p.vibe||"")).trim();
-  $("avatar").src=p.photoURL||"Logo.png";
-  $("lobbyModal").classList.add("show");
-  loadMine();
-}
-window.signOutUser=async()=>{await signOut(auth);closeModal("lobbyModal");toast("Logged out.")};
-
-window.openMemory=type=>{
-  if(!user){openLogin();toast("Login to add memories.");return}
-  privacy=type;
-  $("memoryTitle").textContent=type==="public"?"Add Your Memory — Public":"Add Your Memory — Private";
-  $("privacyText").textContent=type==="public"?"This memory may appear in the public gallery.":"Only you can read this memory through your account.";
-  $("memoryHeading").value="";$("memoryText").value="";$("memoryFile").value="";$("memoryMsg").textContent="";
-  $("memoryModal").classList.add("show");
-};
-
-window.saveMemory=async()=>{try{
-  if(!user)throw Error("Login required.");
-  const title=$("memoryHeading").value.trim(),text=$("memoryText").value.trim();
-  if(!title||!text)throw Error("Add a title and memory.");
-  const f=$("memoryFile").files[0],url=f?await uploadImage(f,`memories/${user.uid}/${Date.now()}-${f.name}`):"";
-  const p=(await getDoc(doc(db,"profiles",user.uid))).data()||{};
-  await addDoc(collection(db,"memories"),{ownerId:user.uid,displayName:p.displayName||"Member",username:p.username||"member",title,text,year:Number($("memoryYear").value)||2026,imageURL:url,visibility:privacy,createdAt:serverTimestamp()});
-  closeModal("memoryModal");loadPublic();loadMine();toast(privacy==="public"?"Memory shared 🌿":"Private memory saved 🔒");
-}catch(e){$("memoryMsg").textContent=e.message}};
-
-const esc=s=>String(s||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
-const mem=m=>`<article class="memory">${m.imageURL?`<img src="${esc(m.imageURL)}" alt="Memory photo">`:""}<div class="memoryBody"><h3>${esc(m.title)}</h3><p>${esc(m.text)}</p><div class="meta">${esc(m.year)} • ${esc(m.displayName||"Member")} ${m.visibility==="private"?"• 🔒 Private":"• 🌿 Public"}</div></div></article>`;
-
-function loadPublic(){
-  if(!user)return;
-  if(publicOff)publicOff();
-  publicOff=onSnapshot(query(collection(db,"memories"),where("visibility","==","public"),orderBy("createdAt","desc"),limit(12)),s=>{$("publicMemories").innerHTML=s.docs.map(x=>mem(x.data())).join("")||'<div class="card"><p class="muted">No public memories yet.</p></div>'},e=>{$("publicMemories").innerHTML='<div class="card"><p class="muted">Public memories could not load. Check your Firestore index/rules.</p></div>'});
-}
-function loadMine(){
-  if(!user)return;
-  if(myOff)myOff();
-  myOff=onSnapshot(query(collection(db,"memories"),where("ownerId","==",user.uid),orderBy("createdAt","desc"),limit(30)),s=>{$("myMemories").innerHTML=s.docs.map(x=>mem(x.data())).join("")||'<div class="card"><p class="muted">No memories yet.</p></div>'});
-}
-
-function listenChat(){
-  if(chatOff)chatOff();
-  chatOff=onSnapshot(query(collection(db,"chatMessages"),orderBy("createdAt","desc"),limit(50)),s=>{
-    $("chatList").innerHTML=s.docs.reverse().map(x=>{const d=x.data();return `<div class="msg"><b>${esc(d.displayName||"Member")}</b><div>${esc(d.text)}</div></div>`}).join("")||'<p class="muted">No messages yet.</p>';
-    $("chatList").scrollTop=$("chatList").scrollHeight;
-  },()=>{$("chatList").innerHTML='<p class="muted">Chat could not load. Check Firestore rules.</p>'});
-}
-window.sendChat=async()=>{try{
-  if(!user){openLogin();return}
-  const t=$("chatInput").value.trim();if(!t)return;
-  const p=(await getDoc(doc(db,"profiles",user.uid))).data()||{};
-  await addDoc(collection(db,"chatMessages"),{uid:user.uid,displayName:p.displayName||"Member",text:t.slice(0,500),createdAt:serverTimestamp()});
-  $("chatInput").value="";
-}catch(e){toast("Could not send message.")}};
-
-function toast(x){$("toast").textContent=x;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2600)}
-
-/* WEATHER */
-async function weather(){try{
-  let[a,b,n]=$("locationSelect").value.split(","),r=await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${a}&longitude=${b}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata`),d=await r.json(),c=d.current;
-  $("weatherLocation").textContent=n+", Kerala";$("weatherTemp").textContent=Math.round(c.temperature_2m)+"°C";$("weatherCondition").textContent=weatherText(c.weather_code);$("humidity").textContent=c.relative_humidity_2m+"%";$("wind").textContent=Math.round(c.wind_speed_10m)+" km/h";
-}catch(e){$("weatherCondition").textContent="Weather unavailable"}}
-function weatherText(c){return({0:"Clear sky ☀️",1:"Mainly clear 🌤️",2:"Partly cloudy ⛅",3:"Overcast ☁️",45:"Fog 🌫️",48:"Fog 🌫️",51:"Light drizzle 🌦️",53:"Drizzle 🌦️",55:"Heavy drizzle 🌧️",61:"Light rain 🌦️",63:"Rain 🌧️",65:"Heavy rain 🌧️",71:"Snow ❄️",73:"Snow ❄️",75:"Snow ❄️",80:"Rain showers 🌦️",81:"Rain showers 🌧️",82:"Heavy rain ⛈️",95:"Thunderstorm ⛈️",96:"Thunderstorm ⛈️",99:"Thunderstorm ⛈️"})[c]||"Kerala weather"}
-$("locationSelect").onchange=weather;$("refreshWeather").onclick=weather;weather();
-</script>
 
 <script>
+
 /* =====================================================
-   YOUTUBE SOUNDS
-   Birds + rain + village + 3 playlists
+   YOUR YOUTUBE SOUND FILES
 ===================================================== */
-const tracks={
- rain:[["Normal Rain","HmH4W8JOifg"],["Heavy Rain","FtHwx67ORIE"]],
- birds:[["Birds of Kerala","Y1tdWJtZtOg"]],
- village:[["Kerala Village","eX3ioEkKpH0"]],
- songs:[["Feel-Good Playlist 1","3sjUeqA4Jd8"],["Feel-Good Playlist 2","xayU791VQr0"],["Feel-Good Playlist 3","orTnt4bdbhg"]]
-},idx={rain:0,birds:0,village:0,songs:0},playing={rain:0,birds:0,village:0,songs:0},vol={rain:.7,birds:.7,village:.7,songs:.7},players={};let ytReady=false;
-function onYouTubeIframeAPIReady(){ytReady=true;Object.keys(tracks).forEach(makePlayer)}
-function makePlayer(t){const x=tracks[t][idx[t]];try{players[t]?.destroy()}catch(e){}players[t]=new YT.Player("player-"+t,{videoId:x[1],height:"1",width:"1",playerVars:{autoplay:0,controls:0,rel:0,modestbranding:1,playsinline:1},events:{onReady:e=>e.target.setVolume(vol[t]*100),onStateChange:e=>{if(e.data===1)playing[t]=1;if(e.data===2)playing[t]=0;if(e.data===0&&tracks[t].length>1)nextTrack(t,true);updateSound(t)}}})}
-function toggleSound(t){if(!ytReady){toast("YouTube is still loading.");return}const p=players[t];if(!p)return;try{p.getPlayerState()===1?p.pauseVideo():p.playVideo()}catch(e){toast("This YouTube sound could not start.")}}
-function stopSound(t){players[t]?.stopVideo();playing[t]=0;updateSound(t)}
-function nextTrack(t,a=false){const was=playing[t];idx[t]=(idx[t]+1)%tracks[t].length;updateSound(t);makePlayer(t);setTimeout(()=>{if(a||was)players[t]?.playVideo()},600)}
-function previousTrack(t){const was=playing[t];idx[t]=(idx[t]-1+tracks[t].length)%tracks[t].length;updateSound(t);makePlayer(t);setTimeout(()=>{if(was)players[t]?.playVideo()},600)}
-function updateSound(t){const n=document.getElementById("name-"+t);if(n)n.textContent=tracks[t][idx[t]][0];const c=document.getElementById("counter-"+t);if(c)c.textContent=`${idx[t]+1} / ${tracks[t].length}`;document.getElementById("card-"+t)?.classList.toggle("active",!!playing[t]);const b=document.getElementById("card-"+t)?.querySelector(".play");if(b)b.textContent=playing[t]?"Ⅱ":"▶"}
-function setVolume(t,v){vol[t]=Number(v)/100;try{players[t]?.setVolume(Number(v))}catch(e){}}
-Object.keys(tracks).forEach(updateSound);
+
+const soundTracks = {
+
+
+    /* ---------------- RAIN ---------------- */
+
+    rain:[
+
+        {
+            name:"Normal Rain",
+            id:"HmH4W8JOifg"
+        },
+
+        {
+            name:"Heavy Rain",
+            id:"FtHwx67ORIE"
+        }
+
+    ],
+
+
+    /* ---------------- BIRDS ---------------- */
+
+    birds:[
+
+        {
+            name:"Birds of Kerala",
+            id:"Y1tdWJtZtOg"
+        }
+
+    ],
+
+
+    /* ---------------- VILLAGE ---------------- */
+
+    village:[
+
+        {
+            name:"Kerala Village",
+            id:"eX3ioEkKpH0"
+        }
+
+    ],
+
+
+    /* ---------------- SONGS ---------------- */
+
+    songs:[
+
+        {
+            name:"Feel-Good Playlist 1",
+            id:"3sjUeqA4Jd8"
+        },
+
+        {
+            name:"Feel-Good Playlist 2",
+            id:"xayU791VQr0"
+        },
+
+        {
+            name:"Feel-Good Playlist 3",
+            id:"orTnt4bdbhg"
+        }
+
+    ]
+
+};
+
+
+/* =====================================================
+   STATE
+===================================================== */
+
+const indexes={
+
+    rain:0,
+
+    birds:0,
+
+    village:0,
+
+    songs:0
+
+};
+
+
+const playing={
+
+    rain:false,
+
+    birds:false,
+
+    village:false,
+
+    songs:false
+
+};
+
+
+const volumes={
+
+    rain:.70,
+
+    birds:.70,
+
+    village:.70,
+
+    songs:.70
+
+};
+
+
+const players={};
+
+
+/* =====================================================
+   YOUTUBE READY
+===================================================== */
+
+let youtubeReady=false;
+
+
+function onYouTubeIframeAPIReady(){
+
+    youtubeReady=true;
+
+
+    Object.keys(soundTracks).forEach(
+
+        type => createPlayer(type)
+
+    );
+
+}
+
+
+/* =====================================================
+   CREATE PLAYER
+===================================================== */
+
+function createPlayer(type){
+
+
+    const track =
+        soundTracks[type][indexes[type]];
+
+
+    if(players[type]){
+
+        try{
+
+            players[type].destroy();
+
+        }
+
+        catch(e){}
+
+    }
+
+
+    players[type] =
+
+        new YT.Player(
+
+            "player-"+type,
+
+            {
+
+                height:"1",
+
+                width:"1",
+
+
+                videoId:track.id,
+
+
+                playerVars:{
+
+                    autoplay:0,
+
+                    controls:0,
+
+                    rel:0,
+
+                    modestbranding:1,
+
+                    playsinline:1
+
+                },
+
+
+                events:{
+
+                    onReady:function(event){
+
+                        event.target.setVolume(
+
+                            volumes[type]*100
+
+                        );
+
+                    },
+
+
+                    onStateChange:function(event){
+
+
+                        /* PLAYING */
+
+                        if(
+
+                            event.data ===
+                            YT.PlayerState.PLAYING
+
+                        ){
+
+                            playing[type]=true;
+
+                            updateCard(type);
+
+                        }
+
+
+                        /* PAUSED */
+
+                        if(
+
+                            event.data ===
+                            YT.PlayerState.PAUSED
+
+                        ){
+
+                            playing[type]=false;
+
+                            updateCard(type);
+
+                        }
+
+
+                        /* ENDED */
+
+                        if(
+
+                            event.data ===
+                            YT.PlayerState.ENDED
+
+                        ){
+
+
+                            if(
+
+                                soundTracks[type].length > 1
+
+                            ){
+
+                                nextTrack(
+
+                                    type,
+
+                                    true
+
+                                );
+
+                            }
+
+                            else{
+
+                                playing[type]=false;
+
+                                updateCard(type);
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        );
+
+}
+
+
+/* =====================================================
+   PLAY / PAUSE
+===================================================== */
+
+function toggleSound(type){
+
+
+    if(!youtubeReady){
+
+        showToast(
+            "YouTube is still loading. Please try again."
+        );
+
+        return;
+
+    }
+
+
+    const player=players[type];
+
+
+    if(!player){
+
+        createPlayer(type);
+
+        return;
+
+    }
+
+
+    try{
+
+
+        const state =
+            player.getPlayerState();
+
+
+        if(
+
+            state ===
+            YT.PlayerState.PLAYING
+
+        ){
+
+            player.pauseVideo();
+
+            playing[type]=false;
+
+        }
+
+        else{
+
+            player.playVideo();
+
+            playing[type]=true;
+
+        }
+
+
+        updateCard(type);
+
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+        showToast(
+            "Unable to start this sound."
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   STOP
+===================================================== */
+
+function stopSound(type){
+
+
+    const player=players[type];
+
+
+    if(!player){
+
+        return;
+
+    }
+
+
+    player.stopVideo();
+
+
+    playing[type]=false;
+
+
+    updateCard(type);
+
+}
+
+
+/* =====================================================
+   NEXT
+===================================================== */
+
+function nextTrack(
+
+    type,
+
+    autoplay=false
+
+){
+
+
+    const total =
+        soundTracks[type].length;
+
+
+    const wasPlaying =
+        playing[type];
+
+
+    if(players[type]){
+
+        try{
+
+            players[type].stopVideo();
+
+        }
+
+        catch(e){}
+
+    }
+
+
+    playing[type]=false;
+
+
+    indexes[type] =
+
+        (indexes[type]+1)%total;
+
+
+    updateTrackUI(type);
+
+
+    if(youtubeReady){
+
+        createPlayer(type);
+
+
+        setTimeout(
+
+            function(){
+
+
+                if(
+                    autoplay ||
+                    wasPlaying
+                ){
+
+                    try{
+
+                        players[type].playVideo();
+
+                        playing[type]=true;
+
+                        updateCard(type);
+
+                    }
+
+                    catch(e){}
+
+                }
+
+
+            },
+
+            500
+
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   PREVIOUS
+===================================================== */
+
+function previousTrack(type){
+
+
+    const total =
+        soundTracks[type].length;
+
+
+    const wasPlaying =
+        playing[type];
+
+
+    if(players[type]){
+
+        try{
+
+            players[type].stopVideo();
+
+        }
+
+        catch(e){}
+
+    }
+
+
+    playing[type]=false;
+
+
+    indexes[type] =
+
+        (indexes[type]-1+total)%total;
+
+
+    updateTrackUI(type);
+
+
+    if(youtubeReady){
+
+        createPlayer(type);
+
+
+        setTimeout(
+
+            function(){
+
+
+                if(wasPlaying){
+
+                    try{
+
+                        players[type].playVideo();
+
+                        playing[type]=true;
+
+                        updateCard(type);
+
+                    }
+
+                    catch(e){}
+
+                }
+
+
+            },
+
+            500
+
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   TRACK UI
+===================================================== */
+
+function updateTrackUI(type){
+
+
+    const track =
+        soundTracks[type][indexes[type]];
+
+
+    const name =
+
+        document.getElementById(
+            "name-"+type
+        );
+
+
+    if(name){
+
+        name.textContent=
+            track.name;
+
+    }
+
+
+    const counter =
+
+        document.getElementById(
+            "counter-"+type
+        );
+
+
+    if(counter){
+
+        counter.textContent=
+
+            `${indexes[type]+1} / ${soundTracks[type].length}`;
+
+    }
+
+}
+
+
+/* =====================================================
+   CARD UI
+===================================================== */
+
+function updateCard(type){
+
+
+    const card=
+
+        document.getElementById(
+            "card-"+type
+        );
+
+
+    if(!card){
+
+        return;
+
+    }
+
+
+    if(playing[type]){
+
+        card.classList.add("active");
+
+    }
+
+    else{
+
+        card.classList.remove("active");
+
+    }
+
+
+    const button=
+
+        card.querySelector(
+            ".sound-btn.play"
+        );
+
+
+    if(button){
+
+        button.textContent=
+
+            playing[type]
+            ? "Ⅱ"
+            : "▶";
+
+    }
+
+}
+
+
+/* =====================================================
+   VOLUME
+===================================================== */
+
+function setVolume(
+
+    type,
+
+    value
+
+){
+
+
+    const volume=
+        Number(value)/100;
+
+
+    volumes[type]=volume;
+
+
+    if(players[type]){
+
+        try{
+
+            players[type].setVolume(
+                Number(value)
+            );
+
+        }
+
+        catch(e){}
+
+    }
+
+}
+
+
+/* =====================================================
+   WEATHER
+===================================================== */
+
+const locationSelect=
+
+    document.getElementById(
+        "locationSelect"
+    );
+
+
+async function loadWeather(){
+
+
+    try{
+
+
+        const parts=
+
+            locationSelect
+            .value
+            .split(",");
+
+
+        const latitude=
+            parts[0];
+
+
+        const longitude=
+            parts[1];
+
+
+        const locationName=
+
+            parts
+            .slice(2)
+            .join(",");
+
+
+        const url=
+
+            `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata`;
+
+
+        const response=
+
+            await fetch(url);
+
+
+        if(!response.ok){
+
+            throw new Error(
+                "Weather request failed"
+            );
+
+        }
+
+
+        const data=
+            await response.json();
+
+
+        const current=
+            data.current;
+
+
+        document.getElementById(
+            "weatherLocation"
+        ).textContent=
+
+            locationName+
+            ", Kerala";
+
+
+        document.getElementById(
+            "weatherTemp"
+        ).textContent=
+
+            Math.round(
+                current.temperature_2m
+            )+
+            "°C";
+
+
+        document.getElementById(
+            "weatherCondition"
+        ).textContent=
+
+            getWeatherDescription(
+                current.weather_code
+            );
+
+
+        document.getElementById(
+            "humidity"
+        ).textContent=
+
+            current.relative_humidity_2m+
+            "%";
+
+
+        document.getElementById(
+            "wind"
+        ).textContent=
+
+            Math.round(
+                current.wind_speed_10m
+            )+
+            " km/h";
+
+
+    }
+
+    catch(error){
+
+        console.error(error);
+
+
+        document.getElementById(
+            "weatherCondition"
+        ).textContent=
+
+            "Weather unavailable";
+
+
+        showToast(
+
+            "Weather could not be loaded. Check your internet connection."
+
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   WEATHER DESCRIPTION
+===================================================== */
+
+function getWeatherDescription(code){
+
+
+    const map={
+
+
+        0:"Clear sky ☀️",
+
+        1:"Mainly clear 🌤️",
+
+        2:"Partly cloudy ⛅",
+
+        3:"Overcast ☁️",
+
+        45:"Fog 🌫️",
+
+        48:"Fog 🌫️",
+
+        51:"Light drizzle 🌦️",
+
+        53:"Drizzle 🌦️",
+
+        55:"Heavy drizzle 🌧️",
+
+        61:"Light rain 🌦️",
+
+        63:"Rain 🌧️",
+
+        65:"Heavy rain 🌧️",
+
+        71:"Snow ❄️",
+
+        73:"Snow ❄️",
+
+        75:"Snow ❄️",
+
+        80:"Rain showers 🌦️",
+
+        81:"Rain showers 🌧️",
+
+        82:"Heavy rain ⛈️",
+
+        95:"Thunderstorm ⛈️",
+
+        96:"Thunderstorm ⛈️",
+
+        99:"Thunderstorm ⛈️"
+
+    };
+
+
+    return (
+
+        map[code] ||
+        "Kerala weather"
+
+    );
+
+}
+
+
+/* =====================================================
+   WEATHER EVENTS
+===================================================== */
+
+locationSelect.addEventListener(
+
+    "change",
+
+    loadWeather
+
+);
+
+
+document
+    .getElementById(
+        "refreshWeather"
+    )
+    .addEventListener(
+
+        "click",
+
+        loadWeather
+
+    );
+
+
+/* =====================================================
+   TOAST
+===================================================== */
+
+function showToast(message){
+
+
+    const toast=
+
+        document.getElementById(
+            "toast"
+        );
+
+
+    toast.textContent=
+        message;
+
+
+    toast.classList.add(
+        "show"
+    );
+
+
+    setTimeout(
+
+        function(){
+
+            toast.classList.remove(
+                "show"
+            );
+
+        },
+
+        3000
+
+    );
+
+}
+
+
+/* =====================================================
+   INITIALIZE
+===================================================== */
+
+Object.keys(soundTracks)
+
+    .forEach(
+
+        type =>
+            updateTrackUI(type)
+
+    );
+
+
+loadWeather();
+
+
 </script>
+
+
 </body>
+
 </html>
