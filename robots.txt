@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hishamey08-lab.github.io/-kerala-soundscape/sitemap.xml
