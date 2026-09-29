@@ -14,6 +14,22 @@
     Echoes of Kerala — Refresh Your Mind
 </title>
 
+<!-- =====================================================
+     PWA / INSTALL APP
+===================================================== -->
+
+<link rel="manifest" href="manifest.json">
+
+<meta
+    name="theme-color"
+    content="#06110b"
+>
+
+<link
+    rel="apple-touch-icon"
+    href="Logo.png"
+>
+
 
 <style>
 
@@ -275,8 +291,6 @@ nav{
 }
 
 
-/* YOUR LOGO BACKGROUND IMAGE */
-
 .hero::before{
 
     content:"";
@@ -307,8 +321,6 @@ nav{
 
 }
 
-
-/* Dark cinematic overlay */
 
 .hero::after{
 
@@ -500,8 +512,6 @@ nav{
 }
 
 
-/* Poster */
-
 .poster{
 
     position:absolute;
@@ -553,8 +563,6 @@ nav{
 
 }
 
-
-/* Individual positions */
 
 .poster-one{
 
@@ -624,8 +632,6 @@ nav{
 }
 
 
-/* Poster hover */
-
 .poster:hover{
 
     animation-play-state:paused;
@@ -649,26 +655,18 @@ nav{
 }
 
 
-/* Floating animation */
-
 @keyframes floatingPoster{
 
     0%{
-
         margin-top:0;
-
     }
 
     50%{
-
         margin-top:-10px;
-
     }
 
     100%{
-
         margin-top:0;
-
     }
 
 }
@@ -1171,72 +1169,102 @@ section{
 ===================================================== */
 
 .childhood-section{
+
     background:
         radial-gradient(
             circle at 50% 10%,
             rgba(155,227,165,.10),
             transparent 45%
         );
+
 }
+
 
 .childhood-card{
+
     max-width:1100px;
+
     margin:auto;
+
     padding:32px;
+
     border-radius:30px;
+
     background:
-        linear-gradient(145deg,rgba(255,255,255,.09),rgba(255,255,255,.035));
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.035)
+        );
+
     border:1px solid var(--border);
+
     box-shadow:var(--shadow);
+
 }
+
 
 .childhood-intro{
+
     color:var(--muted);
+
     line-height:1.8;
+
     max-width:760px;
+
     margin-bottom:28px;
+
 }
+
 
 .childhood-grid{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+        repeat(3,1fr);
+
     gap:18px;
+
 }
+
 
 .childhood-video{
+
     overflow:hidden;
+
     border-radius:20px;
+
     border:1px solid var(--border);
+
     background:#07110b;
+
 }
+
 
 .childhood-video iframe{
+
     width:100%;
+
     aspect-ratio:16/9;
+
     display:block;
+
     border:0;
+
 }
+
 
 .childhood-video h3{
+
     padding:15px 16px 18px;
+
     font-size:1rem;
+
     color:#eef8f0;
+
 }
 
-@media(max-width:900px){
-    .childhood-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:600px){
-    .childhood-card{
-        padding:20px;
-    }
-    .childhood-grid{
-        grid-template-columns:1fr;
-    }
-}
 
 /* =====================================================
    QUOTE
@@ -1440,6 +1468,13 @@ footer strong{
 
     }
 
+
+    .childhood-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
 }
 
 
@@ -1549,6 +1584,20 @@ footer strong{
     }
 
 
+    .childhood-card{
+
+        padding:20px;
+
+    }
+
+
+    .childhood-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+
     .quote-section{
 
         padding:
@@ -1622,8 +1671,6 @@ footer strong{
     <div class="hero-content">
 
 
-        <!-- HERO TEXT -->
-
         <div class="hero-left">
 
             <div class="eyebrow">
@@ -1665,8 +1712,6 @@ footer strong{
             <div class="hero-buttons">
 
 
-                <!-- DIRECTLY TO SOUNDS -->
-
                 <a
                     href="#sounds"
                     class="primary-btn"
@@ -1676,8 +1721,6 @@ footer strong{
 
                 </a>
 
-
-                <!-- WEATHER -->
 
                 <a
                     href="#weather"
@@ -1689,15 +1732,25 @@ footer strong{
                 </a>
 
 
+                <!-- NEW INSTALL BUTTON -->
+
+                <button
+                    id="installApp"
+                    class="secondary-btn"
+                    style="display:none;"
+                >
+
+                    📱 Install Feel Kerala
+
+                </button>
+
+
             </div>
 
         </div>
 
 
-        <!-- =================================================
-             POSTERS
-             ONLY IMAGES — NO CAPTIONS
-        ================================================== -->
+        <!-- POSTERS -->
 
         <div class="poster-wall">
 
@@ -1758,32 +1811,23 @@ footer strong{
     class="mind-section"
 >
 
-
     <div class="section-heading">
 
         <div class="section-small">
-
             Take a breath
-
         </div>
 
-
         <h2>
-
             Refresh your mind.
-
         </h2>
 
-
         <p>
-
             Leave the noise behind
             for a moment.
 
             Listen to Kerala,
             breathe slowly,
             and simply relax.
-
         </p>
 
     </div>
@@ -1791,20 +1835,13 @@ footer strong{
 
     <div class="mind-card">
 
-
         <div class="mind-icon">
-
             🌴
-
         </div>
 
-
         <h3>
-
             Welcome back to Kerala.
-
         </h3>
-
 
         <p>
 
@@ -1824,7 +1861,6 @@ footer strong{
 
         </p>
 
-
     </div>
 
 </section>
@@ -1839,28 +1875,19 @@ footer strong{
     class="weather-section"
 >
 
-
     <div class="section-heading">
 
         <div class="section-small">
-
             Kerala right now
-
         </div>
 
-
         <h2>
-
             Check the weather.
-
         </h2>
 
-
         <p>
-
             Choose a place in Kerala
             and see its current weather.
-
         </p>
 
     </div>
@@ -1869,18 +1896,13 @@ footer strong{
     <div class="weather-grid">
 
 
-        <!-- CURRENT WEATHER -->
-
         <div class="card">
-
 
             <div
                 class="weather-location"
                 id="weatherLocation"
             >
-
                 Kochi, Kerala
-
             </div>
 
 
@@ -1888,9 +1910,7 @@ footer strong{
                 class="weather-temp"
                 id="weatherTemp"
             >
-
                 --°C
-
             </div>
 
 
@@ -1898,9 +1918,7 @@ footer strong{
                 class="weather-condition"
                 id="weatherCondition"
             >
-
                 Loading...
-
             </div>
 
 
@@ -1922,19 +1940,13 @@ footer strong{
 
             </div>
 
-
         </div>
 
 
-        <!-- LOCATION -->
-
         <div class="card">
 
-
             <h3>
-
                 Choose your place
-
             </h3>
 
 
@@ -2015,11 +2027,8 @@ footer strong{
                 class="primary-btn"
                 style="margin-top:18px;"
             >
-
                 Refresh Weather
-
             </button>
-
 
         </div>
 
@@ -2037,30 +2046,20 @@ footer strong{
     class="sounds-section"
 >
 
-
     <div class="section-heading">
 
-
         <div class="section-small">
-
             Your peaceful corner
-
         </div>
 
-
         <h2>
-
             Listen. Breathe. Relax.
-
         </h2>
 
-
         <p>
-
             Choose an atmosphere
             and let Kerala play
             in the background.
-
         </p>
 
     </div>
@@ -2069,93 +2068,64 @@ footer strong{
     <div class="sound-grid">
 
 
-        <!-- =================================================
-             RAIN
-        ================================================== -->
+        <!-- RAIN -->
 
         <div
             class="sound-card"
             id="card-rain"
         >
 
-
             <div class="sound-icon">
-
                 🌧️
-
             </div>
 
-
             <h3>
-
                 Kerala Rain
-
             </h3>
 
-
             <p class="sound-description">
-
                 Two rain atmospheres
                 in one option.
-
             </p>
-
 
             <div
                 class="track-name"
                 id="name-rain"
             >
-
                 Normal Rain
-
             </div>
 
-
             <div class="sound-controls">
-
 
                 <button
                     class="sound-btn"
                     onclick="previousTrack('rain')"
                 >
-
                     ◀
-
                 </button>
-
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('rain')"
                 >
-
                     ▶
-
                 </button>
-
 
                 <button
                     class="sound-btn"
                     onclick="nextTrack('rain')"
                 >
-
                     ▶▶
-
                 </button>
-
 
                 <span
                     class="track-counter"
                     id="counter-rain"
                 >
-
                     1 / 2
-
                 </span>
 
-
             </div>
-
 
             <div class="volume">
 
@@ -2171,77 +2141,53 @@ footer strong{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             BIRDS
-        ================================================== -->
+        <!-- BIRDS -->
 
         <div
             class="sound-card"
             id="card-birds"
         >
 
-
             <div class="sound-icon">
-
                 🐦
-
             </div>
 
-
             <h3>
-
                 Kerala Birds
-
             </h3>
 
-
             <p class="sound-description">
-
                 A quiet morning
                 surrounded by nature.
-
             </p>
-
 
             <div
                 class="track-name"
                 id="name-birds"
             >
-
                 Birds of Kerala
-
             </div>
 
-
             <div class="sound-controls">
-
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('birds')"
                 >
-
                     ▶
-
                 </button>
-
 
                 <button
                     class="sound-btn"
                     onclick="stopSound('birds')"
                 >
-
                     ■
-
                 </button>
 
-
             </div>
-
 
             <div class="volume">
 
@@ -2257,78 +2203,54 @@ footer strong{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             VILLAGE
-        ================================================== -->
+        <!-- VILLAGE -->
 
         <div
             class="sound-card"
             id="card-village"
         >
 
-
             <div class="sound-icon">
-
                 🌴
-
             </div>
 
-
             <h3>
-
                 Morning Village
-
             </h3>
 
-
             <p class="sound-description">
-
                 Wake up slowly to
                 the peaceful sound
                 of a Kerala village.
-
             </p>
-
 
             <div
                 class="track-name"
                 id="name-village"
             >
-
                 Kerala Village
-
             </div>
 
-
             <div class="sound-controls">
-
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('village')"
                 >
-
                     ▶
-
                 </button>
-
 
                 <button
                     class="sound-btn"
                     onclick="stopSound('village')"
                 >
-
                     ■
-
                 </button>
 
-
             </div>
-
 
             <div class="volume">
 
@@ -2344,97 +2266,67 @@ footer strong{
 
             </div>
 
-
         </div>
 
 
-        <!-- =================================================
-             MALAYALAM SONGS
-        ================================================== -->
+        <!-- SONGS -->
 
         <div
             class="sound-card"
             id="card-songs"
         >
 
-
             <div class="sound-icon">
-
                 🎵
-
             </div>
 
-
             <h3>
-
                 Malayalam Feel-Good
-
             </h3>
 
-
             <p class="sound-description">
-
                 Three playlists in
                 one peaceful music option.
-
             </p>
-
 
             <div
                 class="track-name"
                 id="name-songs"
             >
-
                 Feel-Good Playlist 1
-
             </div>
 
-
             <div class="sound-controls">
-
 
                 <button
                     class="sound-btn"
                     onclick="previousTrack('songs')"
                 >
-
                     ◀
-
                 </button>
-
 
                 <button
                     class="sound-btn play"
                     onclick="toggleSound('songs')"
                 >
-
                     ▶
-
                 </button>
-
 
                 <button
                     class="sound-btn"
                     onclick="nextTrack('songs')"
                 >
-
                     ▶▶
-
                 </button>
-
 
                 <span
                     class="track-counter"
                     id="counter-songs"
                 >
-
                     1 / 3
-
                 </span>
 
-
             </div>
-
 
             <div class="volume">
 
@@ -2449,7 +2341,6 @@ footer strong{
                 >
 
             </div>
-
 
         </div>
 
@@ -2486,6 +2377,7 @@ footer strong{
 
     </div>
 
+
     <div class="childhood-card">
 
         <p class="childhood-intro">
@@ -2493,62 +2385,130 @@ footer strong{
             These videos are embedded directly from YouTube.
         </p>
 
+
         <div class="childhood-grid">
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/PvzmL1aHGnw?rel=0&modestbranding=1&playsinline=1" title="Detective Rajappan" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/PvzmL1aHGnw?rel=0&modestbranding=1&playsinline=1"
+                    title="Detective Rajappan"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Detective Rajappan</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/TN5MFnuHba4?rel=0&modestbranding=1&playsinline=1" title="Dosth Bada Dosth" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/TN5MFnuHba4?rel=0&modestbranding=1&playsinline=1"
+                    title="Dosth Bada Dosth"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Dosth Bada Dosth</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/6gbEA53Klzg?rel=0&modestbranding=1&playsinline=1" title="He-Man" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/6gbEA53Klzg?rel=0&modestbranding=1&playsinline=1"
+                    title="He-Man"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>He-Man</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/xLW35zFSiNQ?rel=0&modestbranding=1&playsinline=1" title="Mayakannan" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/xLW35zFSiNQ?rel=0&modestbranding=1&playsinline=1"
+                    title="Mayakannan"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Mayakannan</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/vmshe2H7Vdo?rel=0&modestbranding=1&playsinline=1" title="Lilly" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/vmshe2H7Vdo?rel=0&modestbranding=1&playsinline=1"
+                    title="Lilly"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Lilly</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/jzlheO3Icbk?rel=0&modestbranding=1&playsinline=1" title="Mr Thangu" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/jzlheO3Icbk?rel=0&modestbranding=1&playsinline=1"
+                    title="Mr Thangu"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Mr Thangu</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/YgdRlJUdsAw?rel=0&modestbranding=1&playsinline=1" title="Little Krishna" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/YgdRlJUdsAw?rel=0&modestbranding=1&playsinline=1"
+                    title="Little Krishna"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Little Krishna</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/9YxWaJ0x79k?rel=0&modestbranding=1&playsinline=1" title="Dragon Booster" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/9YxWaJ0x79k?rel=0&modestbranding=1&playsinline=1"
+                    title="Dragon Booster"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Dragon Booster</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/xCcQIKntThs?rel=0&modestbranding=1&playsinline=1" title="Marsupilami" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/xCcQIKntThs?rel=0&modestbranding=1&playsinline=1"
+                    title="Marsupilami"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Marsupilami</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/jS5SoRCmfe0?rel=0&modestbranding=1&playsinline=1" title="Stuart Little" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/jS5SoRCmfe0?rel=0&modestbranding=1&playsinline=1"
+                    title="Stuart Little"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Stuart Little</h3>
             </div>
 
+
             <div class="childhood-video">
-                <iframe src="https://www.youtube.com/embed/-2TnU-v5VAg?rel=0&modestbranding=1&playsinline=1" title="Dorayude Prayanam" loading="lazy" allowfullscreen></iframe>
+                <iframe
+                    src="https://www.youtube.com/embed/-2TnU-v5VAg?rel=0&modestbranding=1&playsinline=1"
+                    title="Dorayude Prayanam"
+                    loading="lazy"
+                    allowfullscreen>
+                </iframe>
                 <h3>Dorayude Prayanam</h3>
             </div>
+
 
         </div>
 
@@ -2562,7 +2522,6 @@ footer strong{
 ===================================================== -->
 
 <section class="quote-section">
-
 
     <div class="quote">
 
@@ -2580,7 +2539,6 @@ footer strong{
 
     </div>
 
-
 </section>
 
 
@@ -2589,7 +2547,6 @@ footer strong{
 ===================================================== -->
 
 <footer>
-
 
     <p>
 
@@ -2620,7 +2577,6 @@ footer strong{
 
     </p>
 
-
 </footer>
 
 
@@ -2630,30 +2586,25 @@ footer strong{
 
 <div id="youtubePlayers">
 
-
     <div
         id="player-rain"
         class="youtube-audio"
     ></div>
-
 
     <div
         id="player-birds"
         class="youtube-audio"
     ></div>
 
-
     <div
         id="player-village"
         class="youtube-audio"
     ></div>
 
-
     <div
         id="player-songs"
         class="youtube-audio"
     ></div>
-
 
 </div>
 
@@ -2674,16 +2625,12 @@ footer strong{
 <script>
 
 /* =====================================================
-   YOUR YOUTUBE SOUND FILES
+   YOUTUBE SOUND FILES
 ===================================================== */
 
 const soundTracks = {
 
-
-    /* ---------------- RAIN ---------------- */
-
     rain:[
-
         {
             name:"Normal Rain",
             id:"HmH4W8JOifg"
@@ -2693,38 +2640,23 @@ const soundTracks = {
             name:"Heavy Rain",
             id:"FtHwx67ORIE"
         }
-
     ],
 
-
-    /* ---------------- BIRDS ---------------- */
-
     birds:[
-
         {
             name:"Birds of Kerala",
             id:"Y1tdWJtZtOg"
         }
-
     ],
 
-
-    /* ---------------- VILLAGE ---------------- */
-
     village:[
-
         {
             name:"Kerala Village",
             id:"eX3ioEkKpH0"
         }
-
     ],
 
-
-    /* ---------------- SONGS ---------------- */
-
     songs:[
-
         {
             name:"Feel-Good Playlist 1",
             id:"3sjUeqA4Jd8"
@@ -2739,7 +2671,6 @@ const soundTracks = {
             name:"Feel-Good Playlist 3",
             id:"orTnt4bdbhg"
         }
-
     ]
 
 };
@@ -2752,11 +2683,8 @@ const soundTracks = {
 const indexes={
 
     rain:0,
-
     birds:0,
-
     village:0,
-
     songs:0
 
 };
@@ -2765,11 +2693,8 @@ const indexes={
 const playing={
 
     rain:false,
-
     birds:false,
-
     village:false,
-
     songs:false
 
 };
@@ -2778,11 +2703,8 @@ const playing={
 const volumes={
 
     rain:.70,
-
     birds:.70,
-
     village:.70,
-
     songs:.70
 
 };
@@ -2802,11 +2724,8 @@ function onYouTubeIframeAPIReady(){
 
     youtubeReady=true;
 
-
     Object.keys(soundTracks).forEach(
-
         type => createPlayer(type)
-
     );
 
 }
@@ -2818,7 +2737,6 @@ function onYouTubeIframeAPIReady(){
 
 function createPlayer(type){
 
-
     const track =
         soundTracks[type][indexes[type]];
 
@@ -2826,9 +2744,7 @@ function createPlayer(type){
     if(players[type]){
 
         try{
-
             players[type].destroy();
-
         }
 
         catch(e){}
@@ -2845,36 +2761,26 @@ function createPlayer(type){
             {
 
                 height:"1",
-
                 width:"1",
 
-
                 videoId:track.id,
-
 
                 playerVars:{
 
                     autoplay:0,
-
                     controls:0,
-
                     rel:0,
-
                     modestbranding:1,
-
                     playsinline:1
 
                 },
-
 
                 events:{
 
                     onReady:function(event){
 
                         event.target.setVolume(
-
                             volumes[type]*100
-
                         );
 
                     },
@@ -2882,14 +2788,9 @@ function createPlayer(type){
 
                     onStateChange:function(event){
 
-
-                        /* PLAYING */
-
                         if(
-
                             event.data ===
                             YT.PlayerState.PLAYING
-
                         ){
 
                             playing[type]=true;
@@ -2899,13 +2800,9 @@ function createPlayer(type){
                         }
 
 
-                        /* PAUSED */
-
                         if(
-
                             event.data ===
                             YT.PlayerState.PAUSED
-
                         ){
 
                             playing[type]=false;
@@ -2915,28 +2812,18 @@ function createPlayer(type){
                         }
 
 
-                        /* ENDED */
-
                         if(
-
                             event.data ===
                             YT.PlayerState.ENDED
-
                         ){
 
-
                             if(
-
                                 soundTracks[type].length > 1
-
                             ){
 
                                 nextTrack(
-
                                     type,
-
                                     true
-
                                 );
 
                             }
@@ -2968,7 +2855,6 @@ function createPlayer(type){
 
 function toggleSound(type){
 
-
     if(!youtubeReady){
 
         showToast(
@@ -2994,16 +2880,13 @@ function toggleSound(type){
 
     try{
 
-
         const state =
             player.getPlayerState();
 
 
         if(
-
             state ===
             YT.PlayerState.PLAYING
-
         ){
 
             player.pauseVideo();
@@ -3022,7 +2905,6 @@ function toggleSound(type){
 
 
         updateCard(type);
-
 
     }
 
@@ -3045,22 +2927,17 @@ function toggleSound(type){
 
 function stopSound(type){
 
-
     const player=players[type];
 
 
     if(!player){
-
         return;
-
     }
 
 
     player.stopVideo();
 
-
     playing[type]=false;
-
 
     updateCard(type);
 
@@ -3072,13 +2949,9 @@ function stopSound(type){
 ===================================================== */
 
 function nextTrack(
-
     type,
-
     autoplay=false
-
 ){
-
 
     const total =
         soundTracks[type].length;
@@ -3091,9 +2964,7 @@ function nextTrack(
     if(players[type]){
 
         try{
-
             players[type].stopVideo();
-
         }
 
         catch(e){}
@@ -3105,7 +2976,6 @@ function nextTrack(
 
 
     indexes[type] =
-
         (indexes[type]+1)%total;
 
 
@@ -3118,9 +2988,7 @@ function nextTrack(
 
 
         setTimeout(
-
             function(){
-
 
                 if(
                     autoplay ||
@@ -3141,11 +3009,8 @@ function nextTrack(
 
                 }
 
-
             },
-
             500
-
         );
 
     }
@@ -3159,7 +3024,6 @@ function nextTrack(
 
 function previousTrack(type){
 
-
     const total =
         soundTracks[type].length;
 
@@ -3171,9 +3035,7 @@ function previousTrack(type){
     if(players[type]){
 
         try{
-
             players[type].stopVideo();
-
         }
 
         catch(e){}
@@ -3185,7 +3047,6 @@ function previousTrack(type){
 
 
     indexes[type] =
-
         (indexes[type]-1+total)%total;
 
 
@@ -3198,9 +3059,7 @@ function previousTrack(type){
 
 
         setTimeout(
-
             function(){
-
 
                 if(wasPlaying){
 
@@ -3218,11 +3077,8 @@ function previousTrack(type){
 
                 }
 
-
             },
-
             500
-
         );
 
     }
@@ -3236,13 +3092,11 @@ function previousTrack(type){
 
 function updateTrackUI(type){
 
-
     const track =
         soundTracks[type][indexes[type]];
 
 
     const name =
-
         document.getElementById(
             "name-"+type
         );
@@ -3250,14 +3104,13 @@ function updateTrackUI(type){
 
     if(name){
 
-        name.textContent=
+        name.textContent =
             track.name;
 
     }
 
 
     const counter =
-
         document.getElementById(
             "counter-"+type
         );
@@ -3265,8 +3118,7 @@ function updateTrackUI(type){
 
     if(counter){
 
-        counter.textContent=
-
+        counter.textContent =
             `${indexes[type]+1} / ${soundTracks[type].length}`;
 
     }
@@ -3280,18 +3132,14 @@ function updateTrackUI(type){
 
 function updateCard(type){
 
-
-    const card=
-
+    const card =
         document.getElementById(
             "card-"+type
         );
 
 
     if(!card){
-
         return;
-
     }
 
 
@@ -3308,8 +3156,7 @@ function updateCard(type){
     }
 
 
-    const button=
-
+    const button =
         card.querySelector(
             ".sound-btn.play"
         );
@@ -3317,8 +3164,7 @@ function updateCard(type){
 
     if(button){
 
-        button.textContent=
-
+        button.textContent =
             playing[type]
             ? "Ⅱ"
             : "▶";
@@ -3333,15 +3179,11 @@ function updateCard(type){
 ===================================================== */
 
 function setVolume(
-
     type,
-
     value
-
 ){
 
-
-    const volume=
+    const volume =
         Number(value)/100;
 
 
@@ -3369,8 +3211,7 @@ function setVolume(
    WEATHER
 ===================================================== */
 
-const locationSelect=
-
+const locationSelect =
     document.getElementById(
         "locationSelect"
     );
@@ -3378,39 +3219,33 @@ const locationSelect=
 
 async function loadWeather(){
 
-
     try{
 
-
-        const parts=
-
+        const parts =
             locationSelect
             .value
             .split(",");
 
 
-        const latitude=
+        const latitude =
             parts[0];
 
 
-        const longitude=
+        const longitude =
             parts[1];
 
 
-        const locationName=
-
+        const locationName =
             parts
             .slice(2)
             .join(",");
 
 
-        const url=
-
+        const url =
             `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}&current=temperature_2m,relative_humidity_2m,weather_code,wind_speed_10m&timezone=Asia%2FKolkata`;
 
 
-        const response=
-
+        const response =
             await fetch(url);
 
 
@@ -3423,26 +3258,24 @@ async function loadWeather(){
         }
 
 
-        const data=
+        const data =
             await response.json();
 
 
-        const current=
+        const current =
             data.current;
 
 
         document.getElementById(
             "weatherLocation"
-        ).textContent=
-
+        ).textContent =
             locationName+
             ", Kerala";
 
 
         document.getElementById(
             "weatherTemp"
-        ).textContent=
-
+        ).textContent =
             Math.round(
                 current.temperature_2m
             )+
@@ -3451,8 +3284,7 @@ async function loadWeather(){
 
         document.getElementById(
             "weatherCondition"
-        ).textContent=
-
+        ).textContent =
             getWeatherDescription(
                 current.weather_code
             );
@@ -3460,21 +3292,18 @@ async function loadWeather(){
 
         document.getElementById(
             "humidity"
-        ).textContent=
-
+        ).textContent =
             current.relative_humidity_2m+
             "%";
 
 
         document.getElementById(
             "wind"
-        ).textContent=
-
+        ).textContent =
             Math.round(
                 current.wind_speed_10m
             )+
             " km/h";
-
 
     }
 
@@ -3485,15 +3314,12 @@ async function loadWeather(){
 
         document.getElementById(
             "weatherCondition"
-        ).textContent=
-
+        ).textContent =
             "Weather unavailable";
 
 
         showToast(
-
             "Weather could not be loaded. Check your internet connection."
-
         );
 
     }
@@ -3507,60 +3333,36 @@ async function loadWeather(){
 
 function getWeatherDescription(code){
 
-
     const map={
 
-
         0:"Clear sky ☀️",
-
         1:"Mainly clear 🌤️",
-
         2:"Partly cloudy ⛅",
-
         3:"Overcast ☁️",
-
         45:"Fog 🌫️",
-
         48:"Fog 🌫️",
-
         51:"Light drizzle 🌦️",
-
         53:"Drizzle 🌦️",
-
         55:"Heavy drizzle 🌧️",
-
         61:"Light rain 🌦️",
-
         63:"Rain 🌧️",
-
         65:"Heavy rain 🌧️",
-
         71:"Snow ❄️",
-
         73:"Snow ❄️",
-
         75:"Snow ❄️",
-
         80:"Rain showers 🌦️",
-
         81:"Rain showers 🌧️",
-
         82:"Heavy rain ⛈️",
-
         95:"Thunderstorm ⛈️",
-
         96:"Thunderstorm ⛈️",
-
         99:"Thunderstorm ⛈️"
 
     };
 
 
     return (
-
         map[code] ||
         "Kerala weather"
-
     );
 
 }
@@ -3571,11 +3373,8 @@ function getWeatherDescription(code){
 ===================================================== */
 
 locationSelect.addEventListener(
-
     "change",
-
     loadWeather
-
 );
 
 
@@ -3584,11 +3383,8 @@ document
         "refreshWeather"
     )
     .addEventListener(
-
         "click",
-
         loadWeather
-
     );
 
 
@@ -3598,15 +3394,13 @@ document
 
 function showToast(message){
 
-
-    const toast=
-
+    const toast =
         document.getElementById(
             "toast"
         );
 
 
-    toast.textContent=
+    toast.textContent =
         message;
 
 
@@ -3616,7 +3410,6 @@ function showToast(message){
 
 
     setTimeout(
-
         function(){
 
             toast.classList.remove(
@@ -3624,9 +3417,156 @@ function showToast(message){
             );
 
         },
-
         3000
+    );
 
+}
+
+
+/* =====================================================
+   PWA INSTALL SYSTEM
+===================================================== */
+
+let deferredPrompt = null;
+
+
+const installButton =
+    document.getElementById(
+        "installApp"
+    );
+
+
+/*
+   Browser tells us that the website
+   can be installed.
+*/
+
+window.addEventListener(
+    "beforeinstallprompt",
+    event => {
+
+        event.preventDefault();
+
+        deferredPrompt = event;
+
+
+        if(installButton){
+
+            installButton.style.display =
+                "inline-block";
+
+        }
+
+    }
+);
+
+
+/*
+   Install button
+*/
+
+if(installButton){
+
+    installButton.addEventListener(
+        "click",
+        async () => {
+
+            if(!deferredPrompt){
+
+                showToast(
+                    "Use your browser's Install App option to install Feel Kerala."
+                );
+
+                return;
+
+            }
+
+
+            deferredPrompt.prompt();
+
+
+            const result =
+                await deferredPrompt.userChoice;
+
+
+            console.log(
+                "Install result:",
+                result.outcome
+            );
+
+
+            deferredPrompt = null;
+
+
+            installButton.style.display =
+                "none";
+
+        }
+    );
+
+}
+
+
+/*
+   After successful installation
+*/
+
+window.addEventListener(
+    "appinstalled",
+    () => {
+
+        if(installButton){
+
+            installButton.style.display =
+                "none";
+
+        }
+
+
+        showToast(
+            "Feel Kerala has been installed! 🌿"
+        );
+
+    }
+);
+
+
+/*
+   Register Service Worker
+*/
+
+if(
+    "serviceWorker" in navigator
+){
+
+    window.addEventListener(
+        "load",
+        () => {
+
+            navigator.serviceWorker
+                .register("./sw.js")
+                .then(
+                    registration => {
+
+                        console.log(
+                            "Echoes of Kerala PWA ready.",
+                            registration
+                        );
+
+                    }
+                )
+                .catch(
+                    error => {
+
+                        console.error(
+                            "Service worker registration failed:",
+                            error
+                        );
+
+                    }
+                );
+
+        }
     );
 
 }
@@ -3637,17 +3577,13 @@ function showToast(message){
 ===================================================== */
 
 Object.keys(soundTracks)
-
     .forEach(
-
         type =>
             updateTrackUI(type)
-
     );
 
 
 loadWeather();
-
 
 </script>
 
