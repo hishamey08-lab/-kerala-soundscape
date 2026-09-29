@@ -1,0 +1,17 @@
+{
+  "name": "Echoes of Kerala",
+  "short_name": "Feel Kerala",
+  "description": "Experience the peaceful side of Kerala through sounds, memories, weather, music and nostalgia.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#06110b",
+  "theme_color": "#06110b",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "Logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
